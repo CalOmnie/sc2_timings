@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarCraft II Build Order Gantt Chart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gantt.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <div class="race-selector">
+                <label>Race:</label>
+                <button class="race-button" data-race="protoss">Protoss</button>
+                <button class="race-button" data-race="terran">Terran</button>
+                <button class="race-button" data-race="zerg">Zerg</button>
+            </div>
+            
+            <div class="entity-type-selector">
+                <label>Type:</label>
+                <button class="type-button" data-type="units">Units</button>
+                <button class="type-button" data-type="buildings">Buildings</button>
+                <button class="type-button" data-type="upgrades">Upgrades</button>
+            </div>
+            
+            <button id="addRow">Add Row</button>
+            <span id="timeScaleDisplay">Scale: 3.0x</span>
+            <small style="color: #666; margin-left: 10px;">Ctrl+Scroll to zoom</small>
+        </div>
+        
+        <div class="entity-palette" id="entityPalette" style="display: none;">
+            <div class="palette-content" id="paletteContent">
+                <!-- Entity icons will be populated here -->
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart" id="chart">
+                <div class="grid-lines" id="gridLines"></div>
+                <div class="row" data-row="0">
+                    <div class="row-label">Row 1</div>
+                    <div class="row-stats">
+                        <div class="row-end-time">End: 0:00</div>
+                        <div class="row-total-cost">Cost: 0/0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/gantt.js') }}"></script>
+</body>
+</html>

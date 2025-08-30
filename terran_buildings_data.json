@@ -1,0 +1,129 @@
+{
+  "barracks": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/0/04/SC2Barracks.jpg/600px-SC2Barracks.jpg",
+    "minerals": 150,
+    "gas": 0,
+    "build_time": 46,
+    "requirements": [
+      "Supply Depot"
+    ],
+    "produces": [
+      "Marine",
+      "Marauder",
+      "Reaper",
+      "Ghost"
+    ]
+  },
+  "factory": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/8/8c/SC2Factory.jpg/600px-SC2Factory.jpg",
+    "minerals": 150,
+    "gas": 100,
+    "build_time": 43,
+    "requirements": [
+      "Barracks"
+    ],
+    "produces": [
+      "Hellion",
+      "Widow Mine",
+      "Siege Tank",
+      "Cyclone",
+      "Hellbat",
+      "Thor"
+    ]
+  },
+  "starport": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/a/a9/SC2Starport.jpg/600px-SC2Starport.jpg",
+    "minerals": 150,
+    "gas": 100,
+    "build_time": 36,
+    "requirements": [
+      "Factory"
+    ],
+    "produces": [
+      "Viking",
+      "Medivac",
+      "Raven",
+      "Banshee",
+      "Liberator",
+      "Battlecruiser"
+    ]
+  },
+  "engineering": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/4/47/SC2EngineeringBay.jpg/600px-SC2EngineeringBay.jpg",
+    "minerals": 125,
+    "gas": 0,
+    "build_time": 25,
+    "requirements": [
+      "Command Center"
+    ]
+  },
+  "bunker": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/3/32/SC2Bunker.jpg/600px-SC2Bunker.jpg",
+    "minerals": 100,
+    "gas": 0,
+    "build_time": 29
+  },
+  "missile": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/1/10/SC2MissileTurret.jpg/600px-SC2MissileTurret.jpg",
+    "minerals": 100,
+    "gas": 0,
+    "build_time": 18
+  },
+  "sensor": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/1/1e/SC2SensorTower.jpg/600px-SC2SensorTower.jpg",
+    "minerals": 100,
+    "gas": 50,
+    "build_time": 18
+  },
+  "armory": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/f/f8/SC2Armory.jpg/600px-SC2Armory.jpg",
+    "minerals": 150,
+    "gas": 50,
+    "build_time": 46,
+    "requirements": [
+      "Factory"
+    ]
+  },
+  "fusion": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/6/61/SC2Fusion_Core.jpg/600px-SC2Fusion_Core.jpg",
+    "minerals": 150,
+    "gas": 150,
+    "build_time": 46,
+    "requirements": [
+      "Starport"
+    ]
+  },
+  "tech": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/0/0f/SC2TechLab.jpg/600px-SC2TechLab.jpg",
+    "minerals": 50,
+    "gas": 25,
+    "build_time": 18
+  },
+  "reactor": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/8/82/SC2Reactor.jpg/600px-SC2Reactor.jpg",
+    "minerals": 50,
+    "gas": 50,
+    "build_time": 36
+  },
+  "command": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/b/b6/SC2CommandCenter.jpg/600px-SC2CommandCenter.jpg",
+    "minerals": 400,
+    "gas": 0,
+    "build_time": 71,
+    "produces": [
+      "SCV"
+    ]
+  },
+  "orbital": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/8/84/SC2OrbitalCommand.jpg/600px-SC2OrbitalCommand.jpg",
+    "minerals": 1,
+    "gas": 5,
+    "build_time": 0
+  },
+  "planetary": {
+    "icon_url": "https://liquipedia.net/commons/images/thumb/4/4e/SC2PlanetaryFortress.jpg/600px-SC2PlanetaryFortress.jpg",
+    "minerals": 1,
+    "gas": 5,
+    "build_time": 0
+  }
+}
