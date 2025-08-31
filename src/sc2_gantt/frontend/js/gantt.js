@@ -387,13 +387,14 @@ class GanttChart {
         // Calculate the maximum time span needed
         const maxTime = this.getMaxTimeSpan();
         const chartWidth = this.chart.clientWidth - 120; // Account for padding
+        const entityStartOffset = 100; // Same offset as chart padding-left where entities start
         
         // Create vertical lines every 10 seconds starting at 0:00
         const interval = 10; // 10 second intervals
         
         for (let time = 0; time <= maxTime; time += interval) {
-            const x = time * this.timeScale;
-            if (x > chartWidth) break;
+            const x = entityStartOffset + (time * this.timeScale);
+            if (x > this.chart.clientWidth) break;
             
             const line = document.createElement('div');
             line.className = 'grid-line';
