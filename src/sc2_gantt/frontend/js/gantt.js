@@ -146,18 +146,10 @@ class GanttChart {
             };
             iconButton.appendChild(img);
             
-            // Create name label
-            const nameLabel = document.createElement('div');
-            nameLabel.className = 'entity-name';
-            nameLabel.textContent = entity.name;
-            iconButton.appendChild(nameLabel);
-            
-            // Create stats label
-            const statsLabel = document.createElement('div');
-            statsLabel.className = 'entity-stats';
+            // Add tooltip with entity name and stats
             const buildTime = entity.build_time || entity.research_time || 0;
-            statsLabel.textContent = `${buildTime}s, ${entity.minerals}/${entity.gas || 0}`;
-            iconButton.appendChild(statsLabel);
+            const tooltip = `${entity.name} - ${buildTime}s, ${entity.minerals}/${entity.gas || 0}`;
+            iconButton.setAttribute('data-tooltip', tooltip);
             
             // Add click handler
             iconButton.addEventListener('click', () => {

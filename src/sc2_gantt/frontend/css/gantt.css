@@ -344,23 +344,25 @@ body {
 .palette-content {
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    gap: 8px;
     overflow-y: auto;
     flex: 1;
 }
 
 .entity-icon-button {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
+    padding: 4px;
     border: 2px solid transparent;
     border-radius: 6px;
     background: #51576d;
     cursor: pointer;
     transition: all 0.2s;
-    text-align: center;
+    width: 60px;
+    height: 60px;
 }
 
 .entity-icon-button:hover {
@@ -370,28 +372,36 @@ body {
 }
 
 .entity-icon-button img {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 4px;
     object-fit: cover;
-    margin-bottom: 4px;
 }
 
-.entity-icon-button .entity-name {
-    font-size: 10px;
-    font-weight: bold;
+/* Tooltip for entity hover */
+.entity-icon-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #232634;
     color: #c6d0f5;
-    line-height: 1.2;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
     white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    border: 1px solid #51576d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 8px;
 }
 
-.entity-icon-button .entity-stats {
-    font-size: 8px;
-    color: #a5adce;
-    margin-top: 2px;
+.entity-icon-button:hover::after {
+    opacity: 1;
 }
 
 .drop-zone {
