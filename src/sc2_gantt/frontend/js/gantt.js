@@ -514,25 +514,46 @@ class GanttChart {
         
         // Add chronoboost section for Protoss units and upgrades
         if (race === 'protoss' && (entityType === 'unit' || entityType === 'upgrade') && rectangleData) {
-            if (rectangleData.chronoboosted) {
-                html += `
-                    <div class="chronoboost-section">
-                        <h5>Chronoboost</h5>
-                        <p>✨ Chronoboost applied! Build time reduced by 50%</p>
-                        <p style="font-size: 12px; opacity: 0.8; margin-top: 8px;">
-                            Original time: ${rectangleData.originalBuildTime}s → Current: ${buildTime}s
-                        </p>
-                    </div>`;
-            } else {
-                html += `
-                    <div class="chronoboost-section">
-                        <h5>Chronoboost</h5>
-                        <p>Apply chronoboost to reduce build time by 50%</p>
-                        <button class="chronoboost-button" data-rect-id="${rectangleData.id}">
-                            Apply Chronoboost
+            const originalTime = rectangleData.originalBuildTime || buildTime;
+            const currentCount = rectangleData.chronoboostCount || 0;
+            const maxReduction = originalTime * 0.5;
+            const maxChronoboosts = Math.floor(maxReduction / 10);
+            const timeSaved = currentCount * 10;
+            
+            html += `
+                <div class="chronoboost-section">
+                    <h5>Chronoboost</h5>
+                    <p>Each chronoboost reduces build time by 10 seconds</p>
+                    
+                    <div class="chronoboost-controls">
+                        <button class="chronoboost-decrease" data-rect-id="${rectangleData.id}" ${currentCount <= 0 ? 'disabled' : ''}>
+                            −
                         </button>
-                    </div>`;
-            }
+                        <span class="chronoboost-count">${currentCount}</span>
+                        <button class="chronoboost-increase" data-rect-id="${rectangleData.id}" ${currentCount >= maxChronoboosts ? 'disabled' : ''}>
+                            +
+                        </button>
+                    </div>
+                    
+                    <div class="chronoboost-info">
+                        <div class="chrono-stat">
+                            <span>Original time:</span>
+                            <span>${originalTime}s</span>
+                        </div>
+                        <div class="chrono-stat">
+                            <span>Time saved:</span>
+                            <span>-${timeSaved}s</span>
+                        </div>
+                        <div class="chrono-stat current-time">
+                            <span>Current time:</span>
+                            <span>${buildTime}s</span>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 11px; opacity: 0.7; margin-top: 8px;">
+                        Max: ${maxChronoboosts} chronoboosts (50% reduction cap)
+                    </p>
+                </div>`;
         }
         
         html += `</div>`;
@@ -542,32 +563,54 @@ class GanttChart {
     addChronoboostHandlers(entityData, rectangleData) {
         if (!rectangleData || entityData.race !== 'protoss') return;
         
-        const chronoButton = document.querySelector('.chronoboost-button');
-        if (chronoButton) {
-            chronoButton.addEventListener('click', () => {
-                this.applyChronoboost(rectangleData);
+        const increaseButton = document.querySelector('.chronoboost-increase');
+        const decreaseButton = document.querySelector('.chronoboost-decrease');
+        
+        if (increaseButton) {
+            increaseButton.addEventListener('click', () => {
+                this.applyChronoboost(rectangleData, 1);
+            });
+        }
+        
+        if (decreaseButton) {
+            decreaseButton.addEventListener('click', () => {
+                this.applyChronoboost(rectangleData, -1);
             });
         }
     }
     
-    applyChronoboost(rectangleData) {
+    applyChronoboost(rectangleData, change = 1) {
         if (!rectangleData || !rectangleData.entityData) return;
-        if (rectangleData.chronoboosted) return; // Already chronoboosted
         
-        const originalBuildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
-        const chronoboostedTime = originalBuildTime * 0.5; // 50% reduction
-        const newWidth = chronoboostedTime * this.timeScale;
-        
-        // Store original time before modifying
+        // Initialize chronoboost data
         if (!rectangleData.originalBuildTime) {
-            rectangleData.originalBuildTime = originalBuildTime;
+            rectangleData.originalBuildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
+        }
+        if (rectangleData.chronoboostCount === undefined) {
+            rectangleData.chronoboostCount = 0;
         }
         
-        // Update entity data with chronoboosted time
+        // Update chronoboost count
+        const newCount = Math.max(0, rectangleData.chronoboostCount + change);
+        
+        // Calculate maximum possible chronoboosts
+        // Each chronoboost saves 10 seconds, max reduction is 50% of original time
+        const maxReduction = rectangleData.originalBuildTime * 0.5;
+        const maxChronoboosts = Math.floor(maxReduction / 10);
+        
+        // Cap the chronoboost count
+        rectangleData.chronoboostCount = Math.min(newCount, maxChronoboosts);
+        
+        // Calculate new build time
+        const timeSaved = rectangleData.chronoboostCount * 10;
+        const newBuildTime = rectangleData.originalBuildTime - timeSaved;
+        const newWidth = newBuildTime * this.timeScale;
+        
+        // Update entity data with new time
         if (rectangleData.entityData.build_time) {
-            rectangleData.entityData.build_time = chronoboostedTime;
+            rectangleData.entityData.build_time = newBuildTime;
         } else if (rectangleData.entityData.research_time) {
-            rectangleData.entityData.research_time = chronoboostedTime;
+            rectangleData.entityData.research_time = newBuildTime;
         }
         
         // Update rectangle width
@@ -577,12 +620,17 @@ class GanttChart {
         // Update time display on the rectangle
         const timeDisplay = rectangleData.element.querySelector('.entity-time');
         if (timeDisplay) {
-            timeDisplay.textContent = `${chronoboostedTime}s`;
+            timeDisplay.textContent = `${newBuildTime}s`;
         }
         
-        // Add visual indicator for chronoboost
-        rectangleData.element.classList.add('chronoboosted');
-        rectangleData.chronoboosted = true;
+        // Update visual indicator for chronoboost
+        if (rectangleData.chronoboostCount > 0) {
+            rectangleData.element.classList.add('chronoboosted');
+            rectangleData.chronoboosted = true;
+        } else {
+            rectangleData.element.classList.remove('chronoboosted');
+            rectangleData.chronoboosted = false;
+        }
         
         // Reposition rectangles and update stats
         this.repositionAllRectangles();
@@ -591,7 +639,7 @@ class GanttChart {
         // Update info panel with new data
         this.showInfoPanel(rectangleData.entityData, rectangleData);
         
-        console.log(`Applied chronoboost to ${rectangleData.entityData.name}: ${originalBuildTime}s → ${chronoboostedTime}s`);
+        console.log(`Chronoboost updated for ${rectangleData.entityData.name}: ${rectangleData.chronoboostCount} boosts, ${rectangleData.originalBuildTime}s → ${newBuildTime}s`);
     }
     
     formatTime(seconds) {
