@@ -394,10 +394,14 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
-    z-index: 1000;
+    z-index: 9999;
     border: 1px solid #51576d;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     margin-top: 8px;
+}
+
+.entity-icon-button:hover {
+    z-index: 10000;
 }
 
 .entity-icon-button:hover::after {
