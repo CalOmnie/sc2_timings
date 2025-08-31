@@ -162,6 +162,7 @@ class SC2ComprehensiveScraper:
                     # Find level-specific icon
                     upgrade_icon_url = self._extract_tiered_upgrade_icon(element, upgrade_base_name, level)
                     
+                    name = re.sub(r'\s+', '_', normalized_base_name.lower())
                     upgrade_data = {
                         'name': full_upgrade_name,
                         'base_name': normalized_base_name,  # For grouping related upgrades
@@ -174,13 +175,13 @@ class SC2ComprehensiveScraper:
                         'affects_units': [entity['name']],
                         'research_building': entity['name'],
                         'hotkey': hotkey,
-                        'key': f"{re.sub(r'\s+', '_', normalized_base_name.lower())}_level_{level}_{entity['race']}"
+                        'key': f"{name}_level_{level}_{entity['race']}"
                     }
                     
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
-                        # Add local file path for frontend use
-                        local_name = re.sub(r'\s+', '_', full_upgrade_name.lower())
+                        # Add local file path for frontend use - match asset filename format
+                        local_name = re.sub(r'\s+', '_', full_upgrade_name.lower()).replace('level_', 'level')
                         upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                     
                     upgrades.append(upgrade_data)
@@ -205,6 +206,7 @@ class SC2ComprehensiveScraper:
                     
                     upgrade_icon_url = self._extract_upgrade_icon_from_element(element)
                     
+                    name = re.sub(r'\s+', '_', upgrade_name.lower())
                     upgrade_data = {
                         'name': upgrade_name,
                         'type': 'upgrade',
@@ -215,13 +217,13 @@ class SC2ComprehensiveScraper:
                         'affects_units': [entity['name']],
                         'research_building': entity['name'],
                         'hotkey': hotkey,
-                        'key': f"{re.sub(r'\s+', '_', upgrade_name.lower())}_{entity['race']}"
+                        'key': f"{name}_{entity['race']}"
                     }
                     
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
-                        # Add local file path for frontend use
-                        local_name = re.sub(r'\s+', '_', upgrade_name.lower())
+                        # Add local file path for frontend use - match asset filename format
+                        local_name = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
                         upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                     
                     upgrades.append(upgrade_data)
@@ -308,6 +310,7 @@ class SC2ComprehensiveScraper:
                 # Find matching icon by filename similarity
                 upgrade_icon_url = self._find_matching_icon(upgrade_name, all_upgrade_icons)
                 
+                name = re.sub(r'\s+', '_', upgrade_name.lower())
                 upgrade_data = {
                     'name': upgrade_name,
                     'type': 'upgrade',
@@ -318,13 +321,13 @@ class SC2ComprehensiveScraper:
                     'affects_units': [entity['name']],
                     'research_building': research_building,
                     'hotkey': hotkey,
-                    'key': f"{re.sub(r'\s+', '_', upgrade_name.lower())}_{entity['race']}"
+                    'key': f"{name}_{entity['race']}"
                 }
                 
                 if upgrade_icon_url:
                     upgrade_data['icon_url'] = upgrade_icon_url
-                    # Add local file path for frontend use
-                    local_name = re.sub(r'\s+', '_', upgrade_name.lower())
+                    # Add local file path for frontend use - match asset filename format
+                    local_name = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
                     upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                 
                 upgrades.append(upgrade_data)
@@ -419,8 +422,8 @@ class SC2ComprehensiveScraper:
             # Add icon URL if found
             if upgrade_icon_url:
                 upgrade_data['icon_url'] = upgrade_icon_url
-                # Add local file path for frontend use
-                local_name = upgrade_name.lower().replace(' ', '_')
+                # Add local file path for frontend use - match asset filename format
+                local_name = upgrade_name.lower().replace(' ', '_').replace('level_', 'level')
                 upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
             
             upgrades.append(upgrade_data)

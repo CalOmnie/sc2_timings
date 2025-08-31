@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scrape_timestamp": 1756499358.2820857,
+    "scrape_timestamp": 1756681806.8124752,
     "total_entities": 114
   },
   "races": {
@@ -260,33 +260,30 @@
         }
       ],
       "detailed_data": {
+        "archon": {
+          "name": "Archon",
+          "type": "unit",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Archon_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/1/16/SC2Archon.jpg/600px-SC2Archon.jpg",
+          "href": "/assets/icons/protoss/units/archon.jpg",
+          "minerals": 0,
+          "gas": 0,
+          "build_time": 8
+        },
         "colossus": {
           "name": "Colossus",
           "type": "unit",
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Colossus_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/6c/SC2Colossus.jpg/600px-SC2Colossus.jpg",
+          "href": "/assets/icons/protoss/units/colossus.jpg",
           "minerals": 300,
           "gas": 200,
           "build_time": 54,
           "requirements": [
             "Robotics Bay"
-          ],
-          "href": "/assets/icons/protoss/units/colossus.jpg"
-        },
-        "carrier": {
-          "name": "Carrier",
-          "type": "unit",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Carrier_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e3/SC2Carrier.jpg/600px-SC2Carrier.jpg",
-          "minerals": 350,
-          "gas": 250,
-          "build_time": 64,
-          "requirements": [
-            "Fleet Beacon"
-          ],
-          "href": "/assets/icons/protoss/units/carrier.jpg"
+          ]
         },
         "adept": {
           "name": "Adept",
@@ -294,13 +291,27 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Adept",
           "icon_url": "https://liquipedia.net/commons/images/thumb/7/78/SC2Adept.jpg/600px-SC2Adept.jpg",
+          "href": "/assets/icons/protoss/units/adept.jpg",
           "minerals": 100,
           "gas": 25,
           "build_time": 30,
           "requirements": [
             "Cybernetics Core"
-          ],
-          "href": "/assets/icons/protoss/units/adept.jpg"
+          ]
+        },
+        "carrier": {
+          "name": "Carrier",
+          "type": "unit",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Carrier_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e3/SC2Carrier.jpg/600px-SC2Carrier.jpg",
+          "href": "/assets/icons/protoss/units/carrier.jpg",
+          "minerals": 350,
+          "gas": 250,
+          "build_time": 64,
+          "requirements": [
+            "Fleet Beacon"
+          ]
         },
         "dark_templar": {
           "name": "Dark Templar",
@@ -308,24 +319,13 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Dark_Templar_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/e5/SC2DarkTemplar.jpg/600px-SC2DarkTemplar.jpg",
+          "href": "/assets/icons/protoss/units/dark_templar.jpg",
           "minerals": 125,
           "gas": 125,
           "build_time": 39,
           "requirements": [
             "Dark Shrine"
-          ],
-          "href": "/assets/icons/protoss/units/dark_templar.jpg"
-        },
-        "archon": {
-          "name": "Archon",
-          "type": "unit",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Archon_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/1/16/SC2Archon.jpg/600px-SC2Archon.jpg",
-          "minerals": 0,
-          "gas": 0,
-          "build_time": 8,
-          "href": "/assets/icons/protoss/units/archon.jpg"
+          ]
         },
         "disruptor": {
           "name": "Disruptor",
@@ -333,13 +333,13 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Disruptor",
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2Disruptor.jpg/600px-SC2Disruptor.jpg",
+          "href": "/assets/icons/protoss/units/disruptor.jpg",
           "minerals": 150,
           "gas": 150,
           "build_time": 36,
           "requirements": [
             "Robotics Bay"
-          ],
-          "href": "/assets/icons/protoss/units/disruptor.jpg"
+          ]
         },
         "high_templar": {
           "name": "High Templar",
@@ -347,24 +347,13 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/High_Templar_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2HighTemplar.jpg/600px-SC2HighTemplar.jpg",
+          "href": "/assets/icons/protoss/units/high_templar.jpg",
           "minerals": 50,
           "gas": 150,
           "build_time": 39,
           "requirements": [
             "Templar Archives"
-          ],
-          "href": "/assets/icons/protoss/units/high_templar.jpg"
-        },
-        "interceptor": {
-          "name": "Interceptor",
-          "type": "unit",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Interceptor_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/1/10/Interceptor_sc2.png",
-          "minerals": 15,
-          "gas": 0,
-          "build_time": 9,
-          "href": "/assets/icons/protoss/units/interceptor.jpg"
+          ]
         },
         "immortal": {
           "name": "Immortal",
@@ -372,10 +361,21 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Immortal_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/ee/SC2Immortal.jpg/600px-SC2Immortal.jpg",
+          "href": "/assets/icons/protoss/units/immortal.jpg",
           "minerals": 250,
           "gas": 100,
-          "build_time": 39,
-          "href": "/assets/icons/protoss/units/immortal.jpg"
+          "build_time": 39
+        },
+        "interceptor": {
+          "name": "Interceptor",
+          "type": "unit",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Interceptor_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/1/10/Interceptor_sc2.png",
+          "href": "/assets/icons/protoss/units/interceptor.jpg",
+          "minerals": 15,
+          "gas": 0,
+          "build_time": 9
         },
         "mothership": {
           "name": "Mothership",
@@ -383,14 +383,14 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Mothership_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/97/SC2Mothership.jpg/600px-SC2Mothership.jpg",
+          "href": "/assets/icons/protoss/units/mothership.jpg",
           "minerals": 400,
           "gas": 400,
           "build_time": 89,
           "requirements": [
             "Fleet Beacon",
             "No Mothership"
-          ],
-          "href": "/assets/icons/protoss/units/mothership.jpg"
+          ]
         },
         "observer": {
           "name": "Observer",
@@ -398,10 +398,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Observer_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/91/SC2Observer.jpg/600px-SC2Observer.jpg",
+          "href": "/assets/icons/protoss/units/observer.jpg",
           "minerals": 25,
           "gas": 75,
-          "build_time": 17,
-          "href": "/assets/icons/protoss/units/observer.jpg"
+          "build_time": 17
         },
         "oracle": {
           "name": "Oracle",
@@ -409,10 +409,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Oracle_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/14/SC2Oracle.jpg/600px-SC2Oracle.jpg",
+          "href": "/assets/icons/protoss/units/oracle.jpg",
           "minerals": 150,
           "gas": 150,
-          "build_time": 37,
-          "href": "/assets/icons/protoss/units/oracle.jpg"
+          "build_time": 37
         },
         "phoenix": {
           "name": "Phoenix",
@@ -420,10 +420,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Phoenix_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8a/SC2Phoenix.jpg/600px-SC2Phoenix.jpg",
+          "href": "/assets/icons/protoss/units/phoenix.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 25,
-          "href": "/assets/icons/protoss/units/phoenix.jpg"
+          "build_time": 25
         },
         "probe": {
           "name": "Probe",
@@ -431,24 +431,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Probe_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/4f/SC2Probe.jpg/600px-SC2Probe.jpg",
+          "href": "/assets/icons/protoss/units/probe.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 12,
-          "href": "/assets/icons/protoss/units/probe.jpg"
-        },
-        "sentry": {
-          "name": "Sentry",
-          "type": "unit",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Sentry_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e0/SC2Sentry.jpg/600px-SC2Sentry.jpg",
-          "minerals": 50,
-          "gas": 100,
-          "build_time": 23,
-          "requirements": [
-            "Cybernetics Core"
-          ],
-          "href": "/assets/icons/protoss/units/sentry.jpg"
+          "build_time": 12
         },
         "stalker": {
           "name": "Stalker",
@@ -456,13 +442,27 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Stalker_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/63/SC2Stalker.jpg/600px-SC2Stalker.jpg",
+          "href": "/assets/icons/protoss/units/stalker.jpg",
           "minerals": 125,
           "gas": 50,
           "build_time": 27,
           "requirements": [
             "Cybernetics Core"
-          ],
-          "href": "/assets/icons/protoss/units/stalker.jpg"
+          ]
+        },
+        "sentry": {
+          "name": "Sentry",
+          "type": "unit",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Sentry_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e0/SC2Sentry.jpg/600px-SC2Sentry.jpg",
+          "href": "/assets/icons/protoss/units/sentry.jpg",
+          "minerals": 50,
+          "gas": 100,
+          "build_time": 23,
+          "requirements": [
+            "Cybernetics Core"
+          ]
         },
         "tempest": {
           "name": "Tempest",
@@ -470,13 +470,24 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Tempest_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/e1/SC2Tempest.jpg/600px-SC2Tempest.jpg",
+          "href": "/assets/icons/protoss/units/tempest.jpg",
           "minerals": 250,
           "gas": 175,
           "build_time": 43,
           "requirements": [
             "Fleet Beacon"
-          ],
-          "href": "/assets/icons/protoss/units/tempest.jpg"
+          ]
+        },
+        "void_ray": {
+          "name": "Void Ray",
+          "type": "unit",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Void_Ray_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/c/cd/SC2Void_Ray.jpg/600px-SC2Void_Ray.jpg",
+          "href": "/assets/icons/protoss/units/void_ray.jpg",
+          "minerals": 250,
+          "gas": 150,
+          "build_time": 43
         },
         "warp_prism": {
           "name": "Warp Prism",
@@ -484,10 +495,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Warp_Prism_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/da/SC2WarpPrismFlying.jpg/600px-SC2WarpPrismFlying.jpg",
+          "href": "/assets/icons/protoss/units/warp_prism.jpg",
           "minerals": 250,
           "gas": 0,
-          "build_time": 36,
-          "href": "/assets/icons/protoss/units/warp_prism.jpg"
+          "build_time": 36
         },
         "assimilator": {
           "name": "Assimilator",
@@ -495,10 +506,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Assimilator_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/1c/SC2Assimilator.jpg/600px-SC2Assimilator.jpg",
+          "href": "/assets/icons/protoss/buildings/assimilator.jpg",
           "minerals": 75,
           "gas": 0,
-          "build_time": 21,
-          "href": "/assets/icons/protoss/buildings/assimilator.jpg"
+          "build_time": 21
         },
         "zealot": {
           "name": "Zealot",
@@ -506,10 +517,29 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Zealot_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5c/SC2Zealot.jpg/600px-SC2Zealot.jpg",
+          "href": "/assets/icons/protoss/units/zealot.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 27,
-          "href": "/assets/icons/protoss/units/zealot.jpg"
+          "build_time": 27
+        },
+        "dark_shrine": {
+          "name": "Dark Shrine",
+          "type": "building",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Dark_Shrine_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/20/SC2DarkShrine.jpg/600px-SC2DarkShrine.jpg",
+          "href": "/assets/icons/protoss/buildings/dark_shrine.jpg",
+          "minerals": 150,
+          "gas": 150,
+          "build_time": 71,
+          "requirements": [
+            "Twilight Council",
+            "Pylon Power"
+          ],
+          "unlocks": [
+            "Dark Templar",
+            "Archon"
+          ]
         },
         "cybernetics_core": {
           "name": "Cybernetics Core",
@@ -517,6 +547,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Cybernetics_Core_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/e6/SC2CyberneticsCore.jpg/600px-SC2CyberneticsCore.jpg",
+          "href": "/assets/icons/protoss/buildings/cybernetics_core.jpg",
           "minerals": 150,
           "gas": 0,
           "build_time": 36,
@@ -532,45 +563,7 @@
             "Sentry",
             "Stalker",
             "Adept"
-          ],
-          "href": "/assets/icons/protoss/buildings/cybernetics_core.jpg"
-        },
-        "dark_shrine": {
-          "name": "Dark Shrine",
-          "type": "building",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Dark_Shrine_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/20/SC2DarkShrine.jpg/600px-SC2DarkShrine.jpg",
-          "minerals": 150,
-          "gas": 150,
-          "build_time": 71,
-          "requirements": [
-            "Twilight Council",
-            "Pylon Power"
-          ],
-          "unlocks": [
-            "Dark Templar",
-            "Archon"
-          ],
-          "href": "/assets/icons/protoss/buildings/dark_shrine.jpg"
-        },
-        "forge": {
-          "name": "Forge",
-          "type": "building",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Forge_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e4/SC2Forge.jpg/600px-SC2Forge.jpg",
-          "minerals": 150,
-          "gas": 0,
-          "build_time": 32,
-          "requirements": [
-            "Nexus",
-            "Pylon Power"
-          ],
-          "unlocks": [
-            "Photon Cannon"
-          ],
-          "href": "/assets/icons/protoss/buildings/forge.jpg"
+          ]
         },
         "fleet_beacon": {
           "name": "Fleet Beacon",
@@ -578,6 +571,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Fleet_Beacon_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/aa/SC2FleetBeacon.jpg/600px-SC2FleetBeacon.jpg",
+          "href": "/assets/icons/protoss/buildings/fleet_beacon.jpg",
           "minerals": 300,
           "gas": 200,
           "build_time": 43,
@@ -589,8 +583,25 @@
             "Carrier",
             "Mothership",
             "Tempest"
+          ]
+        },
+        "forge": {
+          "name": "Forge",
+          "type": "building",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Forge_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e4/SC2Forge.jpg/600px-SC2Forge.jpg",
+          "href": "/assets/icons/protoss/buildings/forge.jpg",
+          "minerals": 150,
+          "gas": 0,
+          "build_time": 32,
+          "requirements": [
+            "Nexus",
+            "Pylon Power"
           ],
-          "href": "/assets/icons/protoss/buildings/fleet_beacon.jpg"
+          "unlocks": [
+            "Photon Cannon"
+          ]
         },
         "gateway": {
           "name": "Gateway",
@@ -598,6 +609,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Gateway_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/99/SC2Gateway.jpg/600px-SC2Gateway.jpg",
+          "href": "/assets/icons/protoss/buildings/gateway.jpg",
           "minerals": 150,
           "gas": 0,
           "build_time": 46,
@@ -615,8 +627,22 @@
           ],
           "unlocks": [
             "Cybernetics Core"
-          ],
-          "href": "/assets/icons/protoss/buildings/gateway.jpg"
+          ]
+        },
+        "photon_cannon": {
+          "name": "Photon Cannon",
+          "type": "building",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Photon_Cannon_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/9/93/SC2PhotonCannon.jpg/600px-SC2PhotonCannon.jpg",
+          "href": "/assets/icons/protoss/buildings/photon_cannon.jpg",
+          "minerals": 150,
+          "gas": 0,
+          "build_time": 29,
+          "requirements": [
+            "Forge",
+            "Pylon Power"
+          ]
         },
         "nexus": {
           "name": "Nexus",
@@ -624,6 +650,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Nexus_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/f/f8/SC2Nexus.jpg/600px-SC2Nexus.jpg",
+          "href": "/assets/icons/protoss/buildings/nexus.jpg",
           "minerals": 400,
           "gas": 0,
           "build_time": 71,
@@ -635,8 +662,7 @@
             "Gateway",
             "Forge",
             "+15"
-          ],
-          "href": "/assets/icons/protoss/buildings/nexus.jpg"
+          ]
         },
         "pylon": {
           "name": "Pylon",
@@ -644,25 +670,29 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Pylon_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/48/SC2Pylon.jpg/600px-SC2Pylon.jpg",
+          "href": "/assets/icons/protoss/buildings/pylon.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18,
-          "href": "/assets/icons/protoss/buildings/pylon.jpg"
+          "build_time": 18
         },
-        "photon_cannon": {
-          "name": "Photon Cannon",
+        "robotics_bay": {
+          "name": "Robotics Bay",
           "type": "building",
           "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Photon_Cannon_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/9/93/SC2PhotonCannon.jpg/600px-SC2PhotonCannon.jpg",
+          "page_url": "https://liquipedia.net/starcraft2/Robotics_Bay_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/d/da/SC2RoboticsBay.jpg/600px-SC2RoboticsBay.jpg",
+          "href": "/assets/icons/protoss/buildings/robotics_bay.jpg",
           "minerals": 150,
-          "gas": 0,
-          "build_time": 29,
+          "gas": 150,
+          "build_time": 46,
           "requirements": [
-            "Forge",
+            "Robotics Facility",
             "Pylon Power"
           ],
-          "href": "/assets/icons/protoss/buildings/photon_cannon.jpg"
+          "unlocks": [
+            "Colossus",
+            "Disruptor"
+          ]
         },
         "robotics_facility": {
           "name": "Robotics Facility",
@@ -670,6 +700,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Robotics_Facility_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/e8/SC2RoboticsFacility.jpg/600px-SC2RoboticsFacility.jpg",
+          "href": "/assets/icons/protoss/buildings/robotics_facility.jpg",
           "minerals": 150,
           "gas": 100,
           "build_time": 46,
@@ -686,27 +717,7 @@
           ],
           "unlocks": [
             "Robotics Bay"
-          ],
-          "href": "/assets/icons/protoss/buildings/robotics_facility.jpg"
-        },
-        "robotics_bay": {
-          "name": "Robotics Bay",
-          "type": "building",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Robotics_Bay_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/d/da/SC2RoboticsBay.jpg/600px-SC2RoboticsBay.jpg",
-          "minerals": 150,
-          "gas": 150,
-          "build_time": 46,
-          "requirements": [
-            "Robotics Facility",
-            "Pylon Power"
-          ],
-          "unlocks": [
-            "Colossus",
-            "Disruptor"
-          ],
-          "href": "/assets/icons/protoss/buildings/robotics_bay.jpg"
+          ]
         },
         "stargate": {
           "name": "Stargate",
@@ -714,6 +725,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Stargate_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/3/35/SC2Stargate.jpg/600px-SC2Stargate.jpg",
+          "href": "/assets/icons/protoss/buildings/stargate.jpg",
           "minerals": 150,
           "gas": 150,
           "build_time": 43,
@@ -730,19 +742,7 @@
           ],
           "unlocks": [
             "Fleet Beacon"
-          ],
-          "href": "/assets/icons/protoss/buildings/stargate.jpg"
-        },
-        "void_ray": {
-          "name": "Void Ray",
-          "type": "unit",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Void_Ray_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/c/cd/SC2Void_Ray.jpg/600px-SC2Void_Ray.jpg",
-          "minerals": 250,
-          "gas": 150,
-          "build_time": 43,
-          "href": "/assets/icons/protoss/units/void_ray.jpg"
+          ]
         },
         "stasis_ward": {
           "name": "Stasis Ward",
@@ -750,29 +750,10 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Stasis_Ward",
           "icon_url": "https://liquipedia.net/commons/images/a/ac/Stasis_Ward.jpg",
+          "href": "/assets/icons/protoss/buildings/stasis_ward.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 4,
-          "href": "/assets/icons/protoss/buildings/stasis_ward.jpg"
-        },
-        "twilight_council": {
-          "name": "Twilight Council",
-          "type": "building",
-          "race": "protoss",
-          "page_url": "https://liquipedia.net/starcraft2/Twilight_Council_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/1/15/SC2TwilightCouncil.jpg/600px-SC2TwilightCouncil.jpg",
-          "minerals": 150,
-          "gas": 100,
-          "build_time": 36,
-          "requirements": [
-            "Cybernetics Core",
-            "Pylon Power"
-          ],
-          "unlocks": [
-            "Templar Archives",
-            "Dark Shrine"
-          ],
-          "href": "/assets/icons/protoss/buildings/twilight_council.jpg"
+          "build_time": 4
         },
         "templar_archives": {
           "name": "Templar Archives",
@@ -780,6 +761,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Templar_Archives_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/dd/SC2TemplarArchives.jpg/600px-SC2TemplarArchives.jpg",
+          "href": "/assets/icons/protoss/buildings/templar_archives.jpg",
           "minerals": 150,
           "gas": 200,
           "build_time": 36,
@@ -790,8 +772,26 @@
           "unlocks": [
             "High Templar",
             "Archon"
+          ]
+        },
+        "twilight_council": {
+          "name": "Twilight Council",
+          "type": "building",
+          "race": "protoss",
+          "page_url": "https://liquipedia.net/starcraft2/Twilight_Council_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/1/15/SC2TwilightCouncil.jpg/600px-SC2TwilightCouncil.jpg",
+          "href": "/assets/icons/protoss/buildings/twilight_council.jpg",
+          "minerals": 150,
+          "gas": 100,
+          "build_time": 36,
+          "requirements": [
+            "Cybernetics Core",
+            "Pylon Power"
           ],
-          "href": "/assets/icons/protoss/buildings/templar_archives.jpg"
+          "unlocks": [
+            "Templar Archives",
+            "Dark Shrine"
+          ]
         },
         "warp_gate": {
           "name": "Warp Gate",
@@ -799,6 +799,7 @@
           "race": "protoss",
           "page_url": "https://liquipedia.net/starcraft2/Warp_Gate_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/c8/SC2WarpGate.jpg/600px-SC2WarpGate.jpg",
+          "href": "/assets/icons/protoss/buildings/warp_gate.jpg",
           "minerals": 0,
           "gas": 0,
           "build_time": 7,
@@ -814,8 +815,7 @@
             "Adept",
             "High Templar",
             "Dark Templar"
-          ],
-          "href": "/assets/icons/protoss/buildings/warp_gate.jpg"
+          ]
         }
       },
       "upgrades": {
@@ -835,23 +835,6 @@
           "key": "extended_thermal_lance_protoss",
           "icon_url": "https://liquipedia.net/commons/images/8/81/Extended_thermal_lances.gif",
           "href": "/assets/icons/protoss/upgrades/extended_thermal_lance.jpg"
-        },
-        "graviton_catapult_protoss": {
-          "name": "Graviton Catapult",
-          "type": "upgrade",
-          "race": "protoss",
-          "minerals": 150,
-          "gas": 150,
-          "research_time": 57,
-          "affects_units": [
-            "Fleet Beacon",
-            "Carrier"
-          ],
-          "research_building": "Carrier",
-          "hotkey": "G",
-          "key": "graviton_catapult_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/b/b9/Graviton_catapult.gif",
-          "href": "/assets/icons/protoss/upgrades/graviton_catapult.jpg"
         },
         "resonating_glaives_protoss": {
           "name": "Resonating Glaives",
@@ -885,6 +868,23 @@
           "key": "shield_upgrade_protoss",
           "icon_url": "https://liquipedia.net/commons/images/d/df/Shield_Upgrade.png",
           "href": "/assets/icons/protoss/upgrades/shield_upgrade.jpg"
+        },
+        "graviton_catapult_protoss": {
+          "name": "Graviton Catapult",
+          "type": "upgrade",
+          "race": "protoss",
+          "minerals": 150,
+          "gas": 150,
+          "research_time": 57,
+          "affects_units": [
+            "Fleet Beacon",
+            "Carrier"
+          ],
+          "research_building": "Carrier",
+          "hotkey": "G",
+          "key": "graviton_catapult_protoss",
+          "icon_url": "https://liquipedia.net/commons/images/b/b9/Graviton_catapult.gif",
+          "href": "/assets/icons/protoss/upgrades/graviton_catapult.jpg"
         },
         "shadow_stride_protoss": {
           "name": "Shadow Stride",
@@ -928,8 +928,8 @@
           "gas": 100,
           "research_time": 57,
           "affects_units": [
-            "Robotics Bay",
-            "Observer"
+            "Observer",
+            "Robotics Bay"
           ],
           "research_building": "Observer",
           "hotkey": "B",
@@ -988,6 +988,23 @@
           "icon_url": "https://liquipedia.net/commons/images/f/f2/Tectonic_Destabilizers.png",
           "href": "/assets/icons/protoss/upgrades/tectonic_destabilizers.jpg"
         },
+        "flux_vanes_protoss": {
+          "name": "Flux Vanes",
+          "type": "upgrade",
+          "race": "protoss",
+          "minerals": 100,
+          "gas": 100,
+          "research_time": 57,
+          "affects_units": [
+            "Void Ray",
+            "Fleet Beacon"
+          ],
+          "research_building": "Void Ray",
+          "hotkey": "F",
+          "key": "flux_vanes_protoss",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f9/Flux_Vanes.png/62px-Flux_Vanes.png",
+          "href": "/assets/icons/protoss/upgrades/flux_vanes.jpg"
+        },
         "gravitic_drive_protoss": {
           "name": "Gravitic Drive",
           "type": "upgrade",
@@ -1038,7 +1055,7 @@
           "hotkey": "E",
           "key": "air_weapons_level_1_protoss",
           "icon_url": "https://liquipedia.net/commons/images/3/3d/Air_weapons_1.gif",
-          "href": "/assets/icons/protoss/upgrades/air_weapons_level_1.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level1.jpg"
         },
         "air_weapons_level_2_protoss": {
           "name": "Air Weapons Level 2",
@@ -1056,7 +1073,7 @@
           "hotkey": "E",
           "key": "air_weapons_level_2_protoss",
           "icon_url": "https://liquipedia.net/commons/images/4/4b/Air_weapons_2.gif",
-          "href": "/assets/icons/protoss/upgrades/air_weapons_level_2.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level2.jpg"
         },
         "air_weapons_level_3_protoss": {
           "name": "Air Weapons Level 3",
@@ -1074,7 +1091,7 @@
           "hotkey": "E",
           "key": "air_weapons_level_3_protoss",
           "icon_url": "https://liquipedia.net/commons/images/c/c4/Air_weapons_3.gif",
-          "href": "/assets/icons/protoss/upgrades/air_weapons_level_3.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level3.jpg"
         },
         "air_armor_level_1_protoss": {
           "name": "Air Armor Level 1",
@@ -1092,7 +1109,7 @@
           "hotkey": "A",
           "key": "air_armor_level_1_protoss",
           "icon_url": "https://liquipedia.net/commons/images/8/80/Air_armor_1.gif",
-          "href": "/assets/icons/protoss/upgrades/air_armor_level_1.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_armor_level1.jpg"
         },
         "air_armor_level_2_protoss": {
           "name": "Air Armor Level 2",
@@ -1110,7 +1127,7 @@
           "hotkey": "A",
           "key": "air_armor_level_2_protoss",
           "icon_url": "https://liquipedia.net/commons/images/6/63/Air_armor_2.gif",
-          "href": "/assets/icons/protoss/upgrades/air_armor_level_2.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_armor_level2.jpg"
         },
         "air_armor_level_3_protoss": {
           "name": "Air Armor Level 3",
@@ -1128,7 +1145,7 @@
           "hotkey": "A",
           "key": "air_armor_level_3_protoss",
           "icon_url": "https://liquipedia.net/commons/images/6/6f/Air_armor_3.gif",
-          "href": "/assets/icons/protoss/upgrades/air_armor_level_3.jpg"
+          "href": "/assets/icons/protoss/upgrades/air_armor_level3.jpg"
         },
         "warp_gate_protoss": {
           "name": "Warp Gate",
@@ -1163,7 +1180,7 @@
           "hotkey": "G",
           "key": "ground_weapons_level_1_protoss",
           "icon_url": "https://liquipedia.net/commons/images/e/eb/Ground_weapons_1.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_1.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level1.jpg"
         },
         "ground_weapons_level_2_protoss": {
           "name": "Ground Weapons Level 2",
@@ -1181,7 +1198,7 @@
           "hotkey": "G",
           "key": "ground_weapons_level_2_protoss",
           "icon_url": "https://liquipedia.net/commons/images/c/c2/Ground_weapons_2.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_2.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level2.jpg"
         },
         "ground_weapons_level_3_protoss": {
           "name": "Ground Weapons Level 3",
@@ -1199,7 +1216,7 @@
           "hotkey": "G",
           "key": "ground_weapons_level_3_protoss",
           "icon_url": "https://liquipedia.net/commons/images/4/45/Ground_weapons_3.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_3.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level3.jpg"
         },
         "ground_armor_level_1_protoss": {
           "name": "Ground Armor Level 1",
@@ -1217,7 +1234,7 @@
           "hotkey": "A",
           "key": "ground_armor_level_1_protoss",
           "icon_url": "https://liquipedia.net/commons/images/e/ed/Ground_armor_1.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_armor_level_1.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level1.jpg"
         },
         "ground_armor_level_2_protoss": {
           "name": "Ground Armor Level 2",
@@ -1235,7 +1252,7 @@
           "hotkey": "A",
           "key": "ground_armor_level_2_protoss",
           "icon_url": "https://liquipedia.net/commons/images/5/59/Ground_armor_2.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_armor_level_2.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level2.jpg"
         },
         "ground_armor_level_3_protoss": {
           "name": "Ground Armor Level 3",
@@ -1253,7 +1270,7 @@
           "hotkey": "A",
           "key": "ground_armor_level_3_protoss",
           "icon_url": "https://liquipedia.net/commons/images/9/9e/Ground_armor_3.gif",
-          "href": "/assets/icons/protoss/upgrades/ground_armor_level_3.jpg"
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level3.jpg"
         },
         "shields_level_1_protoss": {
           "name": "Shields Level 1",
@@ -1271,7 +1288,7 @@
           "hotkey": "S",
           "key": "shields_level_1_protoss",
           "icon_url": "https://liquipedia.net/commons/images/7/7b/Shields_1.gif",
-          "href": "/assets/icons/protoss/upgrades/shields_level_1.jpg"
+          "href": "/assets/icons/protoss/upgrades/shields_level1.jpg"
         },
         "shields_level_2_protoss": {
           "name": "Shields Level 2",
@@ -1289,7 +1306,7 @@
           "hotkey": "S",
           "key": "shields_level_2_protoss",
           "icon_url": "https://liquipedia.net/commons/images/5/5e/Shields_2.gif",
-          "href": "/assets/icons/protoss/upgrades/shields_level_2.jpg"
+          "href": "/assets/icons/protoss/upgrades/shields_level2.jpg"
         },
         "shields_level_3_protoss": {
           "name": "Shields Level 3",
@@ -1307,24 +1324,7 @@
           "hotkey": "S",
           "key": "shields_level_3_protoss",
           "icon_url": "https://liquipedia.net/commons/images/d/d3/Shields_3.gif",
-          "href": "/assets/icons/protoss/upgrades/shields_level_3.jpg"
-        },
-        "flux_vanes_protoss": {
-          "name": "Flux Vanes",
-          "type": "upgrade",
-          "race": "protoss",
-          "minerals": 100,
-          "gas": 100,
-          "research_time": 57,
-          "affects_units": [
-            "Fleet Beacon",
-            "Void Ray"
-          ],
-          "research_building": "Fleet Beacon",
-          "hotkey": "F",
-          "key": "flux_vanes_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f9/Flux_Vanes.png/62px-Flux_Vanes.png",
-          "href": "/assets/icons/protoss/upgrades/flux_vanes.jpg"
+          "href": "/assets/icons/protoss/upgrades/shields_level3.jpg"
         }
       }
     },
@@ -1584,26 +1584,16 @@
         }
       ],
       "detailed_data": {
-        "auto-turret": {
-          "name": "Auto-Turret",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Auto-Turret_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/b/b5/SC2AutoTurret.jpg/600px-SC2AutoTurret.jpg",
-          "minerals": 0,
-          "gas": 0,
-          "href": "/assets/icons/terran/units/auto-turret.jpg"
-        },
         "banshee": {
           "name": "Banshee",
           "type": "unit",
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Banshee_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/88/SC2Banshee.jpg/600px-SC2Banshee.jpg",
+          "href": "/assets/icons/terran/units/banshee.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 43,
-          "href": "/assets/icons/terran/units/banshee.jpg"
+          "build_time": 43
         },
         "battlecruiser": {
           "name": "Battlecruiser",
@@ -1611,13 +1601,23 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Battlecruiser_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/a1/SC2Battlecruiser.jpg/600px-SC2Battlecruiser.jpg",
+          "href": "/assets/icons/terran/units/battlecruiser.jpg",
           "minerals": 400,
           "gas": 300,
           "build_time": 64,
           "requirements": [
             "Fusion Core"
-          ],
-          "href": "/assets/icons/terran/units/battlecruiser.jpg"
+          ]
+        },
+        "auto-turret": {
+          "name": "Auto-Turret",
+          "type": "unit",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Auto-Turret_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/b/b5/SC2AutoTurret.jpg/600px-SC2AutoTurret.jpg",
+          "href": "/assets/icons/terran/units/auto-turret.jpg",
+          "minerals": 0,
+          "gas": 0
         },
         "cyclone": {
           "name": "Cyclone",
@@ -1625,10 +1625,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Cyclone",
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/15/SC2Cyclone.jpg/600px-SC2Cyclone.jpg",
+          "href": "/assets/icons/terran/units/cyclone.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 32,
-          "href": "/assets/icons/terran/units/cyclone.jpg"
+          "build_time": 32
         },
         "ghost": {
           "name": "Ghost",
@@ -1636,13 +1636,13 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Ghost_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/0b/SC2Ghost.jpg/600px-SC2Ghost.jpg",
+          "href": "/assets/icons/terran/units/ghost.jpg",
           "minerals": 150,
           "gas": 125,
           "build_time": 29,
           "requirements": [
             "Ghost Academy"
-          ],
-          "href": "/assets/icons/terran/units/ghost.jpg"
+          ]
         },
         "hellbat": {
           "name": "Hellbat",
@@ -1650,46 +1650,13 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Hellbat_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/f/fe/SC2Hellbat.jpg/600px-SC2Hellbat.jpg",
+          "href": "/assets/icons/terran/units/hellbat.jpg",
           "minerals": 100,
           "gas": 0,
           "build_time": 21,
           "requirements": [
             "Armory"
-          ],
-          "href": "/assets/icons/terran/units/hellbat.jpg"
-        },
-        "hellion": {
-          "name": "Hellion",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Hellion_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/9/91/SC2Hellion.jpg/600px-SC2Hellion.jpg",
-          "minerals": 100,
-          "gas": 0,
-          "build_time": 21,
-          "href": "/assets/icons/terran/units/hellion.jpg"
-        },
-        "marauder": {
-          "name": "Marauder",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Marauder_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/3/30/SC2Marauder.jpg/600px-SC2Marauder.jpg",
-          "minerals": 100,
-          "gas": 25,
-          "build_time": 21,
-          "href": "/assets/icons/terran/units/marauder.jpg"
-        },
-        "liberator": {
-          "name": "Liberator",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Liberator",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2LiberatorAA.jpg/600px-SC2LiberatorAA.jpg",
-          "minerals": 150,
-          "gas": 125,
-          "build_time": 43,
-          "href": "/assets/icons/terran/units/liberator.jpg"
+          ]
         },
         "mule": {
           "name": "MULE",
@@ -1697,9 +1664,31 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/MULE_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/ab/SC2MULE.jpg/600px-SC2MULE.jpg",
+          "href": "/assets/icons/terran/units/mule.jpg",
           "minerals": 0,
+          "gas": 0
+        },
+        "hellion": {
+          "name": "Hellion",
+          "type": "unit",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Hellion_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/9/91/SC2Hellion.jpg/600px-SC2Hellion.jpg",
+          "href": "/assets/icons/terran/units/hellion.jpg",
+          "minerals": 100,
           "gas": 0,
-          "href": "/assets/icons/terran/units/mule.jpg"
+          "build_time": 21
+        },
+        "marauder": {
+          "name": "Marauder",
+          "type": "unit",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Marauder_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/3/30/SC2Marauder.jpg/600px-SC2Marauder.jpg",
+          "href": "/assets/icons/terran/units/marauder.jpg",
+          "minerals": 100,
+          "gas": 25,
+          "build_time": 21
         },
         "marine": {
           "name": "Marine",
@@ -1707,10 +1696,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Marine_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/d8/SC2Marine.jpg/600px-SC2Marine.jpg",
+          "href": "/assets/icons/terran/units/marine.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 18,
-          "href": "/assets/icons/terran/units/marine.jpg"
+          "build_time": 18
         },
         "medivac": {
           "name": "Medivac",
@@ -1718,32 +1707,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Medivac_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/61/SC2Medivac.jpg/600px-SC2Medivac.jpg",
+          "href": "/assets/icons/terran/units/medivac.jpg",
           "minerals": 100,
           "gas": 100,
-          "build_time": 30,
-          "href": "/assets/icons/terran/units/medivac.jpg"
-        },
-        "scv": {
-          "name": "SCV",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/SCV_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f7/SC2SCV.jpg/600px-SC2SCV.jpg",
-          "minerals": 50,
-          "gas": 0,
-          "build_time": 12,
-          "href": "/assets/icons/terran/units/scv.jpg"
-        },
-        "reaper": {
-          "name": "Reaper",
-          "type": "unit",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Reaper_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/0/0a/SC2Reaper.jpg/600px-SC2Reaper.jpg",
-          "minerals": 50,
-          "gas": 50,
-          "build_time": 32,
-          "href": "/assets/icons/terran/units/reaper.jpg"
+          "build_time": 30
         },
         "raven": {
           "name": "Raven",
@@ -1751,10 +1718,32 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Raven_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/86/SC2Raven.jpg/600px-SC2Raven.jpg",
+          "href": "/assets/icons/terran/units/raven.jpg",
           "minerals": 100,
           "gas": 150,
-          "build_time": 34,
-          "href": "/assets/icons/terran/units/raven.jpg"
+          "build_time": 34
+        },
+        "reaper": {
+          "name": "Reaper",
+          "type": "unit",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Reaper_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/0/0a/SC2Reaper.jpg/600px-SC2Reaper.jpg",
+          "href": "/assets/icons/terran/units/reaper.jpg",
+          "minerals": 50,
+          "gas": 50,
+          "build_time": 32
+        },
+        "scv": {
+          "name": "SCV",
+          "type": "unit",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/SCV_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f7/SC2SCV.jpg/600px-SC2SCV.jpg",
+          "href": "/assets/icons/terran/units/scv.jpg",
+          "minerals": 50,
+          "gas": 0,
+          "build_time": 12
         },
         "siege_tank": {
           "name": "Siege Tank",
@@ -1762,10 +1751,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Siege_Tank_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/dc/SC2SiegeTankTankMode.jpg/600px-SC2SiegeTankTankMode.jpg",
+          "href": "/assets/icons/terran/units/siege_tank.jpg",
           "minerals": 150,
           "gas": 125,
-          "build_time": 32,
-          "href": "/assets/icons/terran/units/siege_tank.jpg"
+          "build_time": 32
         },
         "thor": {
           "name": "Thor",
@@ -1773,13 +1762,13 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Thor_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/7/77/SC2ThorExplosive.jpg/600px-SC2ThorExplosive.jpg",
+          "href": "/assets/icons/terran/units/thor.jpg",
           "minerals": 300,
           "gas": 200,
           "build_time": 43,
           "requirements": [
             "Armory"
-          ],
-          "href": "/assets/icons/terran/units/thor.jpg"
+          ]
         },
         "viking": {
           "name": "Viking",
@@ -1787,10 +1776,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Viking_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/9f/SC2VikingFighter.jpg/600px-SC2VikingFighter.jpg",
+          "href": "/assets/icons/terran/units/viking.jpg",
           "minerals": 150,
           "gas": 75,
-          "build_time": 30,
-          "href": "/assets/icons/terran/units/viking.jpg"
+          "build_time": 30
         },
         "widow_mine": {
           "name": "Widow Mine",
@@ -1798,28 +1787,21 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Widow_Mine_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/f/ff/SC2WidowMine.jpg/600px-SC2WidowMine.jpg",
+          "href": "/assets/icons/terran/units/widow_mine.jpg",
           "minerals": 75,
           "gas": 25,
-          "build_time": 21,
-          "href": "/assets/icons/terran/units/widow_mine.jpg"
+          "build_time": 21
         },
-        "armory": {
-          "name": "Armory",
-          "type": "building",
+        "liberator": {
+          "name": "Liberator",
+          "type": "unit",
           "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Armory_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f8/SC2Armory.jpg/600px-SC2Armory.jpg",
+          "page_url": "https://liquipedia.net/starcraft2/Liberator",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2LiberatorAA.jpg/600px-SC2LiberatorAA.jpg",
+          "href": "/assets/icons/terran/units/liberator.jpg",
           "minerals": 150,
-          "gas": 50,
-          "build_time": 46,
-          "requirements": [
-            "Factory"
-          ],
-          "unlocks": [
-            "Thor",
-            "Hellbat"
-          ],
-          "href": "/assets/icons/terran/buildings/armory.jpg"
+          "gas": 125,
+          "build_time": 43
         },
         "barracks": {
           "name": "Barracks",
@@ -1827,6 +1809,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Barracks_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/04/SC2Barracks.jpg/600px-SC2Barracks.jpg",
+          "href": "/assets/icons/terran/buildings/barracks.jpg",
           "minerals": 150,
           "gas": 0,
           "build_time": 46,
@@ -1844,22 +1827,25 @@
             "Bunker",
             "Factory",
             "Ghost Academy"
-          ],
-          "href": "/assets/icons/terran/buildings/barracks.jpg"
+          ]
         },
-        "bunker": {
-          "name": "Bunker",
+        "armory": {
+          "name": "Armory",
           "type": "building",
           "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Bunker_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/3/32/SC2Bunker.jpg/600px-SC2Bunker.jpg",
-          "minerals": 100,
-          "gas": 0,
-          "build_time": 29,
+          "page_url": "https://liquipedia.net/starcraft2/Armory_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f8/SC2Armory.jpg/600px-SC2Armory.jpg",
+          "href": "/assets/icons/terran/buildings/armory.jpg",
+          "minerals": 150,
+          "gas": 50,
+          "build_time": 46,
           "requirements": [
-            "Barracks"
+            "Factory"
           ],
-          "href": "/assets/icons/terran/buildings/bunker.jpg"
+          "unlocks": [
+            "Thor",
+            "Hellbat"
+          ]
         },
         "command_center": {
           "name": "Command Center",
@@ -1867,6 +1853,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Command_Center_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/b/b6/SC2CommandCenter.jpg/600px-SC2CommandCenter.jpg",
+          "href": "/assets/icons/terran/buildings/command_center.jpg",
           "minerals": 400,
           "gas": 0,
           "build_time": 71,
@@ -1876,8 +1863,21 @@
           "unlocks": [
             "+ 15",
             "Engineering Bay"
-          ],
-          "href": "/assets/icons/terran/buildings/command_center.jpg"
+          ]
+        },
+        "bunker": {
+          "name": "Bunker",
+          "type": "building",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Bunker_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/3/32/SC2Bunker.jpg/600px-SC2Bunker.jpg",
+          "href": "/assets/icons/terran/buildings/bunker.jpg",
+          "minerals": 100,
+          "gas": 0,
+          "build_time": 29,
+          "requirements": [
+            "Barracks"
+          ]
         },
         "engineering_bay": {
           "name": "Engineering Bay",
@@ -1885,6 +1885,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Engineering_Bay_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/47/SC2EngineeringBay.jpg/600px-SC2EngineeringBay.jpg",
+          "href": "/assets/icons/terran/buildings/engineering_bay.jpg",
           "minerals": 125,
           "gas": 0,
           "build_time": 25,
@@ -1895,8 +1896,24 @@
             "Missile Turret",
             "Sensor Tower",
             "Planetary Fortress"
+          ]
+        },
+        "fusion_core": {
+          "name": "Fusion Core",
+          "type": "building",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Fusion_Core_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/61/SC2Fusion_Core.jpg/600px-SC2Fusion_Core.jpg",
+          "href": "/assets/icons/terran/buildings/fusion_core.jpg",
+          "minerals": 150,
+          "gas": 150,
+          "build_time": 46,
+          "requirements": [
+            "Starport"
           ],
-          "href": "/assets/icons/terran/buildings/engineering_bay.jpg"
+          "unlocks": [
+            "Battlecruiser"
+          ]
         },
         "factory": {
           "name": "Factory",
@@ -1904,6 +1921,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Factory_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8c/SC2Factory.jpg/600px-SC2Factory.jpg",
+          "href": "/assets/icons/terran/buildings/factory.jpg",
           "minerals": 150,
           "gas": 100,
           "build_time": 43,
@@ -1922,25 +1940,21 @@
             "Starport",
             "Armory",
             "Tactical Nuke"
-          ],
-          "href": "/assets/icons/terran/buildings/factory.jpg"
+          ]
         },
-        "fusion_core": {
-          "name": "Fusion Core",
+        "missile_turret": {
+          "name": "Missile Turret",
           "type": "building",
           "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Fusion_Core_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/61/SC2Fusion_Core.jpg/600px-SC2Fusion_Core.jpg",
-          "minerals": 150,
-          "gas": 150,
-          "build_time": 46,
+          "page_url": "https://liquipedia.net/starcraft2/Missile_Turret_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/1/10/SC2MissileTurret.jpg/600px-SC2MissileTurret.jpg",
+          "href": "/assets/icons/terran/buildings/missile_turret.jpg",
+          "minerals": 100,
+          "gas": 0,
+          "build_time": 18,
           "requirements": [
-            "Starport"
-          ],
-          "unlocks": [
-            "Battlecruiser"
-          ],
-          "href": "/assets/icons/terran/buildings/fusion_core.jpg"
+            "Engineering Bay"
+          ]
         },
         "ghost_academy": {
           "name": "Ghost Academy",
@@ -1948,6 +1962,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Ghost_Academy_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/af/SC2GhostAcademy.jpg/600px-SC2GhostAcademy.jpg",
+          "href": "/assets/icons/terran/buildings/ghost_academy.jpg",
           "minerals": 150,
           "gas": 50,
           "build_time": 29,
@@ -1956,37 +1971,7 @@
           ],
           "unlocks": [
             "Ghost"
-          ],
-          "href": "/assets/icons/terran/buildings/ghost_academy.jpg"
-        },
-        "missile_turret": {
-          "name": "Missile Turret",
-          "type": "building",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Missile_Turret_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/1/10/SC2MissileTurret.jpg/600px-SC2MissileTurret.jpg",
-          "minerals": 100,
-          "gas": 0,
-          "build_time": 18,
-          "requirements": [
-            "Engineering Bay"
-          ],
-          "href": "/assets/icons/terran/buildings/missile_turret.jpg"
-        },
-        "orbital_command": {
-          "name": "Orbital Command",
-          "type": "building",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Orbital_Command_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/8/84/SC2OrbitalCommand.jpg/600px-SC2OrbitalCommand.jpg",
-          "minerals": 150,
-          "gas": 0,
-          "build_time": 35,
-          "requirements": [
-            "Command Center",
-            "Barracks"
-          ],
-          "href": "/assets/icons/terran/buildings/orbital_command.jpg"
+          ]
         },
         "planetary_fortress": {
           "name": "Planetary Fortress",
@@ -1994,14 +1979,29 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Planetary_Fortress_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/4e/SC2PlanetaryFortress.jpg/600px-SC2PlanetaryFortress.jpg",
+          "href": "/assets/icons/terran/buildings/planetary_fortress.jpg",
           "minerals": 150,
           "gas": 150,
           "build_time": 60,
           "requirements": [
             "Command Center",
             "Engineering Bay"
-          ],
-          "href": "/assets/icons/terran/buildings/planetary_fortress.jpg"
+          ]
+        },
+        "orbital_command": {
+          "name": "Orbital Command",
+          "type": "building",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Orbital_Command_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/8/84/SC2OrbitalCommand.jpg/600px-SC2OrbitalCommand.jpg",
+          "href": "/assets/icons/terran/buildings/orbital_command.jpg",
+          "minerals": 150,
+          "gas": 0,
+          "build_time": 35,
+          "requirements": [
+            "Command Center",
+            "Barracks"
+          ]
         },
         "reactor": {
           "name": "Reactor",
@@ -2009,10 +2009,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Reactor_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/82/SC2Reactor.jpg/600px-SC2Reactor.jpg",
+          "href": "/assets/icons/terran/buildings/reactor.jpg",
           "minerals": 50,
           "gas": 50,
-          "build_time": 36,
-          "href": "/assets/icons/terran/buildings/reactor.jpg"
+          "build_time": 36
         },
         "refinery": {
           "name": "Refinery",
@@ -2020,10 +2020,10 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Refinery_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/69/SC2Refinery.jpg/600px-SC2Refinery.jpg",
+          "href": "/assets/icons/terran/buildings/refinery.jpg",
           "minerals": 75,
           "gas": 0,
-          "build_time": 21,
-          "href": "/assets/icons/terran/buildings/refinery.jpg"
+          "build_time": 21
         },
         "sensor_tower": {
           "name": "Sensor Tower",
@@ -2031,13 +2031,28 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Sensor_Tower_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/1e/SC2SensorTower.jpg/600px-SC2SensorTower.jpg",
+          "href": "/assets/icons/terran/buildings/sensor_tower.jpg",
           "minerals": 100,
           "gas": 50,
           "build_time": 18,
           "requirements": [
             "Engineering Bay"
-          ],
-          "href": "/assets/icons/terran/buildings/sensor_tower.jpg"
+          ]
+        },
+        "supply_depot": {
+          "name": "Supply Depot",
+          "type": "building",
+          "race": "terran",
+          "page_url": "https://liquipedia.net/starcraft2/Supply_Depot_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/7/7e/SC2SupplyDepot.jpg/600px-SC2SupplyDepot.jpg",
+          "href": "/assets/icons/terran/buildings/supply_depot.jpg",
+          "minerals": 100,
+          "gas": 0,
+          "build_time": 21,
+          "unlocks": [
+            "+8  (+8 )",
+            "Barracks"
+          ]
         },
         "starport": {
           "name": "Starport",
@@ -2045,6 +2060,7 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Starport_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/a9/SC2Starport.jpg/600px-SC2Starport.jpg",
+          "href": "/assets/icons/terran/buildings/starport.jpg",
           "minerals": 150,
           "gas": 100,
           "build_time": 36,
@@ -2061,23 +2077,7 @@
           ],
           "unlocks": [
             "Fusion Core"
-          ],
-          "href": "/assets/icons/terran/buildings/starport.jpg"
-        },
-        "supply_depot": {
-          "name": "Supply Depot",
-          "type": "building",
-          "race": "terran",
-          "page_url": "https://liquipedia.net/starcraft2/Supply_Depot_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/7/7e/SC2SupplyDepot.jpg/600px-SC2SupplyDepot.jpg",
-          "minerals": 100,
-          "gas": 0,
-          "build_time": 21,
-          "unlocks": [
-            "+8  (+8 )",
-            "Barracks"
-          ],
-          "href": "/assets/icons/terran/buildings/supply_depot.jpg"
+          ]
         },
         "tech_lab": {
           "name": "Tech Lab",
@@ -2085,58 +2085,13 @@
           "race": "terran",
           "page_url": "https://liquipedia.net/starcraft2/Tech_Lab_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/0f/SC2TechLab.jpg/600px-SC2TechLab.jpg",
+          "href": "/assets/icons/terran/buildings/tech_lab.jpg",
           "minerals": 50,
           "gas": 25,
-          "build_time": 18,
-          "href": "/assets/icons/terran/buildings/tech_lab.jpg"
+          "build_time": 18
         }
       },
       "upgrades": {
-        "sec_auto_tracking_terran": {
-          "name": "Sec Auto Tracking",
-          "type": "upgrade",
-          "race": "terran",
-          "minerals": 100,
-          "gas": 100,
-          "research_time": 57,
-          "affects_units": [
-            "Auto-Turret",
-            "Engineering Bay",
-            "Missile Turret",
-            "Raven",
-            "Planetary Fortress"
-          ],
-          "research_building": "Auto-Turret",
-          "hotkey": "H",
-          "key": "sec_auto_tracking_terran",
-          "icon_url": "https://liquipedia.net/commons/images/f/f2/Hisec_auto_tracking.gif",
-          "href": "/assets/icons/terran/upgrades/sec_auto_tracking.jpg"
-        },
-        "neosteel_armor_terran": {
-          "name": "Neosteel Armor",
-          "type": "upgrade",
-          "race": "terran",
-          "minerals": 150,
-          "gas": 150,
-          "research_time": 100,
-          "affects_units": [
-            "Sensor Tower",
-            "Supply Depot",
-            "Auto-Turret",
-            "Refinery",
-            "Command Center",
-            "Engineering Bay",
-            "Missile Turret",
-            "Orbital Command",
-            "Bunker",
-            "Planetary Fortress"
-          ],
-          "research_building": "Auto-Turret",
-          "hotkey": "B",
-          "key": "neosteel_armor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif",
-          "href": "/assets/icons/terran/upgrades/neosteel_armor.jpg"
-        },
         "cloaking_field_terran": {
           "name": "Cloaking Field",
           "type": "upgrade",
@@ -2203,6 +2158,51 @@
           "icon_url": "https://liquipedia.net/commons/images/4/4b/Behemoth_reactor.gif",
           "href": "/assets/icons/terran/upgrades/behemoth_reactor.jpg"
         },
+        "sec_auto_tracking_terran": {
+          "name": "Sec Auto Tracking",
+          "type": "upgrade",
+          "race": "terran",
+          "minerals": 100,
+          "gas": 100,
+          "research_time": 57,
+          "affects_units": [
+            "Auto-Turret",
+            "Planetary Fortress",
+            "Missile Turret",
+            "Raven",
+            "Engineering Bay"
+          ],
+          "research_building": "Auto-Turret",
+          "hotkey": "H",
+          "key": "sec_auto_tracking_terran",
+          "icon_url": "https://liquipedia.net/commons/images/f/f2/Hisec_auto_tracking.gif",
+          "href": "/assets/icons/terran/upgrades/sec_auto_tracking.jpg"
+        },
+        "neosteel_armor_terran": {
+          "name": "Neosteel Armor",
+          "type": "upgrade",
+          "race": "terran",
+          "minerals": 150,
+          "gas": 150,
+          "research_time": 100,
+          "affects_units": [
+            "Supply Depot",
+            "Auto-Turret",
+            "Bunker",
+            "Refinery",
+            "Planetary Fortress",
+            "Orbital Command",
+            "Missile Turret",
+            "Sensor Tower",
+            "Engineering Bay",
+            "Command Center"
+          ],
+          "research_building": "Auto-Turret",
+          "hotkey": "B",
+          "key": "neosteel_armor_terran",
+          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif",
+          "href": "/assets/icons/terran/upgrades/neosteel_armor.jpg"
+        },
         "field_accelerator_terran": {
           "name": "Field Accelerator",
           "type": "upgrade",
@@ -2227,8 +2227,8 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Cyclone",
-            "Tech Lab"
+            "Tech Lab",
+            "Cyclone"
           ],
           "research_building": "Cyclone",
           "hotkey": "R",
@@ -2244,8 +2244,8 @@
           "gas": 75,
           "research_time": 79,
           "affects_units": [
-            "Cyclone",
-            "Tech Lab"
+            "Tech Lab",
+            "Cyclone"
           ],
           "research_building": "Cyclone",
           "hotkey": "A",
@@ -2261,8 +2261,8 @@
           "gas": 100,
           "research_time": 100,
           "affects_units": [
-            "Cyclone",
-            "Tech Lab"
+            "Tech Lab",
+            "Cyclone"
           ],
           "research_building": "Cyclone",
           "hotkey": "R",
@@ -2346,8 +2346,8 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Hellbat",
-            "Hellion"
+            "Hellion",
+            "Hellbat"
           ],
           "research_building": "Hellbat",
           "hotkey": "I",
@@ -2363,10 +2363,10 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Hellbat",
-            "Hellion",
             "Viking",
-            "Thor"
+            "Thor",
+            "Hellion",
+            "Hellbat"
           ],
           "research_building": "Hellbat",
           "hotkey": "S",
@@ -2407,23 +2407,6 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/98/Concussive_Shells.png/61px-Concussive_Shells.png",
           "href": "/assets/icons/terran/upgrades/concussive_shells.jpg"
         },
-        "advanced_ballistics_terran": {
-          "name": "Advanced Ballistics",
-          "type": "upgrade",
-          "race": "terran",
-          "minerals": 150,
-          "gas": 150,
-          "research_time": 79,
-          "affects_units": [
-            "Liberator",
-            "Fusion Core"
-          ],
-          "research_building": "Liberator",
-          "hotkey": "N",
-          "key": "advanced_ballistics_terran",
-          "icon_url": "https://liquipedia.net/commons/images/7/77/Advanced_Ballistics_%28Patch_3.1.2%29.jpg",
-          "href": "/assets/icons/terran/upgrades/advanced_ballistics.jpg"
-        },
         "combat_shield_terran": {
           "name": "Combat Shield",
           "type": "upgrade",
@@ -2448,8 +2431,8 @@
           "gas": 100,
           "research_time": 50,
           "affects_units": [
-            "Fusion Core",
-            "Medivac"
+            "Medivac",
+            "Fusion Core"
           ],
           "research_building": "Medivac",
           "hotkey": "A",
@@ -2465,8 +2448,8 @@
           "gas": 100,
           "research_time": 57,
           "affects_units": [
-            "Fusion Core",
-            "Medivac"
+            "Medivac",
+            "Fusion Core"
           ],
           "research_building": "Medivac",
           "hotkey": "R",
@@ -2498,8 +2481,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Raven",
-            "Tech Lab"
+            "Tech Lab",
+            "Raven"
           ],
           "research_building": "Raven",
           "hotkey": "E",
@@ -2531,8 +2514,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Raven",
-            "Tech Lab"
+            "Tech Lab",
+            "Raven"
           ],
           "research_building": "Raven",
           "hotkey": "E",
@@ -2548,8 +2531,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Raven",
-            "Tech Lab"
+            "Tech Lab",
+            "Raven"
           ],
           "research_building": "Raven",
           "hotkey": "T",
@@ -2573,6 +2556,23 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/60/DrillingClaws.png/61px-DrillingClaws.png",
           "href": "/assets/icons/terran/upgrades/drilling_claws.jpg"
         },
+        "advanced_ballistics_terran": {
+          "name": "Advanced Ballistics",
+          "type": "upgrade",
+          "race": "terran",
+          "minerals": 150,
+          "gas": 150,
+          "research_time": 79,
+          "affects_units": [
+            "Fusion Core",
+            "Liberator"
+          ],
+          "research_building": "Liberator",
+          "hotkey": "N",
+          "key": "advanced_ballistics_terran",
+          "icon_url": "https://liquipedia.net/commons/images/7/77/Advanced_Ballistics_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/terran/upgrades/advanced_ballistics.jpg"
+        },
         "vehicle_weapons_level_1_terran": {
           "name": "Vehicle Weapons Level 1",
           "base_name": "Vehicle Weapons",
@@ -2589,7 +2589,7 @@
           "hotkey": "E",
           "key": "vehicle_weapons_level_1_terran",
           "icon_url": "https://liquipedia.net/commons/images/d/d5/Vehicle_weapons_1.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_1.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level1.jpg"
         },
         "vehicle_weapons_level_2_terran": {
           "name": "Vehicle Weapons Level 2",
@@ -2607,7 +2607,7 @@
           "hotkey": "E",
           "key": "vehicle_weapons_level_2_terran",
           "icon_url": "https://liquipedia.net/commons/images/c/ce/Vehicle_weapons_2.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_2.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level2.jpg"
         },
         "vehicle_weapons_level_3_terran": {
           "name": "Vehicle Weapons Level 3",
@@ -2625,7 +2625,7 @@
           "hotkey": "E",
           "key": "vehicle_weapons_level_3_terran",
           "icon_url": "https://liquipedia.net/commons/images/8/89/Vehicle_weapons_3.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_3.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level3.jpg"
         },
         "ship_weapons_level_1_terran": {
           "name": "Ship Weapons Level 1",
@@ -2643,7 +2643,7 @@
           "hotkey": "S",
           "key": "ship_weapons_level_1_terran",
           "icon_url": "https://liquipedia.net/commons/images/f/fc/Ship_weapons_1.gif",
-          "href": "/assets/icons/terran/upgrades/ship_weapons_level_1.jpg"
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level1.jpg"
         },
         "ship_weapons_level_2_terran": {
           "name": "Ship Weapons Level 2",
@@ -2661,7 +2661,7 @@
           "hotkey": "S",
           "key": "ship_weapons_level_2_terran",
           "icon_url": "https://liquipedia.net/commons/images/a/ab/Ship_weapons_2.gif",
-          "href": "/assets/icons/terran/upgrades/ship_weapons_level_2.jpg"
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level2.jpg"
         },
         "ship_weapons_level_3_terran": {
           "name": "Ship Weapons Level 3",
@@ -2679,7 +2679,7 @@
           "hotkey": "S",
           "key": "ship_weapons_level_3_terran",
           "icon_url": "https://liquipedia.net/commons/images/6/6c/Ship_weapons_3.gif",
-          "href": "/assets/icons/terran/upgrades/ship_weapons_level_3.jpg"
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level3.jpg"
         },
         "vehicle_and_ship_plating_level_1_terran": {
           "name": "Vehicle and Ship Plating Level 1",
@@ -2697,7 +2697,7 @@
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_1_terran",
           "icon_url": "https://liquipedia.net/commons/images/3/3d/Vehicle_plating_1.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_1.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level1.jpg"
         },
         "vehicle_and_ship_plating_level_2_terran": {
           "name": "Vehicle and Ship Plating Level 2",
@@ -2715,7 +2715,7 @@
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_2_terran",
           "icon_url": "https://liquipedia.net/commons/images/b/b0/Vehicle_plating_2.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_2.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level2.jpg"
         },
         "vehicle_and_ship_plating_level_3_terran": {
           "name": "Vehicle and Ship Plating Level 3",
@@ -2733,7 +2733,7 @@
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_3_terran",
           "icon_url": "https://liquipedia.net/commons/images/0/0e/Vehicle_plating_3.gif",
-          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_3.jpg"
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level3.jpg"
         },
         "infantry_weapons_level_1_terran": {
           "name": "Infantry Weapons Level 1",
@@ -2751,7 +2751,7 @@
           "hotkey": "E",
           "key": "infantry_weapons_level_1_terran",
           "icon_url": "https://liquipedia.net/commons/images/e/ec/Infantry_weapons_1.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_1.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level1.jpg"
         },
         "infantry_weapons_level_2_terran": {
           "name": "Infantry Weapons Level 2",
@@ -2769,7 +2769,7 @@
           "hotkey": "E",
           "key": "infantry_weapons_level_2_terran",
           "icon_url": "https://liquipedia.net/commons/images/0/06/Infantry_weapons_2.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_2.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level2.jpg"
         },
         "infantry_weapons_level_3_terran": {
           "name": "Infantry Weapons Level 3",
@@ -2787,11 +2787,11 @@
           "hotkey": "E",
           "key": "infantry_weapons_level_3_terran",
           "icon_url": "https://liquipedia.net/commons/images/c/ce/Infantry_weapons_3.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_3.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level3.jpg"
         },
-        "infantry__armor_level_1_terran": {
-          "name": "Infantry  Armor Level 1",
-          "base_name": "Infantry  Armor",
+        "infantry_armor_level_1_terran": {
+          "name": "Infantry Armor Level 1",
+          "base_name": "Infantry Armor",
           "level": 1,
           "type": "upgrade",
           "race": "terran",
@@ -2803,13 +2803,13 @@
           ],
           "research_building": "Engineering Bay",
           "hotkey": "A",
-          "key": "infantry__armor_level_1_terran",
+          "key": "infantry_armor_level_1_terran",
           "icon_url": "https://liquipedia.net/commons/images/1/1a/Infantry_armor_1.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_armor_level_1.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level1.jpg"
         },
-        "infantry__armor_level_2_terran": {
-          "name": "Infantry  Armor Level 2",
-          "base_name": "Infantry  Armor",
+        "infantry_armor_level_2_terran": {
+          "name": "Infantry Armor Level 2",
+          "base_name": "Infantry Armor",
           "level": 2,
           "type": "upgrade",
           "race": "terran",
@@ -2821,13 +2821,13 @@
           ],
           "research_building": "Engineering Bay",
           "hotkey": "A",
-          "key": "infantry__armor_level_2_terran",
+          "key": "infantry_armor_level_2_terran",
           "icon_url": "https://liquipedia.net/commons/images/c/c9/Infantry_armor_2.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_armor_level_2.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level2.jpg"
         },
-        "infantry__armor_level_3_terran": {
-          "name": "Infantry  Armor Level 3",
-          "base_name": "Infantry  Armor",
+        "infantry_armor_level_3_terran": {
+          "name": "Infantry Armor Level 3",
+          "base_name": "Infantry Armor",
           "level": 3,
           "type": "upgrade",
           "race": "terran",
@@ -2839,9 +2839,9 @@
           ],
           "research_building": "Engineering Bay",
           "hotkey": "A",
-          "key": "infantry__armor_level_3_terran",
+          "key": "infantry_armor_level_3_terran",
           "icon_url": "https://liquipedia.net/commons/images/5/5e/Infantry_armor_3.gif",
-          "href": "/assets/icons/terran/upgrades/infantry_armor_level_3.jpg"
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level3.jpg"
         },
         "structure_armor_terran": {
           "name": "Structure Armor",
@@ -3176,43 +3176,19 @@
         }
       ],
       "detailed_data": {
-        "baneling": {
-          "name": "Baneling",
+        "brood_lord": {
+          "name": "Brood Lord",
           "type": "unit",
           "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Baneling_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/6e/SC2Baneling.jpg/600px-SC2Baneling.jpg",
-          "minerals": 25,
-          "gas": 50,
-          "build_time": 25,
-          "requirements": [
-            "Baneling Nest"
-          ],
-          "href": "/assets/icons/zerg/units/baneling.jpg"
-        },
-        "corruptor": {
-          "name": "Corruptor",
-          "type": "unit",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Corruptor_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/b/b8/SC2Corruptor.jpg/600px-SC2Corruptor.jpg",
+          "page_url": "https://liquipedia.net/starcraft2/Brood_Lord_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/2f/SC2BroodLord.jpg/600px-SC2BroodLord.jpg",
+          "href": "/assets/icons/zerg/units/brood_lord.jpg",
           "minerals": 150,
-          "gas": 100,
-          "build_time": 29,
+          "gas": 300,
+          "build_time": 150,
           "requirements": [
-            "Spire"
-          ],
-          "href": "/assets/icons/zerg/units/corruptor.jpg"
-        },
-        "broodling": {
-          "name": "Broodling",
-          "type": "unit",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Broodling_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/0/0f/Broodling_sc2.png",
-          "minerals": 0,
-          "gas": 0,
-          "href": "/assets/icons/zerg/units/broodling.jpg"
+            "Greater Spire"
+          ]
         },
         "changeling": {
           "name": "Changeling",
@@ -3220,23 +3196,47 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Changeling_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8e/SC2Changeling.jpg/600px-SC2Changeling.jpg",
+          "href": "/assets/icons/zerg/units/changeling.jpg",
           "minerals": 0,
-          "gas": 0,
-          "href": "/assets/icons/zerg/units/changeling.jpg"
+          "gas": 0
         },
-        "brood_lord": {
-          "name": "Brood Lord",
+        "corruptor": {
+          "name": "Corruptor",
           "type": "unit",
           "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Brood_Lord_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/2f/SC2BroodLord.jpg/600px-SC2BroodLord.jpg",
+          "page_url": "https://liquipedia.net/starcraft2/Corruptor_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/b/b8/SC2Corruptor.jpg/600px-SC2Corruptor.jpg",
+          "href": "/assets/icons/zerg/units/corruptor.jpg",
           "minerals": 150,
-          "gas": 300,
-          "build_time": 150,
+          "gas": 100,
+          "build_time": 29,
           "requirements": [
-            "Greater Spire"
-          ],
-          "href": "/assets/icons/zerg/units/brood_lord.jpg"
+            "Spire"
+          ]
+        },
+        "broodling": {
+          "name": "Broodling",
+          "type": "unit",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Broodling_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/0/0f/Broodling_sc2.png",
+          "href": "/assets/icons/zerg/units/broodling.jpg",
+          "minerals": 0,
+          "gas": 0
+        },
+        "baneling": {
+          "name": "Baneling",
+          "type": "unit",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Baneling_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/6e/SC2Baneling.jpg/600px-SC2Baneling.jpg",
+          "href": "/assets/icons/zerg/units/baneling.jpg",
+          "minerals": 25,
+          "gas": 50,
+          "build_time": 25,
+          "requirements": [
+            "Baneling Nest"
+          ]
         },
         "drone": {
           "name": "Drone",
@@ -3244,10 +3244,10 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Drone_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/cf/SC2Drone.jpg/600px-SC2Drone.jpg",
+          "href": "/assets/icons/zerg/units/drone.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 12,
-          "href": "/assets/icons/zerg/units/drone.jpg"
+          "build_time": 12
         },
         "flying_locust": {
           "name": "Flying Locust",
@@ -3255,21 +3255,10 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Locust_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2LocustLanded.jpg/600px-SC2LocustLanded.jpg",
+          "href": "/assets/icons/zerg/units/flying_locust.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 3,
-          "href": "/assets/icons/zerg/units/flying_locust.jpg"
-        },
-        "landed_locust": {
-          "name": "Landed Locust",
-          "type": "unit",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Locust_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2LocustLanded.jpg/600px-SC2LocustLanded.jpg",
-          "minerals": 0,
-          "gas": 0,
-          "build_time": 3,
-          "href": "/assets/icons/zerg/units/landed_locust.jpg"
+          "build_time": 3
         },
         "hydralisk": {
           "name": "Hydralisk",
@@ -3277,13 +3266,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Hydralisk_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/4b/SC2Hydralisk.jpg/600px-SC2Hydralisk.jpg",
+          "href": "/assets/icons/zerg/units/hydralisk.jpg",
           "minerals": 100,
           "gas": 50,
           "build_time": 24,
           "requirements": [
             "Hydralisk Den"
-          ],
-          "href": "/assets/icons/zerg/units/hydralisk.jpg"
+          ]
         },
         "infestor": {
           "name": "Infestor",
@@ -3291,13 +3280,24 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Infestor_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/43/SC2Infestor.jpg/600px-SC2Infestor.jpg",
+          "href": "/assets/icons/zerg/units/infestor.jpg",
           "minerals": 100,
           "gas": 150,
           "build_time": 36,
           "requirements": [
             "Infestation Pit"
-          ],
-          "href": "/assets/icons/zerg/units/infestor.jpg"
+          ]
+        },
+        "landed_locust": {
+          "name": "Landed Locust",
+          "type": "unit",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Locust_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2LocustLanded.jpg/600px-SC2LocustLanded.jpg",
+          "href": "/assets/icons/zerg/units/landed_locust.jpg",
+          "minerals": 0,
+          "gas": 0,
+          "build_time": 3
         },
         "larva": {
           "name": "Larva",
@@ -3305,9 +3305,9 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Larva_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/a/ab/Larva_sc2.png",
+          "href": "/assets/icons/zerg/units/larva.jpg",
           "minerals": 0,
-          "gas": 0,
-          "href": "/assets/icons/zerg/units/larva.jpg"
+          "gas": 0
         },
         "lurker": {
           "name": "Lurker",
@@ -3315,13 +3315,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Lurker_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/3/34/SC2Lurker.jpg/600px-SC2Lurker.jpg",
+          "href": "/assets/icons/zerg/units/lurker.jpg",
           "minerals": 50,
           "gas": 150,
           "build_time": 100,
           "requirements": [
             "Lurker Den"
-          ],
-          "href": "/assets/icons/zerg/units/lurker.jpg"
+          ]
         },
         "mutalisk": {
           "name": "Mutalisk",
@@ -3329,13 +3329,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Mutalisk_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/63/SC2Mutalisk.jpg/600px-SC2Mutalisk.jpg",
+          "href": "/assets/icons/zerg/units/mutalisk.jpg",
           "minerals": 100,
           "gas": 100,
           "build_time": 24,
           "requirements": [
             "Spire"
-          ],
-          "href": "/assets/icons/zerg/units/mutalisk.jpg"
+          ]
         },
         "nydus_worm": {
           "name": "Nydus Worm",
@@ -3343,10 +3343,10 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Nydus_Worm_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/1f/SC2NydusWorm.jpg/600px-SC2NydusWorm.jpg",
+          "href": "/assets/icons/zerg/units/nydus_worm.jpg",
           "minerals": 75,
           "gas": 75,
-          "build_time": 14,
-          "href": "/assets/icons/zerg/units/nydus_worm.jpg"
+          "build_time": 14
         },
         "overlord": {
           "name": "Overlord",
@@ -3354,10 +3354,10 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Overlord_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5a/SC2Overlord.jpg/600px-SC2Overlord.jpg",
+          "href": "/assets/icons/zerg/units/overlord.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18,
-          "href": "/assets/icons/zerg/units/overlord.jpg"
+          "build_time": 18
         },
         "overseer": {
           "name": "Overseer",
@@ -3365,13 +3365,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Overseer_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/96/SC2Overseer.jpg/600px-SC2Overseer.jpg",
+          "href": "/assets/icons/zerg/units/overseer.jpg",
           "minerals": 50,
           "gas": 150,
           "build_time": 50,
           "requirements": [
             "Lair"
-          ],
-          "href": "/assets/icons/zerg/units/overseer.jpg"
+          ]
         },
         "queen": {
           "name": "Queen",
@@ -3379,13 +3379,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Queen_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8a/SC2Queen.jpg/600px-SC2Queen.jpg",
+          "href": "/assets/icons/zerg/units/queen.jpg",
           "minerals": 175,
           "gas": 0,
           "build_time": 36,
           "requirements": [
             "Spawning Pool"
-          ],
-          "href": "/assets/icons/zerg/units/queen.jpg"
+          ]
         },
         "ravager": {
           "name": "Ravager",
@@ -3393,13 +3393,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Ravager",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/99/SC2Ravager.jpg/600px-SC2Ravager.jpg",
+          "href": "/assets/icons/zerg/units/ravager.jpg",
           "minerals": 25,
           "gas": 100,
           "build_time": 75,
           "requirements": [
             "Roach Warren"
-          ],
-          "href": "/assets/icons/zerg/units/ravager.jpg"
+          ]
         },
         "roach": {
           "name": "Roach",
@@ -3407,27 +3407,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Roach_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/2/22/SC2Roach.jpg/600px-SC2Roach.jpg",
+          "href": "/assets/icons/zerg/units/roach.jpg",
           "minerals": 75,
           "gas": 25,
           "build_time": 19,
           "requirements": [
             "Roach Warren"
-          ],
-          "href": "/assets/icons/zerg/units/roach.jpg"
-        },
-        "ultralisk": {
-          "name": "Ultralisk",
-          "type": "unit",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Ultralisk_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/25/SC2Ultralisk.jpg/600px-SC2Ultralisk.jpg",
-          "minerals": 275,
-          "gas": 200,
-          "build_time": 39,
-          "requirements": [
-            "Ultralisk Cavern"
-          ],
-          "href": "/assets/icons/zerg/units/ultralisk.jpg"
+          ]
         },
         "swarm_host": {
           "name": "Swarm Host",
@@ -3435,13 +3421,27 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Swarm_Host_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/43/SC2SwarmHost.jpg/600px-SC2SwarmHost.jpg",
+          "href": "/assets/icons/zerg/units/swarm_host.jpg",
           "minerals": 100,
           "gas": 75,
           "build_time": 29,
           "requirements": [
             "Infestation Pit"
-          ],
-          "href": "/assets/icons/zerg/units/swarm_host.jpg"
+          ]
+        },
+        "ultralisk": {
+          "name": "Ultralisk",
+          "type": "unit",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Ultralisk_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/25/SC2Ultralisk.jpg/600px-SC2Ultralisk.jpg",
+          "href": "/assets/icons/zerg/units/ultralisk.jpg",
+          "minerals": 275,
+          "gas": 200,
+          "build_time": 39,
+          "requirements": [
+            "Ultralisk Cavern"
+          ]
         },
         "viper": {
           "name": "Viper",
@@ -3449,13 +3449,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Viper_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/7/7b/SC2Viper.jpg/600px-SC2Viper.jpg",
+          "href": "/assets/icons/zerg/units/viper.jpg",
           "minerals": 100,
           "gas": 200,
           "build_time": 29,
           "requirements": [
             "Hive"
-          ],
-          "href": "/assets/icons/zerg/units/viper.jpg"
+          ]
         },
         "ventral_sacs_overlord": {
           "name": "Ventral Sacs Overlord",
@@ -3463,10 +3463,24 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Overlord_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5a/SC2Overlord.jpg/600px-SC2Overlord.jpg",
+          "href": "/assets/icons/zerg/units/ventral_sacs_overlord.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18,
-          "href": "/assets/icons/zerg/units/ventral_sacs_overlord.jpg"
+          "build_time": 18
+        },
+        "zergling": {
+          "name": "Zergling",
+          "type": "unit",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Zergling_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/4/49/SC2Zergling.jpg/600px-SC2Zergling.jpg",
+          "href": "/assets/icons/zerg/units/zergling.jpg",
+          "minerals": 25,
+          "gas": 0,
+          "build_time": 17,
+          "requirements": [
+            "Spawning Pool"
+          ]
         },
         "baneling_nest": {
           "name": "Baneling Nest",
@@ -3474,6 +3488,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Baneling_Nest_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/99/SC2BanelingNest.jpg/600px-SC2BanelingNest.jpg",
+          "href": "/assets/icons/zerg/buildings/baneling_nest.jpg",
           "minerals": 100,
           "gas": 50,
           "build_time": 43,
@@ -3482,22 +3497,18 @@
           ],
           "unlocks": [
             "Baneling"
-          ],
-          "href": "/assets/icons/zerg/buildings/baneling_nest.jpg"
+          ]
         },
-        "zergling": {
-          "name": "Zergling",
-          "type": "unit",
+        "creep_tumor": {
+          "name": "Creep Tumor",
+          "type": "building",
           "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Zergling_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/4/49/SC2Zergling.jpg/600px-SC2Zergling.jpg",
-          "minerals": 25,
+          "page_url": "https://liquipedia.net/starcraft2/Creep_Tumor_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2CreepTumour.jpg/600px-SC2CreepTumour.jpg",
+          "href": "/assets/icons/zerg/buildings/creep_tumor.jpg",
+          "minerals": 0,
           "gas": 0,
-          "build_time": 17,
-          "requirements": [
-            "Spawning Pool"
-          ],
-          "href": "/assets/icons/zerg/units/zergling.jpg"
+          "build_time": 11
         },
         "evolution_chamber": {
           "name": "Evolution Chamber",
@@ -3505,13 +3516,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Evolution_Chamber_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8e/SC2EvolutionChamber.jpg/600px-SC2EvolutionChamber.jpg",
+          "href": "/assets/icons/zerg/buildings/evolution_chamber.jpg",
           "minerals": 75,
           "gas": 0,
           "build_time": 25,
           "requirements": [
             "Hatchery"
-          ],
-          "href": "/assets/icons/zerg/buildings/evolution_chamber.jpg"
+          ]
         },
         "extractor": {
           "name": "Extractor",
@@ -3519,10 +3530,10 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Extractor_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/69/SC2Extractor.jpg/600px-SC2Extractor.jpg",
+          "href": "/assets/icons/zerg/buildings/extractor.jpg",
           "minerals": 25,
           "gas": 0,
-          "build_time": 21,
-          "href": "/assets/icons/zerg/buildings/extractor.jpg"
+          "build_time": 21
         },
         "greater_spire": {
           "name": "Greater Spire",
@@ -3530,6 +3541,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Greater_Spire_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5c/SC2GreaterSpire.jpg/600px-SC2GreaterSpire.jpg",
+          "href": "/assets/icons/zerg/buildings/greater_spire.jpg",
           "minerals": 100,
           "gas": 300,
           "build_time": 150,
@@ -3539,8 +3551,7 @@
           ],
           "unlocks": [
             "Brood Lord"
-          ],
-          "href": "/assets/icons/zerg/buildings/greater_spire.jpg"
+          ]
         },
         "hatchery": {
           "name": "Hatchery",
@@ -3548,6 +3559,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Hatchery_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/b/be/SC2Hatchery.jpg/600px-SC2Hatchery.jpg",
+          "href": "/assets/icons/zerg/buildings/hatchery.jpg",
           "minerals": 275,
           "gas": 0,
           "build_time": 71,
@@ -3559,8 +3571,7 @@
             "Spawning Pool",
             "Evolution Chamber",
             "+ 6"
-          ],
-          "href": "/assets/icons/zerg/buildings/hatchery.jpg"
+          ]
         },
         "hive": {
           "name": "Hive",
@@ -3568,6 +3579,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Hive_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5a/SC2Hive.jpg/600px-SC2Hive.jpg",
+          "href": "/assets/icons/zerg/buildings/hive.jpg",
           "minerals": 200,
           "gas": 650,
           "build_time": 150,
@@ -3583,8 +3595,7 @@
             "Ultralisk Cavern",
             "Greater Spire",
             "Viper"
-          ],
-          "href": "/assets/icons/zerg/buildings/hive.jpg"
+          ]
         },
         "hydralisk_den": {
           "name": "Hydralisk Den",
@@ -3592,6 +3603,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Hydralisk_Den_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/09/SC2HydraliskDen.jpg/600px-SC2HydraliskDen.jpg",
+          "href": "/assets/icons/zerg/buildings/hydralisk_den.jpg",
           "minerals": 100,
           "gas": 100,
           "build_time": 29,
@@ -3601,8 +3613,7 @@
           "unlocks": [
             "Hydralisk",
             "Lurker Den"
-          ],
-          "href": "/assets/icons/zerg/buildings/hydralisk_den.jpg"
+          ]
         },
         "infestation_pit": {
           "name": "Infestation Pit",
@@ -3610,6 +3621,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Infestation_Pit_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8f/SC2InfestationPit.jpg/600px-SC2InfestationPit.jpg",
+          "href": "/assets/icons/zerg/buildings/infestation_pit.jpg",
           "minerals": 100,
           "gas": 100,
           "build_time": 36,
@@ -3620,8 +3632,7 @@
             "Hive",
             "Infestor",
             "Swarm Host"
-          ],
-          "href": "/assets/icons/zerg/buildings/infestation_pit.jpg"
+          ]
         },
         "lair": {
           "name": "Lair",
@@ -3629,6 +3640,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Lair_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/89/SC2Lair.jpg/600px-SC2Lair.jpg",
+          "href": "/assets/icons/zerg/buildings/lair.jpg",
           "minerals": 150,
           "gas": 425,
           "build_time": 100,
@@ -3647,25 +3659,7 @@
             "Nydus Network",
             "Generate Creep",
             "Ventral Sacs"
-          ],
-          "href": "/assets/icons/zerg/buildings/lair.jpg"
-        },
-        "lurker_den": {
-          "name": "Lurker Den",
-          "type": "building",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Lurker_Den_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/a/a9/SC2LurkerDen.jpg/600px-SC2LurkerDen.jpg",
-          "minerals": 100,
-          "gas": 150,
-          "build_time": 57,
-          "requirements": [
-            "Hydralisk Den"
-          ],
-          "unlocks": [
-            "Lurker"
-          ],
-          "href": "/assets/icons/zerg/buildings/lurker_den.jpg"
+          ]
         },
         "nydus_network": {
           "name": "Nydus Network",
@@ -3673,6 +3667,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Nydus_Network_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/dd/SC2NydusNetwork.jpg/600px-SC2NydusNetwork.jpg",
+          "href": "/assets/icons/zerg/buildings/nydus_network.jpg",
           "minerals": 150,
           "gas": 150,
           "build_time": 36,
@@ -3684,19 +3679,42 @@
           ],
           "unlocks": [
             "Nydus Worm"
-          ],
-          "href": "/assets/icons/zerg/buildings/nydus_network.jpg"
+          ]
         },
-        "creep_tumor": {
-          "name": "Creep Tumor",
+        "lurker_den": {
+          "name": "Lurker Den",
           "type": "building",
           "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Creep_Tumor_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2CreepTumour.jpg/600px-SC2CreepTumour.jpg",
-          "minerals": 0,
+          "page_url": "https://liquipedia.net/starcraft2/Lurker_Den_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/a/a9/SC2LurkerDen.jpg/600px-SC2LurkerDen.jpg",
+          "href": "/assets/icons/zerg/buildings/lurker_den.jpg",
+          "minerals": 100,
+          "gas": 150,
+          "build_time": 57,
+          "requirements": [
+            "Hydralisk Den"
+          ],
+          "unlocks": [
+            "Lurker"
+          ]
+        },
+        "roach_warren": {
+          "name": "Roach Warren",
+          "type": "building",
+          "race": "zerg",
+          "page_url": "https://liquipedia.net/starcraft2/Roach_Warren_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/1/1b/SC2RoachWarren.jpg/600px-SC2RoachWarren.jpg",
+          "href": "/assets/icons/zerg/buildings/roach_warren.jpg",
+          "minerals": 150,
           "gas": 0,
-          "build_time": 11,
-          "href": "/assets/icons/zerg/buildings/creep_tumor.jpg"
+          "build_time": 39,
+          "requirements": [
+            "Spawning Pool"
+          ],
+          "unlocks": [
+            "Roach",
+            "Ravager"
+          ]
         },
         "spawning_pool": {
           "name": "Spawning Pool",
@@ -3704,6 +3722,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Spawning_Pool_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5f/SC2SpawningPool.jpg/600px-SC2SpawningPool.jpg",
+          "href": "/assets/icons/zerg/buildings/spawning_pool.jpg",
           "minerals": 200,
           "gas": 0,
           "build_time": 46,
@@ -3718,26 +3737,21 @@
             "Spore Crawler",
             "Zergling",
             "Queen"
-          ],
-          "href": "/assets/icons/zerg/buildings/spawning_pool.jpg"
+          ]
         },
-        "roach_warren": {
-          "name": "Roach Warren",
+        "spine_crawler": {
+          "name": "Spine Crawler",
           "type": "building",
           "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Roach_Warren_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/1/1b/SC2RoachWarren.jpg/600px-SC2RoachWarren.jpg",
-          "minerals": 150,
+          "page_url": "https://liquipedia.net/starcraft2/Spine_Crawler_(Legacy_of_the_Void)",
+          "icon_url": "https://liquipedia.net/commons/images/thumb/9/96/SC2SpineCrawler.jpg/600px-SC2SpineCrawler.jpg",
+          "href": "/assets/icons/zerg/buildings/spine_crawler.jpg",
+          "minerals": 100,
           "gas": 0,
-          "build_time": 39,
+          "build_time": 36,
           "requirements": [
             "Spawning Pool"
-          ],
-          "unlocks": [
-            "Roach",
-            "Ravager"
-          ],
-          "href": "/assets/icons/zerg/buildings/roach_warren.jpg"
+          ]
         },
         "spire": {
           "name": "Spire",
@@ -3745,6 +3759,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Spire_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/3/33/SC2Spire.jpg/600px-SC2Spire.jpg",
+          "href": "/assets/icons/zerg/buildings/spire.jpg",
           "minerals": 200,
           "gas": 200,
           "build_time": 71,
@@ -3754,8 +3769,7 @@
           "unlocks": [
             "Mutalisk",
             "Corruptor"
-          ],
-          "href": "/assets/icons/zerg/buildings/spire.jpg"
+          ]
         },
         "spore_crawler": {
           "name": "Spore Crawler",
@@ -3763,27 +3777,13 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Spore_Crawler_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/b/ba/SC2SporeCrawler.jpg/600px-SC2SporeCrawler.jpg",
+          "href": "/assets/icons/zerg/buildings/spore_crawler.jpg",
           "minerals": 75,
           "gas": 0,
           "build_time": 21,
           "requirements": [
             "Spawning Pool"
-          ],
-          "href": "/assets/icons/zerg/buildings/spore_crawler.jpg"
-        },
-        "spine_crawler": {
-          "name": "Spine Crawler",
-          "type": "building",
-          "race": "zerg",
-          "page_url": "https://liquipedia.net/starcraft2/Spine_Crawler_(Legacy_of_the_Void)",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/9/96/SC2SpineCrawler.jpg/600px-SC2SpineCrawler.jpg",
-          "minerals": 100,
-          "gas": 0,
-          "build_time": 36,
-          "requirements": [
-            "Spawning Pool"
-          ],
-          "href": "/assets/icons/zerg/buildings/spine_crawler.jpg"
+          ]
         },
         "ultralisk_cavern": {
           "name": "Ultralisk Cavern",
@@ -3791,6 +3791,7 @@
           "race": "zerg",
           "page_url": "https://liquipedia.net/starcraft2/Ultralisk_Cavern_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/ac/SC2UltraliskCavern.jpg/600px-SC2UltraliskCavern.jpg",
+          "href": "/assets/icons/zerg/buildings/ultralisk_cavern.jpg",
           "minerals": 150,
           "gas": 200,
           "build_time": 46,
@@ -3799,8 +3800,7 @@
           ],
           "unlocks": [
             "Ultralisk"
-          ],
-          "href": "/assets/icons/zerg/buildings/ultralisk_cavern.jpg"
+          ]
         }
       },
       "upgrades": {
@@ -3829,9 +3829,9 @@
           "gas": 100,
           "research_time": 64,
           "affects_units": [
-            "Lurker Den",
             "Hydralisk",
-            "Hydralisk Den"
+            "Hydralisk Den",
+            "Lurker Den"
           ],
           "research_building": "Hydralisk",
           "hotkey": "A",
@@ -3847,9 +3847,9 @@
           "gas": 75,
           "research_time": 50,
           "affects_units": [
-            "Lurker Den",
             "Hydralisk",
-            "Hydralisk Den"
+            "Hydralisk Den",
+            "Lurker Den"
           ],
           "research_building": "Hydralisk",
           "hotkey": "G",
@@ -3882,8 +3882,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Infestation Pit",
-            "Infestor"
+            "Infestor",
+            "Infestation Pit"
           ],
           "research_building": "Infestor",
           "hotkey": "E",
@@ -3899,8 +3899,8 @@
           "gas": 150,
           "research_time": 57,
           "affects_units": [
-            "Infestation Pit",
-            "Infestor"
+            "Infestor",
+            "Infestation Pit"
           ],
           "research_building": "Infestor",
           "hotkey": "G",
@@ -3916,8 +3916,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Infestation Pit",
-            "Infestor"
+            "Infestor",
+            "Infestation Pit"
           ],
           "research_building": "Infestor",
           "hotkey": null,
@@ -3967,12 +3967,12 @@
           "gas": 100,
           "research_time": 43,
           "affects_units": [
-            "Overlord",
             "Hive",
-            "Overseer",
             "Lair",
             "Ventral Sacs Overlord",
-            "Hatchery"
+            "Hatchery",
+            "Overseer",
+            "Overlord"
           ],
           "research_building": "Overlord",
           "hotkey": "P",
@@ -3988,8 +3988,8 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Roach",
-            "Roach Warren"
+            "Roach Warren",
+            "Roach"
           ],
           "research_building": "Roach",
           "hotkey": "G",
@@ -4005,8 +4005,8 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Roach",
-            "Roach Warren"
+            "Roach Warren",
+            "Roach"
           ],
           "research_building": "Roach",
           "hotkey": "T",
@@ -4022,8 +4022,8 @@
           "gas": 150,
           "research_time": 79,
           "affects_units": [
-            "Ultralisk Cavern",
-            "Ultralisk"
+            "Ultralisk",
+            "Ultralisk Cavern"
           ],
           "research_building": "Ultralisk",
           "hotkey": "C",
@@ -4039,8 +4039,8 @@
           "gas": 150,
           "research_time": 42,
           "affects_units": [
-            "Ultralisk Cavern",
-            "Ultralisk"
+            "Ultralisk",
+            "Ultralisk Cavern"
           ],
           "research_building": "Ultralisk",
           "hotkey": null,
@@ -4056,8 +4056,8 @@
           "gas": 200,
           "research_time": 93,
           "affects_units": [
-            "Spawning Pool",
-            "Zergling"
+            "Zergling",
+            "Spawning Pool"
           ],
           "research_building": "Zergling",
           "hotkey": "A",
@@ -4073,8 +4073,8 @@
           "gas": 100,
           "research_time": 79,
           "affects_units": [
-            "Spawning Pool",
-            "Zergling"
+            "Zergling",
+            "Spawning Pool"
           ],
           "research_building": "Zergling",
           "hotkey": "M",
@@ -4098,7 +4098,7 @@
           "hotkey": "M",
           "key": "melee_attacks_level_1_zerg",
           "icon_url": "https://liquipedia.net/commons/images/c/ca/Melee_attacks_1.gif",
-          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_1.jpg"
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level1.jpg"
         },
         "melee_attacks_level_2_zerg": {
           "name": "Melee Attacks Level 2",
@@ -4116,7 +4116,7 @@
           "hotkey": "M",
           "key": "melee_attacks_level_2_zerg",
           "icon_url": "https://liquipedia.net/commons/images/4/42/Melee_attacks_2.gif",
-          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_2.jpg"
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level2.jpg"
         },
         "melee_attacks_level_3_zerg": {
           "name": "Melee Attacks Level 3",
@@ -4134,7 +4134,7 @@
           "hotkey": "M",
           "key": "melee_attacks_level_3_zerg",
           "icon_url": "https://liquipedia.net/commons/images/4/4a/Melee_attacks_3.gif",
-          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_3.jpg"
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level3.jpg"
         },
         "missile_attacks_level_1_zerg": {
           "name": "Missile Attacks Level 1",
@@ -4152,7 +4152,7 @@
           "hotkey": "A",
           "key": "missile_attacks_level_1_zerg",
           "icon_url": "https://liquipedia.net/commons/images/7/70/Missile_attacks_1.gif",
-          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_1.jpg"
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level1.jpg"
         },
         "missile_attacks_level_2_zerg": {
           "name": "Missile Attacks Level 2",
@@ -4170,7 +4170,7 @@
           "hotkey": "A",
           "key": "missile_attacks_level_2_zerg",
           "icon_url": "https://liquipedia.net/commons/images/d/dc/Missile_attacks_2.gif",
-          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_2.jpg"
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level2.jpg"
         },
         "missile_attacks_level_3_zerg": {
           "name": "Missile Attacks Level 3",
@@ -4188,7 +4188,7 @@
           "hotkey": "A",
           "key": "missile_attacks_level_3_zerg",
           "icon_url": "https://liquipedia.net/commons/images/3/3b/Missile_attacks_3.gif",
-          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_3.jpg"
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level3.jpg"
         },
         "ground_carapace_level_1_zerg": {
           "name": "Ground Carapace Level 1",
@@ -4206,7 +4206,7 @@
           "hotkey": "C",
           "key": "ground_carapace_level_1_zerg",
           "icon_url": "https://liquipedia.net/commons/images/e/ee/Ground_carapace_1.gif",
-          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_1.jpg"
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level1.jpg"
         },
         "ground_carapace_level_2_zerg": {
           "name": "Ground Carapace Level 2",
@@ -4224,7 +4224,7 @@
           "hotkey": "C",
           "key": "ground_carapace_level_2_zerg",
           "icon_url": "https://liquipedia.net/commons/images/6/6d/Ground_carapace_2.gif",
-          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_2.jpg"
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level2.jpg"
         },
         "ground_carapace_level_3_zerg": {
           "name": "Ground Carapace Level 3",
@@ -4242,7 +4242,7 @@
           "hotkey": "C",
           "key": "ground_carapace_level_3_zerg",
           "icon_url": "https://liquipedia.net/commons/images/3/30/Ground_carapace_3.gif",
-          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_3.jpg"
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level3.jpg"
         },
         "flyer_attacks_level_1_zerg": {
           "name": "Flyer Attacks Level 1",
@@ -4254,14 +4254,14 @@
           "gas": 100,
           "research_time": 114,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_1_zerg",
           "icon_url": "https://liquipedia.net/commons/images/6/6f/Flyer_attack_1.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_1.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level1.jpg"
         },
         "flyer_attacks_level_2_zerg": {
           "name": "Flyer Attacks Level 2",
@@ -4273,14 +4273,14 @@
           "gas": 175,
           "research_time": 136,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_2_zerg",
           "icon_url": "https://liquipedia.net/commons/images/5/5b/Flyer_attack_2.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_2.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level2.jpg"
         },
         "flyer_attacks_level_3_zerg": {
           "name": "Flyer Attacks Level 3",
@@ -4292,14 +4292,14 @@
           "gas": 250,
           "research_time": 157,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_3_zerg",
           "icon_url": "https://liquipedia.net/commons/images/2/28/Flyer_attack_3.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_3.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level3.jpg"
         },
         "flyer_carapace_level_1_zerg": {
           "name": "Flyer Carapace Level 1",
@@ -4311,14 +4311,14 @@
           "gas": 100,
           "research_time": 114,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_1_zerg",
           "icon_url": "https://liquipedia.net/commons/images/7/78/Flyer_carapace_1.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_1.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level1.jpg"
         },
         "flyer_carapace_level_2_zerg": {
           "name": "Flyer Carapace Level 2",
@@ -4330,14 +4330,14 @@
           "gas": 175,
           "research_time": 136,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_2_zerg",
           "icon_url": "https://liquipedia.net/commons/images/f/f7/Flyer_carapace_2.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_2.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level2.jpg"
         },
         "flyer_carapace_level_3_zerg": {
           "name": "Flyer Carapace Level 3",
@@ -4349,14 +4349,14 @@
           "gas": 250,
           "research_time": 157,
           "affects_units": [
-            "Greater Spire",
-            "Spire"
+            "Spire",
+            "Greater Spire"
           ],
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_3_zerg",
           "icon_url": "https://liquipedia.net/commons/images/9/98/Flyer_carapace_3.gif",
-          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_3.jpg"
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level3.jpg"
         },
         "burrow_zerg": {
           "name": "Burrow",
