@@ -827,6 +827,49 @@ body {
     white-space: nowrap;
 }
 
+.row-controls {
+    position: absolute;
+    right: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.row:hover .row-controls {
+    opacity: 1;
+}
+
+.row-control-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #626880;
+    border-radius: 4px;
+    background: #51576d;
+    color: #c6d0f5;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.row-control-btn:hover {
+    background: #8caaee;
+    color: #232634;
+    border-color: #8caaee;
+}
+
+.row-control-btn.clear-row:hover {
+    background: #e78284;
+    border-color: #e78284;
+}
+
 .grid-lines {
     position: absolute;
     top: 0;

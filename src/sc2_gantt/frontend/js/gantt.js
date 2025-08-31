@@ -40,6 +40,23 @@ class GanttChart {
         document.addEventListener('mouseup', (e) => this.handleMouseUp(e));
         document.addEventListener('keydown', (e) => this.handleKeyDown(e));
         
+        // Row control handlers
+        this.chart.addEventListener('click', (e) => {
+            if (e.target.classList.contains('clear-row')) {
+                const row = e.target.closest('.row');
+                const rowIndex = parseInt(row.dataset.row);
+                this.clearRow(rowIndex);
+            } else if (e.target.classList.contains('align-left')) {
+                const row = e.target.closest('.row');
+                const rowIndex = parseInt(row.dataset.row);
+                this.alignRowLeft(rowIndex);
+            } else if (e.target.classList.contains('align-right')) {
+                const row = e.target.closest('.row');
+                const rowIndex = parseInt(row.dataset.row);
+                this.alignRowRight(rowIndex);
+            }
+        });
+        
         // Initialize state
         this.selectedRace = null;
         this.selectedType = null;
@@ -670,6 +687,16 @@ class GanttChart {
         `;
         row.appendChild(stats);
         
+        // Add row controls
+        const controls = document.createElement('div');
+        controls.className = 'row-controls';
+        controls.innerHTML = `
+            <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
+            <button class="row-control-btn align-left" title="Align Left">⇤</button>
+            <button class="row-control-btn align-right" title="Align Right">⇥</button>
+        `;
+        row.appendChild(controls);
+        
         this.chart.appendChild(row);
         this.rows++;
     }
@@ -1022,6 +1049,78 @@ class GanttChart {
                 rect.element.style.top = '5px';
             }
         }
+    }
+    
+    clearRow(rowIndex) {
+        const rowRects = this.rectangles.filter(r => r.row === rowIndex);
+        
+        // Remove each rectangle from DOM and array
+        rowRects.forEach(rectData => {
+            if (rectData.element && rectData.element.parentNode) {
+                rectData.element.parentNode.removeChild(rectData.element);
+            }
+            const index = this.rectangles.findIndex(r => r.id === rectData.id);
+            if (index !== -1) {
+                this.rectangles.splice(index, 1);
+            }
+        });
+        
+        // Clear selection if it was in this row
+        if (this.selectedRectangle && this.selectedRectangle.row === rowIndex) {
+            this.selectedRectangle = null;
+        }
+        
+        // Update row stats
+        this.updateRowStats(rowIndex);
+        
+        console.log(`Cleared row ${rowIndex + 1}`);
+    }
+    
+    alignRowLeft(rowIndex) {
+        const rowRects = this.rectangles
+            .filter(r => r.row === rowIndex)
+            .sort((a, b) => a.x - b.x);
+        
+        if (rowRects.length === 0) return;
+        
+        // Align all rectangles to the left (x = 0) while maintaining their relative order
+        let currentX = 0;
+        rowRects.forEach(rect => {
+            rect.x = currentX;
+            rect.element.style.left = currentX + 'px';
+            currentX += rect.width;
+        });
+        
+        this.updateRowStats(rowIndex);
+        console.log(`Aligned row ${rowIndex + 1} to left`);
+    }
+    
+    alignRowRight(rowIndex) {
+        const rowRects = this.rectangles
+            .filter(r => r.row === rowIndex)
+            .sort((a, b) => a.x - b.x);
+        
+        if (rowRects.length === 0) return;
+        
+        // Calculate total width of all rectangles in row
+        const totalWidth = rowRects.reduce((sum, rect) => sum + rect.width, 0);
+        
+        // Get the chart width (approximate visible area)
+        const chartWidth = this.chart.clientWidth - 120; // Account for labels
+        
+        // Calculate starting position to right-align
+        const startX = Math.max(0, chartWidth - totalWidth);
+        
+        // Position rectangles from right, maintaining order
+        let currentX = startX;
+        rowRects.forEach(rect => {
+            rect.x = currentX;
+            rect.element.style.left = currentX + 'px';
+            currentX += rect.width;
+        });
+        
+        this.updateRowStats(rowIndex);
+        console.log(`Aligned row ${rowIndex + 1} to right`);
     }
 }
 
