@@ -155,15 +155,16 @@ class SC2ComprehensiveScraper:
                     research_time = int(match[4])
                     hotkey = match[5] if len(match) > 5 and match[5] else None
                     
-                    # Create full upgrade name with level
-                    full_upgrade_name = f"{upgrade_base_name} Level {level}"
+                    # Create full upgrade name with level - normalize whitespace
+                    normalized_base_name = re.sub(r'\s+', ' ', upgrade_base_name.strip())
+                    full_upgrade_name = f"{normalized_base_name} Level {level}"
                     
                     # Find level-specific icon
                     upgrade_icon_url = self._extract_tiered_upgrade_icon(element, upgrade_base_name, level)
                     
                     upgrade_data = {
                         'name': full_upgrade_name,
-                        'base_name': upgrade_base_name,  # For grouping related upgrades
+                        'base_name': normalized_base_name,  # For grouping related upgrades
                         'level': int(level),
                         'type': 'upgrade',
                         'race': entity['race'],
@@ -173,7 +174,7 @@ class SC2ComprehensiveScraper:
                         'affects_units': [entity['name']],
                         'research_building': entity['name'],
                         'hotkey': hotkey,
-                        'key': f"{upgrade_base_name.lower().replace(' ', '_')}_level_{level}_{entity['race']}"
+                        'key': f"{re.sub(r'\s+', '_', normalized_base_name.lower())}_level_{level}_{entity['race']}"
                     }
                     
                     if upgrade_icon_url:
@@ -186,7 +187,7 @@ class SC2ComprehensiveScraper:
                 matches = re.findall(upgrade_pattern, text)
                 
                 for match in matches:
-                    upgrade_name = match[0].strip()
+                    upgrade_name = re.sub(r'\s+', ' ', match[0].strip())  # Normalize whitespace
                     if 'level' in upgrade_name.lower():  # Skip if it has level but didn't match tiered pattern
                         continue
                         
@@ -211,7 +212,7 @@ class SC2ComprehensiveScraper:
                         'affects_units': [entity['name']],
                         'research_building': entity['name'],
                         'hotkey': hotkey,
-                        'key': f"{upgrade_name.lower().replace(' ', '_')}_{entity['race']}"
+                        'key': f"{re.sub(r'\s+', '_', upgrade_name.lower())}_{entity['race']}"
                     }
                     
                     if upgrade_icon_url:
@@ -287,7 +288,7 @@ class SC2ComprehensiveScraper:
             matches = re.findall(upgrade_pattern, text)
             
             for match in matches:
-                upgrade_name = match[0].strip()
+                upgrade_name = re.sub(r'\s+', ' ', match[0].strip())  # Normalize whitespace
                 minerals = int(match[1]) if match[1] else 0
                 gas = int(match[2]) if match[2] else 0
                 research_time = int(match[3]) if match[3] else 0
@@ -311,7 +312,7 @@ class SC2ComprehensiveScraper:
                     'affects_units': [entity['name']],
                     'research_building': research_building,
                     'hotkey': hotkey,
-                    'key': f"{upgrade_name.lower().replace(' ', '_')}_{entity['race']}"
+                    'key': f"{re.sub(r'\s+', '_', upgrade_name.lower())}_{entity['race']}"
                 }
                 
                 if upgrade_icon_url:
@@ -323,7 +324,7 @@ class SC2ComprehensiveScraper:
     
     def _find_matching_icon(self, upgrade_name: str, all_icons: List[Tuple[str, str]]) -> Optional[str]:
         """Find the best matching icon for an upgrade name by filename similarity."""
-        upgrade_words = upgrade_name.lower().replace(' ', '_').split('_')
+        upgrade_words = re.sub(r'\s+', '_', upgrade_name.lower()).split('_')
         best_match = None
         best_score = 0
         
@@ -726,8 +727,8 @@ class SC2ComprehensiveScraper:
             upgrades_dir = race_dir / "upgrades"
             upgrades_dir.mkdir(parents=True, exist_ok=True)
             
-            # Create filename - handle level-specific names properly
-            filename = upgrade_name.lower().replace(' ', '_').replace('level_', 'level')
+            # Create filename - handle level-specific names properly and normalize whitespace
+            filename = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
             save_path = upgrades_dir / f"{filename}.jpg"
             
             # Save as JPG with high quality
