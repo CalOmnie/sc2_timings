@@ -171,13 +171,17 @@ class GanttChart {
             
             // Create image
             const img = document.createElement('img');
-            let imagePath;
-            if (this.selectedType === 'units') {
-                imagePath = `/assets/icons/${this.selectedRace}/units/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-            } else if (this.selectedType === 'buildings') {
-                imagePath = `/assets/icons/${this.selectedRace}/buildings/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-            } else if (this.selectedType === 'upgrades') {
-                imagePath = `/assets/icons/${this.selectedRace}/upgrades/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            // Use href field from JSON data if available, fallback to constructed path
+            let imagePath = entity.href;
+            if (!imagePath) {
+                // Fallback to constructed path for backwards compatibility
+                if (this.selectedType === 'units') {
+                    imagePath = `/assets/icons/${this.selectedRace}/units/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                } else if (this.selectedType === 'buildings') {
+                    imagePath = `/assets/icons/${this.selectedRace}/buildings/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                } else if (this.selectedType === 'upgrades') {
+                    imagePath = `/assets/icons/${this.selectedRace}/upgrades/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                }
             }
             
             img.src = imagePath;
@@ -225,14 +229,17 @@ class GanttChart {
         const entityImage = document.createElement('img');
         entityImage.className = 'entity-image';
         
-        // Determine image path based on entity type
-        let imagePath;
-        if (entityType === 'units') {
-            imagePath = `/assets/icons/${entityData.race}/units/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-        } else if (entityType === 'buildings') {
-            imagePath = `/assets/icons/${entityData.race}/buildings/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-        } else if (entityType === 'upgrades') {
-            imagePath = `/assets/icons/${entityData.race}/upgrades/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+        // Use href field from JSON data if available, fallback to constructed path
+        let imagePath = entityData.href;
+        if (!imagePath) {
+            // Fallback to constructed path for backwards compatibility
+            if (entityType === 'units') {
+                imagePath = `/assets/icons/${entityData.race}/units/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            } else if (entityType === 'buildings') {
+                imagePath = `/assets/icons/${entityData.race}/buildings/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            } else if (entityType === 'upgrades') {
+                imagePath = `/assets/icons/${entityData.race}/upgrades/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            }
         }
         
         entityImage.src = imagePath;
@@ -509,8 +516,12 @@ class GanttChart {
         const entityType = entityData.type || 'upgrade';
         const race = entityData.race || 'unknown';
         
-        // Generate image path
-        let imagePath = `/assets/icons/${race}/${entityType}s/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+        // Use href field from JSON data if available, fallback to constructed path
+        let imagePath = entityData.href;
+        if (!imagePath) {
+            // Fallback to constructed path for backwards compatibility
+            imagePath = `/assets/icons/${race}/${entityType}s/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+        }
         
         let html = `
             <div class="entity-info">
