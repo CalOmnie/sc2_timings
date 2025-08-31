@@ -12,6 +12,7 @@ class GanttChart {
         
         this.init();
         this.createGridLines();
+        this.createTimeIndex();
         this.loadSC2Data();
     }
     
@@ -302,6 +303,7 @@ class GanttChart {
         this.rectangles.push(rectData);
         this.positionRectangle(rectData);
         this.updateRowStats(lastRowIndex);
+        this.createTimeIndex(); // Update time index when entities are added
     }
     
     handleWheel(e) {
@@ -330,6 +332,7 @@ class GanttChart {
         });
         this.repositionAllRectangles();
         this.updateAllRowStats();
+        this.createTimeIndex(); // Update time index when scale changes
         
         // Update the display in the toolbar
         const timeScaleDisplay = document.getElementById('timeScaleDisplay');
@@ -369,6 +372,7 @@ class GanttChart {
         // Reposition remaining rectangles in the row to close gaps
         this.collapseGap(rectData.row, rectData.x, rectData.width, -1);
         this.updateRowStats(rectData.row);
+        this.createTimeIndex(); // Update time index when entities are removed
     }
     
     createGridLines() {
@@ -383,6 +387,43 @@ class GanttChart {
             line.style.left = x + 'px';
             gridLines.appendChild(line);
         }
+    }
+    
+    createTimeIndex() {
+        const timeIndex = document.getElementById('timeIndex');
+        if (!timeIndex) return;
+        
+        timeIndex.innerHTML = '';
+        
+        // Calculate the maximum time span needed
+        const maxTime = this.getMaxTimeSpan();
+        const chartWidth = this.chart.clientWidth - 120; // Account for padding
+        
+        // Create time markers every 30 seconds (or every minute for very long spans)
+        const interval = maxTime > 600 ? 60 : 30; // 60s intervals for >10min, 30s otherwise
+        
+        for (let time = 0; time <= maxTime + interval; time += interval) {
+            const x = time * this.timeScale;
+            if (x > chartWidth) break;
+            
+            const marker = document.createElement('div');
+            marker.className = 'time-marker';
+            marker.style.left = x + 'px';
+            
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            marker.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            timeIndex.appendChild(marker);
+        }
+    }
+    
+    getMaxTimeSpan() {
+        if (this.rectangles.length === 0) return 300; // Default 5 minutes if no entities
+        
+        // Find the furthest right edge of any entity
+        const maxEnd = Math.max(...this.rectangles.map(r => (r.x + r.width) / this.timeScale));
+        return Math.max(300, Math.ceil(maxEnd / 30) * 30); // Minimum 5 minutes, rounded up to 30s
     }
     
     updateRowStats(rowIndex) {
@@ -667,6 +708,7 @@ class GanttChart {
         // Reposition rectangles and update stats
         this.repositionAllRectangles();
         this.updateRowStats(rectangleData.row);
+        this.createTimeIndex(); // Update time index when chronoboost changes timing
         
         // Update info panel with new data
         this.showInfoPanel(rectangleData.entityData, rectangleData);
@@ -1273,5 +1315,6 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     if (window.ganttChart) {
         window.ganttChart.createGridLines();
+        window.ganttChart.createTimeIndex();
     }
 });

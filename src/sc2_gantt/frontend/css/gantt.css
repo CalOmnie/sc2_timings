@@ -417,6 +417,7 @@ body {
     min-height: 400px;
     padding: 20px;
     padding-left: 100px;
+    padding-bottom: 50px; /* Make room for time index */
 }
 
 .row {
@@ -883,6 +884,7 @@ body {
     right: 0;
     bottom: 0;
     pointer-events: none;
+    display: none; /* Hide vertical grid lines */
 }
 
 .grid-line {
@@ -890,4 +892,32 @@ body {
     width: 1px;
     height: 100%;
     background: #51576d;
+}
+
+.time-index {
+    position: absolute;
+    bottom: 0;
+    left: 100px; /* Align with chart content */
+    right: 0;
+    height: 30px;
+    background: #414559;
+    border-top: 1px solid #51576d;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: #a5adce;
+    pointer-events: none;
+}
+
+.time-marker {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 4px;
+    border-left: 1px solid #626880;
+}
+
+.time-marker:first-child {
+    border-left: none;
 }
