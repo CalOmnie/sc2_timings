@@ -516,8 +516,7 @@ class GanttChart {
         if (race === 'protoss' && (entityType === 'unit' || entityType === 'upgrade') && rectangleData) {
             const originalTime = rectangleData.originalBuildTime || buildTime;
             const currentCount = rectangleData.chronoboostCount || 0;
-            const maxReduction = originalTime * 0.5;
-            const maxChronoboosts = Math.floor(maxReduction / 10);
+            const maxChronoboosts = Math.floor(originalTime / 30);
             const timeSaved = currentCount * 10;
             
             html += `
@@ -551,7 +550,7 @@ class GanttChart {
                     </div>
                     
                     <p style="font-size: 11px; opacity: 0.7; margin-top: 8px;">
-                        Max: ${maxChronoboosts} chronoboosts (50% reduction cap)
+                        Max: ${maxChronoboosts} chronoboosts (1 per 30s of build time)
                     </p>
                 </div>`;
         }
@@ -594,9 +593,8 @@ class GanttChart {
         const newCount = Math.max(0, rectangleData.chronoboostCount + change);
         
         // Calculate maximum possible chronoboosts
-        // Each chronoboost saves 10 seconds, max reduction is 50% of original time
-        const maxReduction = rectangleData.originalBuildTime * 0.5;
-        const maxChronoboosts = Math.floor(maxReduction / 10);
+        // One chronoboost per 30 seconds of build time
+        const maxChronoboosts = Math.floor(rectangleData.originalBuildTime / 30);
         
         // Cap the chronoboost count
         rectangleData.chronoboostCount = Math.min(newCount, maxChronoboosts);
