@@ -704,7 +704,7 @@ class GanttChart {
         controls.innerHTML = `
             <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
             <button class="row-control-btn align-left" title="Align Left">⇤</button>
-            <button class="row-control-btn align-right" title="Align Right">⇥</button>
+            <button class="row-control-btn align-right" title="Align with Row Above End">⇥</button>
         `;
         row.appendChild(controls);
         
@@ -1116,13 +1116,20 @@ class GanttChart {
         // Calculate total width of all rectangles in row
         const totalWidth = rowRects.reduce((sum, rect) => sum + rect.width, 0);
         
-        // Get the chart width (approximate visible area)
-        const chartWidth = this.chart.clientWidth - 120; // Account for labels
+        // Find the end position of the row above (previous row)
+        let alignmentX = 0;
+        if (rowIndex > 0) {
+            const prevRowRects = this.rectangles.filter(r => r.row === rowIndex - 1);
+            if (prevRowRects.length > 0) {
+                // Get the rightmost position of the previous row
+                alignmentX = Math.max(...prevRowRects.map(r => r.x + r.width));
+            }
+        }
         
-        // Calculate starting position to right-align
-        const startX = Math.max(0, chartWidth - totalWidth);
+        // Calculate starting position to align with the end of the row above
+        const startX = Math.max(0, alignmentX - totalWidth);
         
-        // Position rectangles from right, maintaining order
+        // Position rectangles from the calculated start position, maintaining order
         let currentX = startX;
         rowRects.forEach(rect => {
             rect.x = currentX;
@@ -1131,7 +1138,7 @@ class GanttChart {
         });
         
         this.updateRowStats(rowIndex);
-        console.log(`Aligned row ${rowIndex + 1} to right`);
+        console.log(`Aligned row ${rowIndex + 1} to align with end of row above`);
     }
     
     showDownloadMenu() {
