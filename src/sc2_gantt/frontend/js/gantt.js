@@ -514,14 +514,25 @@ class GanttChart {
         
         // Add chronoboost section for Protoss units and upgrades
         if (race === 'protoss' && (entityType === 'unit' || entityType === 'upgrade') && rectangleData) {
-            html += `
-                <div class="chronoboost-section">
-                    <h5>Chronoboost</h5>
-                    <p>Apply chronoboost to reduce build time by 50%</p>
-                    <button class="chronoboost-button" data-rect-id="${rectangleData.id}">
-                        Apply Chronoboost
-                    </button>
-                </div>`;
+            if (rectangleData.chronoboosted) {
+                html += `
+                    <div class="chronoboost-section">
+                        <h5>Chronoboost</h5>
+                        <p>✨ Chronoboost applied! Build time reduced by 50%</p>
+                        <p style="font-size: 12px; opacity: 0.8; margin-top: 8px;">
+                            Original time: ${rectangleData.originalBuildTime}s → Current: ${buildTime}s
+                        </p>
+                    </div>`;
+            } else {
+                html += `
+                    <div class="chronoboost-section">
+                        <h5>Chronoboost</h5>
+                        <p>Apply chronoboost to reduce build time by 50%</p>
+                        <button class="chronoboost-button" data-rect-id="${rectangleData.id}">
+                            Apply Chronoboost
+                        </button>
+                    </div>`;
+            }
         }
         
         html += `</div>`;
@@ -541,14 +552,33 @@ class GanttChart {
     
     applyChronoboost(rectangleData) {
         if (!rectangleData || !rectangleData.entityData) return;
+        if (rectangleData.chronoboosted) return; // Already chronoboosted
         
-        const buildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
-        const chronoboostedTime = buildTime * 0.5; // 50% reduction
+        const originalBuildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
+        const chronoboostedTime = originalBuildTime * 0.5; // 50% reduction
         const newWidth = chronoboostedTime * this.timeScale;
+        
+        // Store original time before modifying
+        if (!rectangleData.originalBuildTime) {
+            rectangleData.originalBuildTime = originalBuildTime;
+        }
+        
+        // Update entity data with chronoboosted time
+        if (rectangleData.entityData.build_time) {
+            rectangleData.entityData.build_time = chronoboostedTime;
+        } else if (rectangleData.entityData.research_time) {
+            rectangleData.entityData.research_time = chronoboostedTime;
+        }
         
         // Update rectangle width
         rectangleData.width = newWidth;
         rectangleData.element.style.width = newWidth + 'px';
+        
+        // Update time display on the rectangle
+        const timeDisplay = rectangleData.element.querySelector('.entity-time');
+        if (timeDisplay) {
+            timeDisplay.textContent = `${chronoboostedTime}s`;
+        }
         
         // Add visual indicator for chronoboost
         rectangleData.element.classList.add('chronoboosted');
@@ -558,10 +588,10 @@ class GanttChart {
         this.repositionAllRectangles();
         this.updateRowStats(rectangleData.row);
         
-        // Update info panel
+        // Update info panel with new data
         this.showInfoPanel(rectangleData.entityData, rectangleData);
         
-        console.log(`Applied chronoboost to ${rectangleData.entityData.name}: ${buildTime}s → ${chronoboostedTime}s`);
+        console.log(`Applied chronoboost to ${rectangleData.entityData.name}: ${originalBuildTime}s → ${chronoboostedTime}s`);
     }
     
     formatTime(seconds) {
