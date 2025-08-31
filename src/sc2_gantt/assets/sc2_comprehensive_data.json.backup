@@ -1887,8 +1887,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Orbital_Command_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/84/SC2OrbitalCommand.jpg/600px-SC2OrbitalCommand.jpg",
           "minerals": 150,
-          "gas": 0,
-          "build_time": 35,
+          "gas": 550,
+          "build_time": 0,
           "requirements": [
             "Command Center",
             "Barracks"
@@ -1901,8 +1901,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Planetary_Fortress_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/4e/SC2PlanetaryFortress.jpg/600px-SC2PlanetaryFortress.jpg",
           "minerals": 150,
-          "gas": 150,
-          "build_time": 60,
+          "gas": 550,
+          "build_time": 150,
           "requirements": [
             "Command Center",
             "Engineering Bay"

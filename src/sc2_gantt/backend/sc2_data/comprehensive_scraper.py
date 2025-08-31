@@ -31,8 +31,8 @@ class SC2ComprehensiveScraper:
     
     def __init__(self, output_dir: str = None, max_workers: int = 5, delay: float = 1.0):
         if output_dir is None:
-            package_dir = Path(__file__).parent.parent
-            self.output_dir = package_dir / "static"
+            package_dir = Path(__file__).parent.parent.parent
+            self.output_dir = package_dir / "assets"
         else:
             self.output_dir = Path(output_dir)
             
@@ -489,6 +489,17 @@ class SC2ComprehensiveScraper:
             
         # Extract cost data
         cost_data = self._extract_cost_data(infobox)
+        
+        # Fix incorrect costs for specific entities
+        if entity['name'] == 'Orbital Command':
+            cost_data['minerals'] = 150
+            cost_data['gas'] = 0
+            cost_data['build_time'] = 35  # Correct build time for orbital command
+        elif entity['name'] == 'Planetary Fortress':
+            cost_data['minerals'] = 150
+            cost_data['gas'] = 150
+            cost_data['build_time'] = 60  # Correct build time for planetary fortress
+        
         entity_data.update(cost_data)
         
         # Extract other fields
