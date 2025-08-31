@@ -834,7 +834,7 @@ body {
 
 .row-controls {
     position: absolute;
-    right: -90px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -842,6 +842,7 @@ body {
     gap: 4px;
     opacity: 0;
     transition: opacity 0.2s;
+    z-index: 100;
 }
 
 .row:hover .row-controls {
