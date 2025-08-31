@@ -18,14 +18,20 @@ class GanttChart {
     init() {
         document.getElementById('addRow').addEventListener('click', () => this.addRow());
         
-        // Race button handlers
-        document.querySelectorAll('.race-button').forEach(btn => {
-            btn.addEventListener('click', (e) => this.onRaceSelect(e.target.dataset.race));
+        // Race tab handlers
+        document.querySelectorAll('.race-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                const race = e.currentTarget.dataset.race;
+                this.onRaceSelect(race);
+            });
         });
         
-        // Type button handlers  
-        document.querySelectorAll('.type-button').forEach(btn => {
-            btn.addEventListener('click', (e) => this.onTypeSelect(e.target.dataset.type));
+        // Type tab handlers  
+        document.querySelectorAll('.type-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                const type = e.currentTarget.dataset.type;
+                this.onTypeSelect(type);
+            });
         });
         
         this.chart.addEventListener('mousedown', (e) => this.handleMouseDown(e));
@@ -64,9 +70,9 @@ class GanttChart {
     }
     
     onRaceSelect(race) {
-        // Update race button states
-        document.querySelectorAll('.race-button').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.race === race);
+        // Update race tab states
+        document.querySelectorAll('.race-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.race === race);
         });
         
         this.selectedRace = race;
@@ -77,9 +83,9 @@ class GanttChart {
     }
     
     onTypeSelect(type) {
-        // Update type button states
-        document.querySelectorAll('.type-button').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.type === type);
+        // Update type tab states
+        document.querySelectorAll('.type-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.type === type);
         });
         
         this.selectedType = type;

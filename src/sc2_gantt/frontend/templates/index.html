@@ -9,23 +9,49 @@
 <body>
     <div class="container">
         <div class="toolbar">
-            <div class="race-selector">
-                <label>Race:</label>
-                <button class="race-button" data-race="protoss">Protoss</button>
-                <button class="race-button" data-race="terran">Terran</button>
-                <button class="race-button" data-race="zerg">Zerg</button>
+            <div class="tab-container">
+                <div class="tab-group race-tabs">
+                    <div class="tab-header">Race</div>
+                    <div class="tabs">
+                        <div class="tab race-tab" data-race="protoss">
+                            <span class="tab-icon">⚡</span>
+                            <span class="tab-label">Protoss</span>
+                        </div>
+                        <div class="tab race-tab" data-race="terran">
+                            <span class="tab-icon">🔧</span>
+                            <span class="tab-label">Terran</span>
+                        </div>
+                        <div class="tab race-tab" data-race="zerg">
+                            <span class="tab-icon">🦠</span>
+                            <span class="tab-label">Zerg</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-group type-tabs">
+                    <div class="tab-header">Type</div>
+                    <div class="tabs">
+                        <div class="tab type-tab" data-type="units">
+                            <span class="tab-icon">👤</span>
+                            <span class="tab-label">Units</span>
+                        </div>
+                        <div class="tab type-tab" data-type="buildings">
+                            <span class="tab-icon">🏢</span>
+                            <span class="tab-label">Buildings</span>
+                        </div>
+                        <div class="tab type-tab" data-type="upgrades">
+                            <span class="tab-icon">🔬</span>
+                            <span class="tab-label">Upgrades</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="entity-type-selector">
-                <label>Type:</label>
-                <button class="type-button" data-type="units">Units</button>
-                <button class="type-button" data-type="buildings">Buildings</button>
-                <button class="type-button" data-type="upgrades">Upgrades</button>
+            <div class="toolbar-controls">
+                <button id="addRow">Add Row</button>
+                <span id="timeScaleDisplay">Scale: 3.0x</span>
+                <small style="color: #666; margin-left: 10px;">Ctrl+Scroll to zoom</small>
             </div>
-            
-            <button id="addRow">Add Row</button>
-            <span id="timeScaleDisplay">Scale: 3.0x</span>
-            <small style="color: #666; margin-left: 10px;">Ctrl+Scroll to zoom</small>
         </div>
         
         <div class="entity-palette" id="entityPalette" style="display: none;">

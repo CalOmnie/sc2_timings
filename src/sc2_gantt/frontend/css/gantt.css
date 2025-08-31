@@ -13,11 +13,88 @@ body {
 
 .toolbar {
     background: #414559;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     border: 1px solid #51576d;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.tab-container {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+}
+
+.tab-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tab-header {
+    font-size: 12px;
+    font-weight: bold;
+    color: #a5adce;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.tabs {
+    display: flex;
+    gap: 2px;
+    background: #51576d;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    font-weight: 500;
+    color: #a5adce;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.tab:hover {
+    background: #626880;
+    color: #c6d0f5;
+}
+
+.tab.active {
+    background: #8caaee;
+    color: #232634;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tab-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.tab-label {
+    white-space: nowrap;
+}
+
+.toolbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
 }
 
 .toolbar button, .toolbar select, .toolbar input {
