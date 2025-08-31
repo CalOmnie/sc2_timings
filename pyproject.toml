@@ -69,3 +69,8 @@ module = "tests.*"
 allow_untyped_defs = true
 disable_error_code = "attr-defined"
 
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
+
