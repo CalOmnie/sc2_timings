@@ -45,6 +45,12 @@ class GanttChart {
         if (searchInput) {
             searchInput.addEventListener('input', (e) => this.onSearchInput(e.target.value));
         }
+        
+        // Info panel functionality
+        const closeInfoPanel = document.getElementById('closeInfoPanel');
+        if (closeInfoPanel) {
+            closeInfoPanel.addEventListener('click', () => this.hideInfoPanel());
+        }
     }
     
     async loadSC2Data() {
@@ -252,6 +258,13 @@ class GanttChart {
         });
         rectangle.appendChild(deleteButton);
         
+        // Add click handler to show info panel
+        rectangle.addEventListener('click', (e) => {
+            // Don't trigger if delete button was clicked
+            if (e.target.classList.contains('delete-button')) return;
+            this.showInfoPanel(entityData, rectData);
+        });
+        
         this.rectangles.push(rectData);
         this.positionRectangle(rectData);
         this.updateRowStats(lastRowIndex);
@@ -378,6 +391,183 @@ class GanttChart {
         for (let i = 0; i < this.rows; i++) {
             this.updateRowStats(i);
         }
+    }
+    
+    showInfoPanel(entityData, rectangleData = null) {
+        const infoPanel = document.getElementById('infoPanel');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoContent = document.getElementById('infoContent');
+        
+        if (!infoPanel || !infoTitle || !infoContent) return;
+        
+        infoTitle.textContent = entityData.name;
+        infoContent.innerHTML = this.generateInfoPanelContent(entityData, rectangleData);
+        infoPanel.style.display = 'block';
+        
+        // Add chronoboost event listeners if applicable
+        this.addChronoboostHandlers(entityData, rectangleData);
+    }
+    
+    hideInfoPanel() {
+        const infoPanel = document.getElementById('infoPanel');
+        if (infoPanel) {
+            infoPanel.style.display = 'none';
+        }
+    }
+    
+    generateInfoPanelContent(entityData, rectangleData) {
+        const buildTime = entityData.build_time || entityData.research_time || 0;
+        const entityType = entityData.type || 'upgrade';
+        const race = entityData.race || 'unknown';
+        
+        // Generate image path
+        let imagePath = `/assets/icons/${race}/${entityType}s/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+        
+        let html = `
+            <div class="entity-info">
+                <div class="entity-header">
+                    <img src="${imagePath}" alt="${entityData.name}" class="entity-icon" onerror="this.style.display='none'">
+                    <div class="entity-basic-info">
+                        <h4>${entityData.name}</h4>
+                        <div class="entity-type">${entityType} • ${race}</div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h5>Costs & Time</h5>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="label">Minerals</div>
+                            <div class="value">${entityData.minerals || 0}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Gas</div>
+                            <div class="value">${entityData.gas || 0}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Build Time</div>
+                            <div class="value">${buildTime}s</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Supply</div>
+                            <div class="value">${entityData.supply || 0}</div>
+                        </div>
+                    </div>
+                </div>`;
+        
+        // Add requirements section
+        if (entityData.requires && entityData.requires.length > 0) {
+            html += `
+                <div class="info-section">
+                    <h5>Requirements</h5>
+                    <ul class="info-list">`;
+            entityData.requires.forEach(req => {
+                html += `<li>${req}</li>`;
+            });
+            html += `</ul></div>`;
+        }
+        
+        // Add produces section
+        if (entityData.produces && entityData.produces.length > 0) {
+            html += `
+                <div class="info-section">
+                    <h5>Produces</h5>
+                    <ul class="info-list">`;
+            entityData.produces.forEach(prod => {
+                html += `<li>${prod}</li>`;
+            });
+            html += `</ul></div>`;
+        }
+        
+        // Add unlocks section
+        if (entityData.unlocks && entityData.unlocks.length > 0) {
+            html += `
+                <div class="info-section">
+                    <h5>Unlocks</h5>
+                    <ul class="info-list">`;
+            entityData.unlocks.forEach(unlock => {
+                html += `<li>${unlock}</li>`;
+            });
+            html += `</ul></div>`;
+        }
+        
+        // Add timing information if this is a placed entity
+        if (rectangleData) {
+            const startTime = rectangleData.x / this.timeScale;
+            const endTime = startTime + buildTime;
+            
+            html += `
+                <div class="info-section">
+                    <h5>Timeline</h5>
+                    <div class="timing-info">
+                        <div class="timing-item">
+                            <span>Start Time:</span>
+                            <span>${this.formatTime(startTime)}</span>
+                        </div>
+                        <div class="timing-item">
+                            <span>End Time:</span>
+                            <span>${this.formatTime(endTime)}</span>
+                        </div>
+                    </div>
+                </div>`;
+        }
+        
+        // Add chronoboost section for Protoss units and upgrades
+        if (race === 'protoss' && (entityType === 'unit' || entityType === 'upgrade') && rectangleData) {
+            html += `
+                <div class="chronoboost-section">
+                    <h5>Chronoboost</h5>
+                    <p>Apply chronoboost to reduce build time by 50%</p>
+                    <button class="chronoboost-button" data-rect-id="${rectangleData.id}">
+                        Apply Chronoboost
+                    </button>
+                </div>`;
+        }
+        
+        html += `</div>`;
+        return html;
+    }
+    
+    addChronoboostHandlers(entityData, rectangleData) {
+        if (!rectangleData || entityData.race !== 'protoss') return;
+        
+        const chronoButton = document.querySelector('.chronoboost-button');
+        if (chronoButton) {
+            chronoButton.addEventListener('click', () => {
+                this.applyChronoboost(rectangleData);
+            });
+        }
+    }
+    
+    applyChronoboost(rectangleData) {
+        if (!rectangleData || !rectangleData.entityData) return;
+        
+        const buildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
+        const chronoboostedTime = buildTime * 0.5; // 50% reduction
+        const newWidth = chronoboostedTime * this.timeScale;
+        
+        // Update rectangle width
+        rectangleData.width = newWidth;
+        rectangleData.element.style.width = newWidth + 'px';
+        
+        // Add visual indicator for chronoboost
+        rectangleData.element.classList.add('chronoboosted');
+        rectangleData.chronoboosted = true;
+        
+        // Reposition rectangles and update stats
+        this.repositionAllRectangles();
+        this.updateRowStats(rectangleData.row);
+        
+        // Update info panel
+        this.showInfoPanel(rectangleData.entityData, rectangleData);
+        
+        console.log(`Applied chronoboost to ${rectangleData.entityData.name}: ${buildTime}s → ${chronoboostedTime}s`);
+    }
+    
+    formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.round(seconds % 60);
+        return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
     
     addRow() {

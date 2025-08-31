@@ -40,15 +40,27 @@
             </div>
         </div>
         
-        <div class="chart-container">
-            <div class="chart" id="chart">
-                <div class="grid-lines" id="gridLines"></div>
-                <div class="row" data-row="0">
-                    <div class="row-label">Row 1</div>
-                    <div class="row-stats">
-                        <div class="row-end-time">End: 0:00</div>
-                        <div class="row-total-cost">Cost: 0/0</div>
+        <div class="main-content">
+            <div class="chart-container">
+                <div class="chart" id="chart">
+                    <div class="grid-lines" id="gridLines"></div>
+                    <div class="row" data-row="0">
+                        <div class="row-label">Row 1</div>
+                        <div class="row-stats">
+                            <div class="row-end-time">End: 0:00</div>
+                            <div class="row-total-cost">Cost: 0/0</div>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="info-panel" id="infoPanel" style="display: none;">
+                <div class="info-header">
+                    <h3 id="infoTitle">Entity Information</h3>
+                    <button class="close-button" id="closeInfoPanel">×</button>
+                </div>
+                <div class="info-content" id="infoContent">
+                    <!-- Entity information will be populated here -->
                 </div>
             </div>
         </div>
