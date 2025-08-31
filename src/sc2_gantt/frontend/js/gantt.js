@@ -74,6 +74,17 @@ class GanttChart {
         if (closeInfoPanel) {
             closeInfoPanel.addEventListener('click', () => this.hideInfoPanel());
         }
+        
+        // Download functionality
+        const downloadDataBtn = document.getElementById('downloadData');
+        if (downloadDataBtn) {
+            downloadDataBtn.addEventListener('click', () => this.showDownloadMenu());
+        }
+        
+        const exportBuildOrderBtn = document.getElementById('exportBuildOrder');
+        if (exportBuildOrderBtn) {
+            exportBuildOrderBtn.addEventListener('click', () => this.exportBuildOrder());
+        }
     }
     
     async loadSC2Data() {
@@ -1121,6 +1132,130 @@ class GanttChart {
         
         this.updateRowStats(rowIndex);
         console.log(`Aligned row ${rowIndex + 1} to right`);
+    }
+    
+    showDownloadMenu() {
+        // Simple implementation using confirm dialogs
+        const choice = prompt(
+            'Choose download option:\n' +
+            '1 - Full SC2 data\n' +
+            '2 - Protoss data only\n' +
+            '3 - Terran data only\n' +
+            '4 - Zerg data only\n' +
+            'Enter 1, 2, 3, or 4:'
+        );
+        
+        switch(choice) {
+            case '1':
+                this.downloadFile('/download/sc2-data');
+                break;
+            case '2':
+                this.downloadFile('/download/sc2-data/protoss');
+                break;
+            case '3':
+                this.downloadFile('/download/sc2-data/terran');
+                break;
+            case '4':
+                this.downloadFile('/download/sc2-data/zerg');
+                break;
+            default:
+                if (choice !== null) {
+                    alert('Invalid choice. Please select 1, 2, 3, or 4.');
+                }
+        }
+    }
+    
+    downloadFile(url) {
+        // Create a temporary anchor element and trigger download
+        const link = document.createElement('a');
+        link.href = url;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        console.log(`Downloading file from: ${url}`);
+    }
+    
+    async exportBuildOrder() {
+        try {
+            // Collect all rectangles data for export
+            const buildOrder = {
+                metadata: {
+                    exportDate: new Date().toISOString(),
+                    timeScale: this.timeScale,
+                    totalRows: this.rows
+                },
+                rows: []
+            };
+            
+            // Group rectangles by row
+            for (let rowIndex = 0; rowIndex < this.rows; rowIndex++) {
+                const rowRects = this.rectangles
+                    .filter(r => r.row === rowIndex)
+                    .sort((a, b) => a.x - b.x);
+                
+                const rowData = {
+                    rowIndex: rowIndex,
+                    entities: rowRects.map(rect => ({
+                        name: rect.entityData.name,
+                        type: rect.entityType,
+                        race: rect.entityData.race,
+                        startTime: rect.x / this.timeScale,
+                        buildTime: rect.entityData.build_time || rect.entityData.research_time || 0,
+                        minerals: rect.entityData.minerals || 0,
+                        gas: rect.entityData.gas || 0,
+                        chronoboosted: rect.chronoboosted || false,
+                        chronoboostCount: rect.chronoboostCount || 0
+                    }))
+                };
+                
+                // Calculate row statistics
+                if (rowRects.length > 0) {
+                    const endTime = Math.max(...rowRects.map(r => (r.x + r.width) / this.timeScale));
+                    const totalMinerals = rowRects.reduce((sum, r) => sum + (r.entityData.minerals || 0), 0);
+                    const totalGas = rowRects.reduce((sum, r) => sum + (r.entityData.gas || 0), 0);
+                    
+                    rowData.stats = {
+                        endTime: endTime,
+                        totalMinerals: totalMinerals,
+                        totalGas: totalGas
+                    };
+                }
+                
+                buildOrder.rows.push(rowData);
+            }
+            
+            // Send to export endpoint
+            const response = await fetch('/export/build-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(buildOrder)
+            });
+            
+            if (response.ok) {
+                // Trigger download
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'build_order.json';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+                
+                console.log('Build order exported successfully');
+            } else {
+                throw new Error(`Export failed: ${response.statusText}`);
+            }
+            
+        } catch (error) {
+            console.error('Error exporting build order:', error);
+            alert('Failed to export build order. Please check the console for details.');
+        }
     }
 }
 

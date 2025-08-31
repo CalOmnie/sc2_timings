@@ -97,6 +97,11 @@ body {
     flex-shrink: 0;
 }
 
+.download-controls {
+    display: flex;
+    gap: 8px;
+}
+
 .toolbar button, .toolbar select, .toolbar input {
     padding: 8px 16px;
     margin-right: 10px;
