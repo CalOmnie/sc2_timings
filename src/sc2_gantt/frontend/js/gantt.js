@@ -16,6 +16,35 @@ class GanttChart {
         this.loadSC2Data();
     }
     
+    getIconPath(entityData, entityType) {
+        // Use href field from JSON data if available, fallback to constructed path
+        if (entityData.href) {
+            return entityData.href;
+        }
+        
+        // Fallback to constructed path for backwards compatibility
+        const race = entityData.race || this.selectedRace || 'unknown';
+        const name = entityData.name.toLowerCase().replace(/\s+/g, '_');
+        return `/assets/icons/${race}/${entityType}s/${name}.jpg`;
+    }
+    
+    formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    getBuildTime(entityData) {
+        return entityData.build_time || entityData.research_time || 0;
+    }
+    
+    getCost(entityData) {
+        return {
+            minerals: entityData.minerals || 0,
+            gas: entityData.gas || 0
+        };
+    }
+    
     init() {
         document.getElementById('addRow').addEventListener('click', () => this.addRow());
         
@@ -171,20 +200,7 @@ class GanttChart {
             
             // Create image
             const img = document.createElement('img');
-            // Use href field from JSON data if available, fallback to constructed path
-            let imagePath = entity.href;
-            if (!imagePath) {
-                // Fallback to constructed path for backwards compatibility
-                if (this.selectedType === 'units') {
-                    imagePath = `/assets/icons/${this.selectedRace}/units/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-                } else if (this.selectedType === 'buildings') {
-                    imagePath = `/assets/icons/${this.selectedRace}/buildings/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-                } else if (this.selectedType === 'upgrades') {
-                    imagePath = `/assets/icons/${this.selectedRace}/upgrades/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-                }
-            }
-            
-            img.src = imagePath;
+            img.src = this.getIconPath(entity, this.selectedType.slice(0, -1)); // Remove 's' from 'units'/'buildings'/'upgrades'
             img.alt = entity.name;
             img.onerror = () => {
                 img.style.display = 'none';
@@ -192,8 +208,9 @@ class GanttChart {
             iconButton.appendChild(img);
             
             // Add tooltip with entity name and stats
-            const buildTime = entity.build_time || entity.research_time || 0;
-            const tooltip = `${entity.name} - ${buildTime}s, ${entity.minerals}/${entity.gas || 0}`;
+            const buildTime = this.getBuildTime(entity);
+            const cost = this.getCost(entity);
+            const tooltip = `${entity.name} - ${buildTime}s, ${cost.minerals}/${cost.gas}`;
             iconButton.setAttribute('data-tooltip', tooltip);
             
             // Add click handler
@@ -215,7 +232,7 @@ class GanttChart {
     
     addEntityFromIcon(entityData, entityType) {
         // Use the existing addEntity logic but with provided data
-        const buildTime = entityData.build_time || entityData.research_time || 0;
+        const buildTime = this.getBuildTime(entityData);
         const width = buildTime * this.timeScale;
         
         const rectangle = document.createElement('div');
@@ -229,20 +246,7 @@ class GanttChart {
         const entityImage = document.createElement('img');
         entityImage.className = 'entity-image';
         
-        // Use href field from JSON data if available, fallback to constructed path
-        let imagePath = entityData.href;
-        if (!imagePath) {
-            // Fallback to constructed path for backwards compatibility
-            if (entityType === 'units') {
-                imagePath = `/assets/icons/${entityData.race}/units/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-            } else if (entityType === 'buildings') {
-                imagePath = `/assets/icons/${entityData.race}/buildings/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-            } else if (entityType === 'upgrades') {
-                imagePath = `/assets/icons/${entityData.race}/upgrades/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-            }
-        }
-        
-        entityImage.src = imagePath;
+        entityImage.src = this.getIconPath(entityData, entityType);
         entityImage.alt = entityData.name;
         entityImage.onerror = () => {
             entityImage.style.display = 'none';
@@ -332,7 +336,7 @@ class GanttChart {
         // Update all existing rectangles
         this.rectangles.forEach(rect => {
             if (rect.entityData) {
-                const buildTime = rect.entityData.build_time || rect.entityData.research_time || 0;
+                const buildTime = this.getBuildTime(rect.entityData);
                 const newWidth = buildTime * this.timeScale;
                 rect.width = newWidth;
                 rect.element.style.width = newWidth + 'px';
@@ -431,9 +435,7 @@ class GanttChart {
             marker.className = 'time-marker';
             marker.style.left = x + 'px';
             
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-            marker.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            marker.textContent = this.formatTime(time);
             
             timeIndex.appendChild(marker);
         }
@@ -473,9 +475,7 @@ class GanttChart {
             const costElement = rowElement.querySelector('.row-total-cost');
             
             if (endTimeElement) {
-                const minutes = Math.floor(endTime / 60);
-                const seconds = Math.round(endTime % 60);
-                endTimeElement.textContent = `End: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                endTimeElement.textContent = `End: ${this.formatTime(Math.round(endTime))}`;
             }
             if (costElement) {
                 costElement.textContent = `Cost: ${totalMinerals}/${totalGas}`;
@@ -512,16 +512,11 @@ class GanttChart {
     }
     
     generateInfoPanelContent(entityData, rectangleData) {
-        const buildTime = entityData.build_time || entityData.research_time || 0;
+        const buildTime = this.getBuildTime(entityData);
         const entityType = entityData.type || 'upgrade';
         const race = entityData.race || 'unknown';
         
-        // Use href field from JSON data if available, fallback to constructed path
-        let imagePath = entityData.href;
-        if (!imagePath) {
-            // Fallback to constructed path for backwards compatibility
-            imagePath = `/assets/icons/${race}/${entityType}s/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
-        }
+        const imagePath = this.getIconPath(entityData, entityType);
         
         let html = `
             <div class="entity-info">
@@ -683,7 +678,7 @@ class GanttChart {
         
         // Initialize chronoboost data
         if (!rectangleData.originalBuildTime) {
-            rectangleData.originalBuildTime = rectangleData.entityData.build_time || rectangleData.entityData.research_time || 0;
+            rectangleData.originalBuildTime = this.getBuildTime(rectangleData.entityData);
         }
         if (rectangleData.chronoboostCount === undefined) {
             rectangleData.chronoboostCount = 0;
@@ -742,11 +737,6 @@ class GanttChart {
         console.log(`Chronoboost updated for ${rectangleData.entityData.name}: ${rectangleData.chronoboostCount} boosts, ${rectangleData.originalBuildTime}s → ${newBuildTime}s`);
     }
     
-    formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.round(seconds % 60);
-        return `${minutes}:${secs.toString().padStart(2, '0')}`;
-    }
     
     addRow() {
         const row = document.createElement('div');
@@ -1276,7 +1266,7 @@ class GanttChart {
                         type: rect.entityType,
                         race: rect.entityData.race,
                         startTime: rect.x / this.timeScale,
-                        buildTime: rect.entityData.build_time || rect.entityData.research_time || 0,
+                        buildTime: this.getBuildTime(rect.entityData),
                         minerals: rect.entityData.minerals || 0,
                         gas: rect.entityData.gas || 0,
                         chronoboosted: rect.chronoboosted || false,

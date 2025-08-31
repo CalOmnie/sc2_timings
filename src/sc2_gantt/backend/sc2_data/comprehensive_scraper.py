@@ -265,74 +265,6 @@ class SC2ComprehensiveScraper:
         
         return None
     
-    def _parse_upgrade_elements_with_icon_matching(self, upgrade_elements, entity: Dict[str, str]) -> List[Dict[str, Any]]:
-        """Parse upgrade elements and intelligently match icons to upgrade names."""
-        upgrades = []
-        upgrade_icons = {}
-        
-        # First pass: collect all upgrade icons from all elements
-        all_upgrade_icons = []
-        for element in upgrade_elements:
-            images = element.find_all("img") if hasattr(element, 'find_all') else []
-            for img in images:
-                src = img.get('src', '')
-                skip_patterns = ['minerals.gif', 'vespene', 'buildtime', 'hotkey', 'edit', 'information', 'commons/thumb/a/a4']
-                
-                if any(skip in src.lower() for skip in skip_patterns):
-                    continue
-                    
-                if (src and ('/commons/images/thumb/' in src or '/commons/images/' in src) 
-                    and src.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))):
-                    icon_filename = os.path.basename(src).lower()
-                    full_url = urljoin(self.BASE_IMAGE_URL, src)
-                    all_upgrade_icons.append((icon_filename, full_url))
-        
-        # Second pass: extract upgrade names and match them to icons by filename similarity
-        for element in upgrade_elements:
-            text = element.get_text().strip()
-            
-            # Look for upgrade patterns - updated to handle "Level X" in upgrade names
-            upgrade_pattern = r'([A-Z][A-Za-z\s]*(?:Level\s+\d+)?[A-Za-z\s]*?)\s+(\d+)\s+(\d+)\s+(\d+)(?:Hotkey:\s*([A-Z]))?.*?(?:Researched from:\s*([^A-Z][^.]+?)(?:[A-Z]|$))?'
-            matches = re.findall(upgrade_pattern, text)
-            
-            for match in matches:
-                upgrade_name = re.sub(r'\s+', ' ', match[0].strip())  # Normalize whitespace
-                minerals = int(match[1]) if match[1] else 0
-                gas = int(match[2]) if match[2] else 0
-                research_time = int(match[3]) if match[3] else 0
-                hotkey = match[4] if match[4] else None
-                research_building = match[5].strip() if match[5] else None
-                
-                # Skip if this doesn't look like a real upgrade name
-                if len(upgrade_name) < 3 or upgrade_name.lower() in ['the', 'and', 'for']:
-                    continue
-                
-                # Find matching icon by filename similarity
-                upgrade_icon_url = self._find_matching_icon(upgrade_name, all_upgrade_icons)
-                
-                name = re.sub(r'\s+', '_', upgrade_name.lower())
-                upgrade_data = {
-                    'name': upgrade_name,
-                    'type': 'upgrade',
-                    'race': entity['race'],
-                    'minerals': minerals,
-                    'gas': gas,
-                    'research_time': research_time,
-                    'affects_units': [entity['name']],
-                    'research_building': research_building,
-                    'hotkey': hotkey,
-                    'key': f"{name}_{entity['race']}"
-                }
-                
-                if upgrade_icon_url:
-                    upgrade_data['icon_url'] = upgrade_icon_url
-                    # Add local file path for frontend use - match asset filename format
-                    local_name = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
-                    upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
-                
-                upgrades.append(upgrade_data)
-        
-        return upgrades
     
     def _find_matching_icon(self, upgrade_name: str, all_icons: List[Tuple[str, str]]) -> Optional[str]:
         """Find the best matching icon for an upgrade name by filename similarity."""
@@ -380,55 +312,6 @@ class SC2ComprehensiveScraper:
         
         return best_match
     
-    def _parse_upgrade_element(self, element, entity: Dict[str, str]) -> List[Dict[str, Any]]:
-        """Parse upgrade information from HTML elements (text + images)."""
-        upgrades = []
-        
-        text = element.get_text().strip()
-        
-        # Look for upgrade patterns like "Upgrade Name Level X 100 100 50Hotkey: X"
-        upgrade_pattern = r'([A-Z][A-Za-z\s]*(?:Level\s+\d+)?[A-Za-z\s]*?)\s+(\d+)\s+(\d+)\s+(\d+)(?:Hotkey:\s*([A-Z]))?.*?(?:Researched from:\s*([^A-Z][^.]+?)(?:[A-Z]|$))?'
-        matches = re.findall(upgrade_pattern, text)
-        
-        # Find upgrade icon in this element
-        upgrade_icon_url = self._extract_upgrade_icon_from_element(element)
-        
-        for match in matches:
-            upgrade_name = match[0].strip()
-            minerals = int(match[1]) if match[1] else 0
-            gas = int(match[2]) if match[2] else 0
-            research_time = int(match[3]) if match[3] else 0
-            hotkey = match[4] if match[4] else None
-            research_building = match[5].strip() if match[5] else None
-            
-            # Skip if this doesn't look like a real upgrade name
-            if len(upgrade_name) < 3 or upgrade_name.lower() in ['the', 'and', 'for']:
-                continue
-            
-            upgrade_data = {
-                'name': upgrade_name,
-                'type': 'upgrade',
-                'race': entity['race'],
-                'minerals': minerals,
-                'gas': gas,
-                'research_time': research_time,
-                'affects_units': [entity['name']],  # Will aggregate later
-                'research_building': research_building,
-                'hotkey': hotkey,
-                # Generate a unique key for aggregation
-                'key': f"{upgrade_name.lower().replace(' ', '_')}_{entity['race']}"
-            }
-            
-            # Add icon URL if found
-            if upgrade_icon_url:
-                upgrade_data['icon_url'] = upgrade_icon_url
-                # Add local file path for frontend use - match asset filename format
-                local_name = upgrade_name.lower().replace(' ', '_').replace('level_', 'level')
-                upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
-            
-            upgrades.append(upgrade_data)
-        
-        return upgrades
     
     def _extract_upgrade_icon_from_element(self, element) -> Optional[str]:
         """Extract upgrade icon URL from an HTML element."""
