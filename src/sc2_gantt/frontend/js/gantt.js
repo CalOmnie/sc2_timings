@@ -37,6 +37,14 @@ class GanttChart {
         // Initialize state
         this.selectedRace = null;
         this.selectedType = null;
+        this.searchTerm = '';
+        this.allEntities = [];
+        
+        // Search functionality
+        const searchInput = document.getElementById('entitySearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => this.onSearchInput(e.target.value));
+        }
     }
     
     async loadSC2Data() {
@@ -56,6 +64,9 @@ class GanttChart {
         });
         
         this.selectedRace = race;
+        this.searchTerm = ''; // Clear search when race changes
+        const searchInput = document.getElementById('entitySearch');
+        if (searchInput) searchInput.value = '';
         this.updateEntityPalette();
     }
     
@@ -66,6 +77,14 @@ class GanttChart {
         });
         
         this.selectedType = type;
+        this.searchTerm = ''; // Clear search when type changes
+        const searchInput = document.getElementById('entitySearch');
+        if (searchInput) searchInput.value = '';
+        this.updateEntityPalette();
+    }
+    
+    onSearchInput(searchTerm) {
+        this.searchTerm = searchTerm.toLowerCase().trim();
         this.updateEntityPalette();
     }
     
@@ -88,6 +107,17 @@ class GanttChart {
         } else if (this.selectedType === 'upgrades') {
             entities = Object.values(raceData.upgrades || {})
                 .sort((a, b) => a.name.localeCompare(b.name));
+        }
+        
+        // Apply search filter
+        if (this.searchTerm) {
+            entities = entities.filter(entity => 
+                entity.name.toLowerCase().includes(this.searchTerm) ||
+                (entity.minerals && entity.minerals.toString().includes(this.searchTerm)) ||
+                (entity.gas && entity.gas.toString().includes(this.searchTerm)) ||
+                (entity.build_time && entity.build_time.toString().includes(this.searchTerm)) ||
+                (entity.research_time && entity.research_time.toString().includes(this.searchTerm))
+            );
         }
         
         content.innerHTML = '';
@@ -138,6 +168,12 @@ class GanttChart {
         });
         
         palette.style.display = entities.length > 0 ? 'block' : 'none';
+        
+        // Update entity count
+        const entityCountSpan = document.getElementById('entityCount');
+        if (entityCountSpan) {
+            entityCountSpan.textContent = entities.length;
+        }
     }
     
     addEntityFromIcon(entityData, entityType) {
