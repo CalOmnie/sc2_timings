@@ -388,10 +388,10 @@ class GanttChart {
         const maxTime = this.getMaxTimeSpan();
         const chartWidth = this.chart.clientWidth - 120; // Account for padding
         
-        // Create vertical lines every 10 seconds
+        // Create vertical lines every 10 seconds starting at 0:00
         const interval = 10; // 10 second intervals
         
-        for (let time = interval; time <= maxTime; time += interval) {
+        for (let time = 0; time <= maxTime; time += interval) {
             const x = time * this.timeScale;
             if (x > chartWidth) break;
             
