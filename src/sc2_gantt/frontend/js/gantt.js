@@ -303,6 +303,7 @@ class GanttChart {
         this.rectangles.push(rectData);
         this.positionRectangle(rectData);
         this.updateRowStats(lastRowIndex);
+        this.createGridLines(); // Update grid lines when entities are added
         this.createTimeIndex(); // Update time index when entities are added
     }
     
@@ -332,6 +333,7 @@ class GanttChart {
         });
         this.repositionAllRectangles();
         this.updateAllRowStats();
+        this.createGridLines(); // Update grid lines when scale changes
         this.createTimeIndex(); // Update time index when scale changes
         
         // Update the display in the toolbar
@@ -372,16 +374,27 @@ class GanttChart {
         // Reposition remaining rectangles in the row to close gaps
         this.collapseGap(rectData.row, rectData.x, rectData.width, -1);
         this.updateRowStats(rectData.row);
+        this.createGridLines(); // Update grid lines when entities are removed
         this.createTimeIndex(); // Update time index when entities are removed
     }
     
     createGridLines() {
         const gridLines = document.getElementById('gridLines');
+        if (!gridLines) return;
+        
         gridLines.innerHTML = '';
         
-        const chartWidth = this.chart.clientWidth;
+        // Calculate the maximum time span needed
+        const maxTime = this.getMaxTimeSpan();
+        const chartWidth = this.chart.clientWidth - 120; // Account for padding
         
-        for (let x = 0; x <= chartWidth; x += this.gridSize) {
+        // Create vertical lines every 10 seconds
+        const interval = 10; // 10 second intervals
+        
+        for (let time = interval; time <= maxTime; time += interval) {
+            const x = time * this.timeScale;
+            if (x > chartWidth) break;
+            
             const line = document.createElement('div');
             line.className = 'grid-line';
             line.style.left = x + 'px';
@@ -708,6 +721,7 @@ class GanttChart {
         // Reposition rectangles and update stats
         this.repositionAllRectangles();
         this.updateRowStats(rectangleData.row);
+        this.createGridLines(); // Update grid lines when chronoboost changes timing
         this.createTimeIndex(); // Update time index when chronoboost changes timing
         
         // Update info panel with new data

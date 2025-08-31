@@ -884,14 +884,14 @@ body {
     right: 0;
     bottom: 0;
     pointer-events: none;
-    display: none; /* Hide vertical grid lines */
 }
 
 .grid-line {
     position: absolute;
     width: 1px;
     height: 100%;
-    background: #51576d;
+    background: #45495c;
+    opacity: 0.6;
 }
 
 .time-index {
