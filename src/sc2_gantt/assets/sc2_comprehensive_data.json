@@ -271,7 +271,8 @@
           "build_time": 54,
           "requirements": [
             "Robotics Bay"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/colossus.jpg"
         },
         "carrier": {
           "name": "Carrier",
@@ -284,7 +285,8 @@
           "build_time": 64,
           "requirements": [
             "Fleet Beacon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/carrier.jpg"
         },
         "adept": {
           "name": "Adept",
@@ -297,7 +299,8 @@
           "build_time": 30,
           "requirements": [
             "Cybernetics Core"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/adept.jpg"
         },
         "dark_templar": {
           "name": "Dark Templar",
@@ -310,7 +313,8 @@
           "build_time": 39,
           "requirements": [
             "Dark Shrine"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/dark_templar.jpg"
         },
         "archon": {
           "name": "Archon",
@@ -320,7 +324,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/16/SC2Archon.jpg/600px-SC2Archon.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 8
+          "build_time": 8,
+          "href": "/assets/icons/protoss/units/archon.jpg"
         },
         "disruptor": {
           "name": "Disruptor",
@@ -333,7 +338,8 @@
           "build_time": 36,
           "requirements": [
             "Robotics Bay"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/disruptor.jpg"
         },
         "high_templar": {
           "name": "High Templar",
@@ -346,7 +352,8 @@
           "build_time": 39,
           "requirements": [
             "Templar Archives"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/high_templar.jpg"
         },
         "interceptor": {
           "name": "Interceptor",
@@ -356,7 +363,8 @@
           "icon_url": "https://liquipedia.net/commons/images/1/10/Interceptor_sc2.png",
           "minerals": 15,
           "gas": 0,
-          "build_time": 9
+          "build_time": 9,
+          "href": "/assets/icons/protoss/units/interceptor.jpg"
         },
         "immortal": {
           "name": "Immortal",
@@ -366,7 +374,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/e/ee/SC2Immortal.jpg/600px-SC2Immortal.jpg",
           "minerals": 250,
           "gas": 100,
-          "build_time": 39
+          "build_time": 39,
+          "href": "/assets/icons/protoss/units/immortal.jpg"
         },
         "mothership": {
           "name": "Mothership",
@@ -380,7 +389,8 @@
           "requirements": [
             "Fleet Beacon",
             "No Mothership"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/mothership.jpg"
         },
         "observer": {
           "name": "Observer",
@@ -390,7 +400,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/91/SC2Observer.jpg/600px-SC2Observer.jpg",
           "minerals": 25,
           "gas": 75,
-          "build_time": 17
+          "build_time": 17,
+          "href": "/assets/icons/protoss/units/observer.jpg"
         },
         "oracle": {
           "name": "Oracle",
@@ -400,7 +411,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/14/SC2Oracle.jpg/600px-SC2Oracle.jpg",
           "minerals": 150,
           "gas": 150,
-          "build_time": 37
+          "build_time": 37,
+          "href": "/assets/icons/protoss/units/oracle.jpg"
         },
         "phoenix": {
           "name": "Phoenix",
@@ -410,7 +422,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8a/SC2Phoenix.jpg/600px-SC2Phoenix.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 25
+          "build_time": 25,
+          "href": "/assets/icons/protoss/units/phoenix.jpg"
         },
         "probe": {
           "name": "Probe",
@@ -420,7 +433,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/4f/SC2Probe.jpg/600px-SC2Probe.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 12
+          "build_time": 12,
+          "href": "/assets/icons/protoss/units/probe.jpg"
         },
         "sentry": {
           "name": "Sentry",
@@ -433,7 +447,8 @@
           "build_time": 23,
           "requirements": [
             "Cybernetics Core"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/sentry.jpg"
         },
         "stalker": {
           "name": "Stalker",
@@ -446,7 +461,8 @@
           "build_time": 27,
           "requirements": [
             "Cybernetics Core"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/stalker.jpg"
         },
         "tempest": {
           "name": "Tempest",
@@ -459,7 +475,8 @@
           "build_time": 43,
           "requirements": [
             "Fleet Beacon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/units/tempest.jpg"
         },
         "warp_prism": {
           "name": "Warp Prism",
@@ -469,7 +486,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/da/SC2WarpPrismFlying.jpg/600px-SC2WarpPrismFlying.jpg",
           "minerals": 250,
           "gas": 0,
-          "build_time": 36
+          "build_time": 36,
+          "href": "/assets/icons/protoss/units/warp_prism.jpg"
         },
         "assimilator": {
           "name": "Assimilator",
@@ -479,7 +497,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/1c/SC2Assimilator.jpg/600px-SC2Assimilator.jpg",
           "minerals": 75,
           "gas": 0,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/protoss/buildings/assimilator.jpg"
         },
         "zealot": {
           "name": "Zealot",
@@ -489,7 +508,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5c/SC2Zealot.jpg/600px-SC2Zealot.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 27
+          "build_time": 27,
+          "href": "/assets/icons/protoss/units/zealot.jpg"
         },
         "cybernetics_core": {
           "name": "Cybernetics Core",
@@ -512,7 +532,8 @@
             "Sentry",
             "Stalker",
             "Adept"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/cybernetics_core.jpg"
         },
         "dark_shrine": {
           "name": "Dark Shrine",
@@ -530,7 +551,8 @@
           "unlocks": [
             "Dark Templar",
             "Archon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/dark_shrine.jpg"
         },
         "forge": {
           "name": "Forge",
@@ -547,7 +569,8 @@
           ],
           "unlocks": [
             "Photon Cannon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/forge.jpg"
         },
         "fleet_beacon": {
           "name": "Fleet Beacon",
@@ -566,7 +589,8 @@
             "Carrier",
             "Mothership",
             "Tempest"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/fleet_beacon.jpg"
         },
         "gateway": {
           "name": "Gateway",
@@ -591,7 +615,8 @@
           ],
           "unlocks": [
             "Cybernetics Core"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/gateway.jpg"
         },
         "nexus": {
           "name": "Nexus",
@@ -610,7 +635,8 @@
             "Gateway",
             "Forge",
             "+15"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/nexus.jpg"
         },
         "pylon": {
           "name": "Pylon",
@@ -620,7 +646,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/4/48/SC2Pylon.jpg/600px-SC2Pylon.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18
+          "build_time": 18,
+          "href": "/assets/icons/protoss/buildings/pylon.jpg"
         },
         "photon_cannon": {
           "name": "Photon Cannon",
@@ -634,7 +661,8 @@
           "requirements": [
             "Forge",
             "Pylon Power"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/photon_cannon.jpg"
         },
         "robotics_facility": {
           "name": "Robotics Facility",
@@ -658,7 +686,8 @@
           ],
           "unlocks": [
             "Robotics Bay"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/robotics_facility.jpg"
         },
         "robotics_bay": {
           "name": "Robotics Bay",
@@ -676,7 +705,8 @@
           "unlocks": [
             "Colossus",
             "Disruptor"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/robotics_bay.jpg"
         },
         "stargate": {
           "name": "Stargate",
@@ -700,7 +730,8 @@
           ],
           "unlocks": [
             "Fleet Beacon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/stargate.jpg"
         },
         "void_ray": {
           "name": "Void Ray",
@@ -710,7 +741,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/cd/SC2Void_Ray.jpg/600px-SC2Void_Ray.jpg",
           "minerals": 250,
           "gas": 150,
-          "build_time": 43
+          "build_time": 43,
+          "href": "/assets/icons/protoss/units/void_ray.jpg"
         },
         "stasis_ward": {
           "name": "Stasis Ward",
@@ -720,7 +752,8 @@
           "icon_url": "https://liquipedia.net/commons/images/a/ac/Stasis_Ward.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 4
+          "build_time": 4,
+          "href": "/assets/icons/protoss/buildings/stasis_ward.jpg"
         },
         "twilight_council": {
           "name": "Twilight Council",
@@ -738,7 +771,8 @@
           "unlocks": [
             "Templar Archives",
             "Dark Shrine"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/twilight_council.jpg"
         },
         "templar_archives": {
           "name": "Templar Archives",
@@ -756,7 +790,8 @@
           "unlocks": [
             "High Templar",
             "Archon"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/templar_archives.jpg"
         },
         "warp_gate": {
           "name": "Warp Gate",
@@ -779,7 +814,8 @@
             "Adept",
             "High Templar",
             "Dark Templar"
-          ]
+          ],
+          "href": "/assets/icons/protoss/buildings/warp_gate.jpg"
         }
       },
       "upgrades": {
@@ -797,7 +833,8 @@
           "research_building": "Colossus",
           "hotkey": "E",
           "key": "extended_thermal_lance_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/8/81/Extended_thermal_lances.gif"
+          "icon_url": "https://liquipedia.net/commons/images/8/81/Extended_thermal_lances.gif",
+          "href": "/assets/icons/protoss/upgrades/extended_thermal_lance.jpg"
         },
         "graviton_catapult_protoss": {
           "name": "Graviton Catapult",
@@ -813,7 +850,8 @@
           "research_building": "Carrier",
           "hotkey": "G",
           "key": "graviton_catapult_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/b/b9/Graviton_catapult.gif"
+          "icon_url": "https://liquipedia.net/commons/images/b/b9/Graviton_catapult.gif",
+          "href": "/assets/icons/protoss/upgrades/graviton_catapult.jpg"
         },
         "resonating_glaives_protoss": {
           "name": "Resonating Glaives",
@@ -829,7 +867,8 @@
           "research_building": "Adept",
           "hotkey": "A",
           "key": "resonating_glaives_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/e/e3/Resonating_Glaives_%28Patch_3.1.2%29.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/e/e3/Resonating_Glaives_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/protoss/upgrades/resonating_glaives.jpg"
         },
         "shield_upgrade_protoss": {
           "name": "Shield Upgrade",
@@ -844,7 +883,8 @@
           "research_building": "Adept",
           "hotkey": "S",
           "key": "shield_upgrade_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/d/df/Shield_Upgrade.png"
+          "icon_url": "https://liquipedia.net/commons/images/d/df/Shield_Upgrade.png",
+          "href": "/assets/icons/protoss/upgrades/shield_upgrade.jpg"
         },
         "shadow_stride_protoss": {
           "name": "Shadow Stride",
@@ -860,7 +900,8 @@
           "research_building": "Dark Templar",
           "hotkey": "B",
           "key": "shadow_stride_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/e/e4/Shadow_Stride.png"
+          "icon_url": "https://liquipedia.net/commons/images/e/e4/Shadow_Stride.png",
+          "href": "/assets/icons/protoss/upgrades/shadow_stride.jpg"
         },
         "psionic_storm_protoss": {
           "name": "Psionic Storm",
@@ -876,7 +917,8 @@
           "research_building": "High Templar",
           "hotkey": "T",
           "key": "psionic_storm_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/b/be/Psionic_storm.png/62px-Psionic_storm.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/b/be/Psionic_storm.png/62px-Psionic_storm.png",
+          "href": "/assets/icons/protoss/upgrades/psionic_storm.jpg"
         },
         "gravitic_boosters_protoss": {
           "name": "Gravitic Boosters",
@@ -892,7 +934,8 @@
           "research_building": "Observer",
           "hotkey": "B",
           "key": "gravitic_boosters_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/2/26/Gravitic_booster.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/26/Gravitic_booster.gif",
+          "href": "/assets/icons/protoss/upgrades/gravitic_boosters.jpg"
         },
         "crystals_protoss": {
           "name": "Crystals",
@@ -908,7 +951,8 @@
           "research_building": "Phoenix",
           "hotkey": "R",
           "key": "crystals_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e3/Anion_Pulse-Crystals.png/62px-Anion_Pulse-Crystals.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/e3/Anion_Pulse-Crystals.png/62px-Anion_Pulse-Crystals.png",
+          "href": "/assets/icons/protoss/upgrades/crystals.jpg"
         },
         "blink_protoss": {
           "name": "Blink",
@@ -924,7 +968,8 @@
           "research_building": "Stalker",
           "hotkey": "B",
           "key": "blink_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/1/16/Blink.png/62px-Blink.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/1/16/Blink.png/62px-Blink.png",
+          "href": "/assets/icons/protoss/upgrades/blink.jpg"
         },
         "tectonic_destabilizers_protoss": {
           "name": "Tectonic Destabilizers",
@@ -940,7 +985,8 @@
           "research_building": "Tempest",
           "hotkey": "T",
           "key": "tectonic_destabilizers_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/f/f2/Tectonic_Destabilizers.png"
+          "icon_url": "https://liquipedia.net/commons/images/f/f2/Tectonic_Destabilizers.png",
+          "href": "/assets/icons/protoss/upgrades/tectonic_destabilizers.jpg"
         },
         "gravitic_drive_protoss": {
           "name": "Gravitic Drive",
@@ -956,7 +1002,8 @@
           "research_building": "Warp Prism",
           "hotkey": "G",
           "key": "gravitic_drive_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/2/21/Gravitic_drive.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/21/Gravitic_drive.gif",
+          "href": "/assets/icons/protoss/upgrades/gravitic_drive.jpg"
         },
         "charge_protoss": {
           "name": "Charge",
@@ -972,7 +1019,8 @@
           "research_building": "Zealot",
           "hotkey": "C",
           "key": "charge_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/d/db/Charge.png/62px-Charge.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/d/db/Charge.png/62px-Charge.png",
+          "href": "/assets/icons/protoss/upgrades/charge.jpg"
         },
         "air_weapons_level_1_protoss": {
           "name": "Air Weapons Level 1",
@@ -989,7 +1037,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "E",
           "key": "air_weapons_level_1_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/3/3d/Air_weapons_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3d/Air_weapons_1.gif",
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level_1.jpg"
         },
         "air_weapons_level_2_protoss": {
           "name": "Air Weapons Level 2",
@@ -1006,7 +1055,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "E",
           "key": "air_weapons_level_2_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/4/4b/Air_weapons_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/4b/Air_weapons_2.gif",
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level_2.jpg"
         },
         "air_weapons_level_3_protoss": {
           "name": "Air Weapons Level 3",
@@ -1023,7 +1073,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "E",
           "key": "air_weapons_level_3_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/c/c4/Air_weapons_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/c4/Air_weapons_3.gif",
+          "href": "/assets/icons/protoss/upgrades/air_weapons_level_3.jpg"
         },
         "air_armor_level_1_protoss": {
           "name": "Air Armor Level 1",
@@ -1040,7 +1091,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "A",
           "key": "air_armor_level_1_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/8/80/Air_armor_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/8/80/Air_armor_1.gif",
+          "href": "/assets/icons/protoss/upgrades/air_armor_level_1.jpg"
         },
         "air_armor_level_2_protoss": {
           "name": "Air Armor Level 2",
@@ -1057,7 +1109,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "A",
           "key": "air_armor_level_2_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/6/63/Air_armor_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/63/Air_armor_2.gif",
+          "href": "/assets/icons/protoss/upgrades/air_armor_level_2.jpg"
         },
         "air_armor_level_3_protoss": {
           "name": "Air Armor Level 3",
@@ -1074,7 +1127,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "A",
           "key": "air_armor_level_3_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/6/6f/Air_armor_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/6f/Air_armor_3.gif",
+          "href": "/assets/icons/protoss/upgrades/air_armor_level_3.jpg"
         },
         "warp_gate_protoss": {
           "name": "Warp Gate",
@@ -1090,7 +1144,8 @@
           "research_building": "Cybernetics Core",
           "hotkey": "G",
           "key": "warp_gate_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/6/68/Transform_warpgate.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/68/Transform_warpgate.gif",
+          "href": "/assets/icons/protoss/upgrades/warp_gate.jpg"
         },
         "ground_weapons_level_1_protoss": {
           "name": "Ground Weapons Level 1",
@@ -1107,7 +1162,8 @@
           "research_building": "Forge",
           "hotkey": "G",
           "key": "ground_weapons_level_1_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/e/eb/Ground_weapons_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/e/eb/Ground_weapons_1.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_1.jpg"
         },
         "ground_weapons_level_2_protoss": {
           "name": "Ground Weapons Level 2",
@@ -1124,7 +1180,8 @@
           "research_building": "Forge",
           "hotkey": "G",
           "key": "ground_weapons_level_2_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/c/c2/Ground_weapons_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/c2/Ground_weapons_2.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_2.jpg"
         },
         "ground_weapons_level_3_protoss": {
           "name": "Ground Weapons Level 3",
@@ -1141,7 +1198,8 @@
           "research_building": "Forge",
           "hotkey": "G",
           "key": "ground_weapons_level_3_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/4/45/Ground_weapons_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/45/Ground_weapons_3.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_weapons_level_3.jpg"
         },
         "ground_armor_level_1_protoss": {
           "name": "Ground Armor Level 1",
@@ -1158,7 +1216,8 @@
           "research_building": "Forge",
           "hotkey": "A",
           "key": "ground_armor_level_1_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/e/ed/Ground_armor_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/e/ed/Ground_armor_1.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level_1.jpg"
         },
         "ground_armor_level_2_protoss": {
           "name": "Ground Armor Level 2",
@@ -1175,7 +1234,8 @@
           "research_building": "Forge",
           "hotkey": "A",
           "key": "ground_armor_level_2_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/5/59/Ground_armor_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/5/59/Ground_armor_2.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level_2.jpg"
         },
         "ground_armor_level_3_protoss": {
           "name": "Ground Armor Level 3",
@@ -1192,7 +1252,8 @@
           "research_building": "Forge",
           "hotkey": "A",
           "key": "ground_armor_level_3_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/9/9e/Ground_armor_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/9/9e/Ground_armor_3.gif",
+          "href": "/assets/icons/protoss/upgrades/ground_armor_level_3.jpg"
         },
         "shields_level_1_protoss": {
           "name": "Shields Level 1",
@@ -1209,7 +1270,8 @@
           "research_building": "Forge",
           "hotkey": "S",
           "key": "shields_level_1_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/7/7b/Shields_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/7/7b/Shields_1.gif",
+          "href": "/assets/icons/protoss/upgrades/shields_level_1.jpg"
         },
         "shields_level_2_protoss": {
           "name": "Shields Level 2",
@@ -1226,7 +1288,8 @@
           "research_building": "Forge",
           "hotkey": "S",
           "key": "shields_level_2_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/5/5e/Shields_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/5/5e/Shields_2.gif",
+          "href": "/assets/icons/protoss/upgrades/shields_level_2.jpg"
         },
         "shields_level_3_protoss": {
           "name": "Shields Level 3",
@@ -1243,7 +1306,8 @@
           "research_building": "Forge",
           "hotkey": "S",
           "key": "shields_level_3_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/d/d3/Shields_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/d/d3/Shields_3.gif",
+          "href": "/assets/icons/protoss/upgrades/shields_level_3.jpg"
         },
         "flux_vanes_protoss": {
           "name": "Flux Vanes",
@@ -1259,7 +1323,8 @@
           "research_building": "Fleet Beacon",
           "hotkey": "F",
           "key": "flux_vanes_protoss",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f9/Flux_Vanes.png/62px-Flux_Vanes.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f9/Flux_Vanes.png/62px-Flux_Vanes.png",
+          "href": "/assets/icons/protoss/upgrades/flux_vanes.jpg"
         }
       }
     },
@@ -1526,7 +1591,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Auto-Turret_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/b/b5/SC2AutoTurret.jpg/600px-SC2AutoTurret.jpg",
           "minerals": 0,
-          "gas": 0
+          "gas": 0,
+          "href": "/assets/icons/terran/units/auto-turret.jpg"
         },
         "banshee": {
           "name": "Banshee",
@@ -1536,7 +1602,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/88/SC2Banshee.jpg/600px-SC2Banshee.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 43
+          "build_time": 43,
+          "href": "/assets/icons/terran/units/banshee.jpg"
         },
         "battlecruiser": {
           "name": "Battlecruiser",
@@ -1549,7 +1616,8 @@
           "build_time": 64,
           "requirements": [
             "Fusion Core"
-          ]
+          ],
+          "href": "/assets/icons/terran/units/battlecruiser.jpg"
         },
         "cyclone": {
           "name": "Cyclone",
@@ -1559,7 +1627,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/15/SC2Cyclone.jpg/600px-SC2Cyclone.jpg",
           "minerals": 150,
           "gas": 100,
-          "build_time": 32
+          "build_time": 32,
+          "href": "/assets/icons/terran/units/cyclone.jpg"
         },
         "ghost": {
           "name": "Ghost",
@@ -1572,7 +1641,8 @@
           "build_time": 29,
           "requirements": [
             "Ghost Academy"
-          ]
+          ],
+          "href": "/assets/icons/terran/units/ghost.jpg"
         },
         "hellbat": {
           "name": "Hellbat",
@@ -1585,7 +1655,8 @@
           "build_time": 21,
           "requirements": [
             "Armory"
-          ]
+          ],
+          "href": "/assets/icons/terran/units/hellbat.jpg"
         },
         "hellion": {
           "name": "Hellion",
@@ -1595,7 +1666,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/91/SC2Hellion.jpg/600px-SC2Hellion.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/terran/units/hellion.jpg"
         },
         "marauder": {
           "name": "Marauder",
@@ -1605,7 +1677,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/3/30/SC2Marauder.jpg/600px-SC2Marauder.jpg",
           "minerals": 100,
           "gas": 25,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/terran/units/marauder.jpg"
         },
         "liberator": {
           "name": "Liberator",
@@ -1615,7 +1688,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2LiberatorAA.jpg/600px-SC2LiberatorAA.jpg",
           "minerals": 150,
           "gas": 125,
-          "build_time": 43
+          "build_time": 43,
+          "href": "/assets/icons/terran/units/liberator.jpg"
         },
         "mule": {
           "name": "MULE",
@@ -1624,7 +1698,8 @@
           "page_url": "https://liquipedia.net/starcraft2/MULE_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/a/ab/SC2MULE.jpg/600px-SC2MULE.jpg",
           "minerals": 0,
-          "gas": 0
+          "gas": 0,
+          "href": "/assets/icons/terran/units/mule.jpg"
         },
         "marine": {
           "name": "Marine",
@@ -1634,7 +1709,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/d8/SC2Marine.jpg/600px-SC2Marine.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 18
+          "build_time": 18,
+          "href": "/assets/icons/terran/units/marine.jpg"
         },
         "medivac": {
           "name": "Medivac",
@@ -1644,7 +1720,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/61/SC2Medivac.jpg/600px-SC2Medivac.jpg",
           "minerals": 100,
           "gas": 100,
-          "build_time": 30
+          "build_time": 30,
+          "href": "/assets/icons/terran/units/medivac.jpg"
         },
         "scv": {
           "name": "SCV",
@@ -1654,7 +1731,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/f/f7/SC2SCV.jpg/600px-SC2SCV.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 12
+          "build_time": 12,
+          "href": "/assets/icons/terran/units/scv.jpg"
         },
         "reaper": {
           "name": "Reaper",
@@ -1664,7 +1742,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/0a/SC2Reaper.jpg/600px-SC2Reaper.jpg",
           "minerals": 50,
           "gas": 50,
-          "build_time": 32
+          "build_time": 32,
+          "href": "/assets/icons/terran/units/reaper.jpg"
         },
         "raven": {
           "name": "Raven",
@@ -1674,7 +1753,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/86/SC2Raven.jpg/600px-SC2Raven.jpg",
           "minerals": 100,
           "gas": 150,
-          "build_time": 34
+          "build_time": 34,
+          "href": "/assets/icons/terran/units/raven.jpg"
         },
         "siege_tank": {
           "name": "Siege Tank",
@@ -1684,7 +1764,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/d/dc/SC2SiegeTankTankMode.jpg/600px-SC2SiegeTankTankMode.jpg",
           "minerals": 150,
           "gas": 125,
-          "build_time": 32
+          "build_time": 32,
+          "href": "/assets/icons/terran/units/siege_tank.jpg"
         },
         "thor": {
           "name": "Thor",
@@ -1697,7 +1778,8 @@
           "build_time": 43,
           "requirements": [
             "Armory"
-          ]
+          ],
+          "href": "/assets/icons/terran/units/thor.jpg"
         },
         "viking": {
           "name": "Viking",
@@ -1707,7 +1789,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/9/9f/SC2VikingFighter.jpg/600px-SC2VikingFighter.jpg",
           "minerals": 150,
           "gas": 75,
-          "build_time": 30
+          "build_time": 30,
+          "href": "/assets/icons/terran/units/viking.jpg"
         },
         "widow_mine": {
           "name": "Widow Mine",
@@ -1717,7 +1800,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/f/ff/SC2WidowMine.jpg/600px-SC2WidowMine.jpg",
           "minerals": 75,
           "gas": 25,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/terran/units/widow_mine.jpg"
         },
         "armory": {
           "name": "Armory",
@@ -1734,7 +1818,8 @@
           "unlocks": [
             "Thor",
             "Hellbat"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/armory.jpg"
         },
         "barracks": {
           "name": "Barracks",
@@ -1759,7 +1844,8 @@
             "Bunker",
             "Factory",
             "Ghost Academy"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/barracks.jpg"
         },
         "bunker": {
           "name": "Bunker",
@@ -1772,7 +1858,8 @@
           "build_time": 29,
           "requirements": [
             "Barracks"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/bunker.jpg"
         },
         "command_center": {
           "name": "Command Center",
@@ -1789,7 +1876,8 @@
           "unlocks": [
             "+ 15",
             "Engineering Bay"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/command_center.jpg"
         },
         "engineering_bay": {
           "name": "Engineering Bay",
@@ -1807,7 +1895,8 @@
             "Missile Turret",
             "Sensor Tower",
             "Planetary Fortress"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/engineering_bay.jpg"
         },
         "factory": {
           "name": "Factory",
@@ -1833,7 +1922,8 @@
             "Starport",
             "Armory",
             "Tactical Nuke"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/factory.jpg"
         },
         "fusion_core": {
           "name": "Fusion Core",
@@ -1849,7 +1939,8 @@
           ],
           "unlocks": [
             "Battlecruiser"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/fusion_core.jpg"
         },
         "ghost_academy": {
           "name": "Ghost Academy",
@@ -1865,7 +1956,8 @@
           ],
           "unlocks": [
             "Ghost"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/ghost_academy.jpg"
         },
         "missile_turret": {
           "name": "Missile Turret",
@@ -1878,7 +1970,8 @@
           "build_time": 18,
           "requirements": [
             "Engineering Bay"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/missile_turret.jpg"
         },
         "orbital_command": {
           "name": "Orbital Command",
@@ -1892,7 +1985,8 @@
           "requirements": [
             "Command Center",
             "Barracks"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/orbital_command.jpg"
         },
         "planetary_fortress": {
           "name": "Planetary Fortress",
@@ -1906,7 +2000,8 @@
           "requirements": [
             "Command Center",
             "Engineering Bay"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/planetary_fortress.jpg"
         },
         "reactor": {
           "name": "Reactor",
@@ -1916,7 +2011,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/82/SC2Reactor.jpg/600px-SC2Reactor.jpg",
           "minerals": 50,
           "gas": 50,
-          "build_time": 36
+          "build_time": 36,
+          "href": "/assets/icons/terran/buildings/reactor.jpg"
         },
         "refinery": {
           "name": "Refinery",
@@ -1926,7 +2022,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/69/SC2Refinery.jpg/600px-SC2Refinery.jpg",
           "minerals": 75,
           "gas": 0,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/terran/buildings/refinery.jpg"
         },
         "sensor_tower": {
           "name": "Sensor Tower",
@@ -1939,7 +2036,8 @@
           "build_time": 18,
           "requirements": [
             "Engineering Bay"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/sensor_tower.jpg"
         },
         "starport": {
           "name": "Starport",
@@ -1963,7 +2061,8 @@
           ],
           "unlocks": [
             "Fusion Core"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/starport.jpg"
         },
         "supply_depot": {
           "name": "Supply Depot",
@@ -1977,7 +2076,8 @@
           "unlocks": [
             "+8  (+8 )",
             "Barracks"
-          ]
+          ],
+          "href": "/assets/icons/terran/buildings/supply_depot.jpg"
         },
         "tech_lab": {
           "name": "Tech Lab",
@@ -1987,7 +2087,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/0/0f/SC2TechLab.jpg/600px-SC2TechLab.jpg",
           "minerals": 50,
           "gas": 25,
-          "build_time": 18
+          "build_time": 18,
+          "href": "/assets/icons/terran/buildings/tech_lab.jpg"
         }
       },
       "upgrades": {
@@ -2008,7 +2109,8 @@
           "research_building": "Auto-Turret",
           "hotkey": "H",
           "key": "sec_auto_tracking_terran",
-          "icon_url": "https://liquipedia.net/commons/images/f/f2/Hisec_auto_tracking.gif"
+          "icon_url": "https://liquipedia.net/commons/images/f/f2/Hisec_auto_tracking.gif",
+          "href": "/assets/icons/terran/upgrades/sec_auto_tracking.jpg"
         },
         "neosteel_armor_terran": {
           "name": "Neosteel Armor",
@@ -2032,7 +2134,8 @@
           "research_building": "Auto-Turret",
           "hotkey": "B",
           "key": "neosteel_armor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif",
+          "href": "/assets/icons/terran/upgrades/neosteel_armor.jpg"
         },
         "cloaking_field_terran": {
           "name": "Cloaking Field",
@@ -2047,7 +2150,8 @@
           "research_building": "Banshee",
           "hotkey": "C",
           "key": "cloaking_field_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/27/Cloak.png/61px-Cloak.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/27/Cloak.png/61px-Cloak.png",
+          "href": "/assets/icons/terran/upgrades/cloaking_field.jpg"
         },
         "hyperflight_rotors_terran": {
           "name": "Hyperflight Rotors",
@@ -2062,7 +2166,8 @@
           "research_building": "Banshee",
           "hotkey": null,
           "key": "hyperflight_rotors_terran",
-          "icon_url": "https://liquipedia.net/commons/images/d/d3/Hyperflight_Rotors_%28Patch_3.1.2%29.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/d/d3/Hyperflight_Rotors_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/terran/upgrades/hyperflight_rotors.jpg"
         },
         "weapon_refit_terran": {
           "name": "Weapon Refit",
@@ -2078,7 +2183,8 @@
           "research_building": "Battlecruiser",
           "hotkey": "R",
           "key": "weapon_refit_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/3/30/Yamato_cannon.png/61px-Yamato_cannon.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/3/30/Yamato_cannon.png/61px-Yamato_cannon.png",
+          "href": "/assets/icons/terran/upgrades/weapon_refit.jpg"
         },
         "behemoth_reactor_terran": {
           "name": "Behemoth Reactor",
@@ -2094,7 +2200,8 @@
           "research_building": "Battlecruiser",
           "hotkey": "B",
           "key": "behemoth_reactor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/4/4b/Behemoth_reactor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/4b/Behemoth_reactor.gif",
+          "href": "/assets/icons/terran/upgrades/behemoth_reactor.jpg"
         },
         "field_accelerator_terran": {
           "name": "Field Accelerator",
@@ -2109,7 +2216,8 @@
           "research_building": "Cyclone",
           "hotkey": "R",
           "key": "field_accelerator_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/6f/Mag-Field_Accelerator.jpg/62px-Mag-Field_Accelerator.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/6f/Mag-Field_Accelerator.jpg/62px-Mag-Field_Accelerator.jpg",
+          "href": "/assets/icons/terran/upgrades/field_accelerator.jpg"
         },
         "field_launchers_terran": {
           "name": "Field Launchers",
@@ -2125,7 +2233,8 @@
           "research_building": "Cyclone",
           "hotkey": "R",
           "key": "field_launchers_terran",
-          "icon_url": "https://liquipedia.net/commons/images/3/33/Mag-Field_Launchers.png"
+          "icon_url": "https://liquipedia.net/commons/images/3/33/Mag-Field_Launchers.png",
+          "href": "/assets/icons/terran/upgrades/field_launchers.jpg"
         },
         "rapid_fire_launchers_terran": {
           "name": "Rapid Fire Launchers",
@@ -2141,7 +2250,8 @@
           "research_building": "Cyclone",
           "hotkey": "A",
           "key": "rapid_fire_launchers_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/a/aa/Rapid_Fire_Launchers.png/62px-Rapid_Fire_Launchers.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/a/aa/Rapid_Fire_Launchers.png/62px-Rapid_Fire_Launchers.png",
+          "href": "/assets/icons/terran/upgrades/rapid_fire_launchers.jpg"
         },
         "hurricane_engines_terran": {
           "name": "Hurricane Engines",
@@ -2157,7 +2267,8 @@
           "research_building": "Cyclone",
           "hotkey": "R",
           "key": "hurricane_engines_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/62/Hurricane_Engines.png/62px-Hurricane_Engines.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/62/Hurricane_Engines.png/62px-Hurricane_Engines.png",
+          "href": "/assets/icons/terran/upgrades/hurricane_engines.jpg"
         },
         "personal_cloaking_terran": {
           "name": "Personal Cloaking",
@@ -2173,7 +2284,8 @@
           "research_building": "Ghost",
           "hotkey": "C",
           "key": "personal_cloaking_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/27/Cloak.png/61px-Cloak.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/27/Cloak.png/61px-Cloak.png",
+          "href": "/assets/icons/terran/upgrades/personal_cloaking.jpg"
         },
         "arm_silo_with_nuke_terran": {
           "name": "Arm Silo With Nuke",
@@ -2189,7 +2301,8 @@
           "research_building": "Ghost",
           "hotkey": "N",
           "key": "arm_silo_with_nuke_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/ec/Nuke.png/60px-Nuke.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/ec/Nuke.png/60px-Nuke.png",
+          "href": "/assets/icons/terran/upgrades/arm_silo_with_nuke.jpg"
         },
         "moebius_reactor_terran": {
           "name": "Moebius Reactor",
@@ -2205,7 +2318,8 @@
           "research_building": "Ghost",
           "hotkey": "M",
           "key": "moebius_reactor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/4/42/Moebius_reactor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/42/Moebius_reactor.gif",
+          "href": "/assets/icons/terran/upgrades/moebius_reactor.jpg"
         },
         "enhanced_shockwaves_terran": {
           "name": "Enhanced Shockwaves",
@@ -2221,7 +2335,8 @@
           "research_building": "Ghost",
           "hotkey": "S",
           "key": "enhanced_shockwaves_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/d/dd/Enhanced_Shockwaves.png/62px-Enhanced_Shockwaves.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/d/dd/Enhanced_Shockwaves.png/62px-Enhanced_Shockwaves.png",
+          "href": "/assets/icons/terran/upgrades/enhanced_shockwaves.jpg"
         },
         "igniter_terran": {
           "name": "Igniter",
@@ -2237,7 +2352,8 @@
           "research_building": "Hellbat",
           "hotkey": "I",
           "key": "igniter_terran",
-          "icon_url": "https://liquipedia.net/commons/images/b/bf/Infernal_preigniter.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/b/bf/Infernal_preigniter.jpg",
+          "href": "/assets/icons/terran/upgrades/igniter.jpg"
         },
         "smart_servos_terran": {
           "name": "Smart Servos",
@@ -2255,7 +2371,8 @@
           "research_building": "Hellbat",
           "hotkey": "S",
           "key": "smart_servos_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/e/eb/Smart_Servos.png/62px-Smart_Servos.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/e/eb/Smart_Servos.png/62px-Smart_Servos.png",
+          "href": "/assets/icons/terran/upgrades/smart_servos.jpg"
         },
         "stimpack_terran": {
           "name": "Stimpack",
@@ -2271,7 +2388,8 @@
           "research_building": "Marauder",
           "hotkey": "T",
           "key": "stimpack_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/3/39/Stimpack.png/62px-Stimpack.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/3/39/Stimpack.png/62px-Stimpack.png",
+          "href": "/assets/icons/terran/upgrades/stimpack.jpg"
         },
         "concussive_shells_terran": {
           "name": "Concussive Shells",
@@ -2286,7 +2404,8 @@
           "research_building": "Marauder",
           "hotkey": "G",
           "key": "concussive_shells_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/9/98/Concussive_Shells.png/61px-Concussive_Shells.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/9/98/Concussive_Shells.png/61px-Concussive_Shells.png",
+          "href": "/assets/icons/terran/upgrades/concussive_shells.jpg"
         },
         "advanced_ballistics_terran": {
           "name": "Advanced Ballistics",
@@ -2302,7 +2421,8 @@
           "research_building": "Liberator",
           "hotkey": "N",
           "key": "advanced_ballistics_terran",
-          "icon_url": "https://liquipedia.net/commons/images/7/77/Advanced_Ballistics_%28Patch_3.1.2%29.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/7/77/Advanced_Ballistics_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/terran/upgrades/advanced_ballistics.jpg"
         },
         "combat_shield_terran": {
           "name": "Combat Shield",
@@ -2317,7 +2437,8 @@
           "research_building": "Marine",
           "hotkey": "C",
           "key": "combat_shield_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/8/81/Combat_Shield.png/60px-Combat_Shield.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/8/81/Combat_Shield.png/60px-Combat_Shield.png",
+          "href": "/assets/icons/terran/upgrades/combat_shield.jpg"
         },
         "caduceus_reactor_terran": {
           "name": "Caduceus Reactor",
@@ -2333,7 +2454,8 @@
           "research_building": "Medivac",
           "hotkey": "A",
           "key": "caduceus_reactor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/a/a8/Caduceus_reactor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/a/a8/Caduceus_reactor.gif",
+          "href": "/assets/icons/terran/upgrades/caduceus_reactor.jpg"
         },
         "rapid_reignition_system_terran": {
           "name": "Rapid Reignition System",
@@ -2349,7 +2471,8 @@
           "research_building": "Medivac",
           "hotkey": "R",
           "key": "rapid_reignition_system_terran",
-          "icon_url": "https://liquipedia.net/commons/images/c/cf/High_Capacity_Fuel_Tanks_%28Patch_3.1.2%29.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/c/cf/High_Capacity_Fuel_Tanks_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/terran/upgrades/rapid_reignition_system.jpg"
         },
         "interference_matrix_terran": {
           "name": "Interference Matrix",
@@ -2364,7 +2487,8 @@
           "research_building": "Raven",
           "hotkey": "E",
           "key": "interference_matrix_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/4/45/Interference_Matrix.png/62px-Interference_Matrix.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/4/45/Interference_Matrix.png/62px-Interference_Matrix.png",
+          "href": "/assets/icons/terran/upgrades/interference_matrix.jpg"
         },
         "enhanced_munitions_terran": {
           "name": "Enhanced Munitions",
@@ -2380,7 +2504,8 @@
           "research_building": "Raven",
           "hotkey": "E",
           "key": "enhanced_munitions_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/9/92/Enhanced_Munitions.png/62px-Enhanced_Munitions.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/9/92/Enhanced_Munitions.png/62px-Enhanced_Munitions.png",
+          "href": "/assets/icons/terran/upgrades/enhanced_munitions.jpg"
         },
         "explosive_shrapnel_shells_terran": {
           "name": "Explosive Shrapnel Shells",
@@ -2395,7 +2520,8 @@
           "research_building": "Raven",
           "hotkey": "E",
           "key": "explosive_shrapnel_shells_terran",
-          "icon_url": "https://liquipedia.net/commons/images/7/77/Explosive_Shrapnel_Shells_%28Patch_3.1.2%29.jpg"
+          "icon_url": "https://liquipedia.net/commons/images/7/77/Explosive_Shrapnel_Shells_%28Patch_3.1.2%29.jpg",
+          "href": "/assets/icons/terran/upgrades/explosive_shrapnel_shells.jpg"
         },
         "recalibrated_explosives_terran": {
           "name": "Recalibrated Explosives",
@@ -2411,7 +2537,8 @@
           "research_building": "Raven",
           "hotkey": "E",
           "key": "recalibrated_explosives_terran",
-          "icon_url": "https://liquipedia.net/commons/images/b/b7/Recalibrated_Explosives.png"
+          "icon_url": "https://liquipedia.net/commons/images/b/b7/Recalibrated_Explosives.png",
+          "href": "/assets/icons/terran/upgrades/recalibrated_explosives.jpg"
         },
         "corvid_reactor_terran": {
           "name": "Corvid Reactor",
@@ -2427,7 +2554,8 @@
           "research_building": "Raven",
           "hotkey": "T",
           "key": "corvid_reactor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/2/20/Corvid_reactor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/20/Corvid_reactor.gif",
+          "href": "/assets/icons/terran/upgrades/corvid_reactor.jpg"
         },
         "drilling_claws_terran": {
           "name": "Drilling Claws",
@@ -2442,7 +2570,8 @@
           "research_building": "Widow Mine",
           "hotkey": "C",
           "key": "drilling_claws_terran",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/60/DrillingClaws.png/61px-DrillingClaws.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/60/DrillingClaws.png/61px-DrillingClaws.png",
+          "href": "/assets/icons/terran/upgrades/drilling_claws.jpg"
         },
         "vehicle_weapons_level_1_terran": {
           "name": "Vehicle Weapons Level 1",
@@ -2459,7 +2588,8 @@
           "research_building": "Armory",
           "hotkey": "E",
           "key": "vehicle_weapons_level_1_terran",
-          "icon_url": "https://liquipedia.net/commons/images/d/d5/Vehicle_weapons_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/d/d5/Vehicle_weapons_1.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_1.jpg"
         },
         "vehicle_weapons_level_2_terran": {
           "name": "Vehicle Weapons Level 2",
@@ -2476,7 +2606,8 @@
           "research_building": "Armory",
           "hotkey": "E",
           "key": "vehicle_weapons_level_2_terran",
-          "icon_url": "https://liquipedia.net/commons/images/c/ce/Vehicle_weapons_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/ce/Vehicle_weapons_2.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_2.jpg"
         },
         "vehicle_weapons_level_3_terran": {
           "name": "Vehicle Weapons Level 3",
@@ -2493,7 +2624,8 @@
           "research_building": "Armory",
           "hotkey": "E",
           "key": "vehicle_weapons_level_3_terran",
-          "icon_url": "https://liquipedia.net/commons/images/8/89/Vehicle_weapons_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/8/89/Vehicle_weapons_3.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_weapons_level_3.jpg"
         },
         "ship_weapons_level_1_terran": {
           "name": "Ship Weapons Level 1",
@@ -2510,7 +2642,8 @@
           "research_building": "Armory",
           "hotkey": "S",
           "key": "ship_weapons_level_1_terran",
-          "icon_url": "https://liquipedia.net/commons/images/f/fc/Ship_weapons_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/f/fc/Ship_weapons_1.gif",
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level_1.jpg"
         },
         "ship_weapons_level_2_terran": {
           "name": "Ship Weapons Level 2",
@@ -2527,7 +2660,8 @@
           "research_building": "Armory",
           "hotkey": "S",
           "key": "ship_weapons_level_2_terran",
-          "icon_url": "https://liquipedia.net/commons/images/a/ab/Ship_weapons_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/a/ab/Ship_weapons_2.gif",
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level_2.jpg"
         },
         "ship_weapons_level_3_terran": {
           "name": "Ship Weapons Level 3",
@@ -2544,7 +2678,8 @@
           "research_building": "Armory",
           "hotkey": "S",
           "key": "ship_weapons_level_3_terran",
-          "icon_url": "https://liquipedia.net/commons/images/6/6c/Ship_weapons_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/6c/Ship_weapons_3.gif",
+          "href": "/assets/icons/terran/upgrades/ship_weapons_level_3.jpg"
         },
         "vehicle_and_ship_plating_level_1_terran": {
           "name": "Vehicle and Ship Plating Level 1",
@@ -2561,7 +2696,8 @@
           "research_building": "Armory",
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_1_terran",
-          "icon_url": "https://liquipedia.net/commons/images/3/3d/Vehicle_plating_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3d/Vehicle_plating_1.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_1.jpg"
         },
         "vehicle_and_ship_plating_level_2_terran": {
           "name": "Vehicle and Ship Plating Level 2",
@@ -2578,7 +2714,8 @@
           "research_building": "Armory",
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_2_terran",
-          "icon_url": "https://liquipedia.net/commons/images/b/b0/Vehicle_plating_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/b/b0/Vehicle_plating_2.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_2.jpg"
         },
         "vehicle_and_ship_plating_level_3_terran": {
           "name": "Vehicle and Ship Plating Level 3",
@@ -2595,7 +2732,8 @@
           "research_building": "Armory",
           "hotkey": "V",
           "key": "vehicle_and_ship_plating_level_3_terran",
-          "icon_url": "https://liquipedia.net/commons/images/0/0e/Vehicle_plating_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/0/0e/Vehicle_plating_3.gif",
+          "href": "/assets/icons/terran/upgrades/vehicle_and_ship_plating_level_3.jpg"
         },
         "infantry_weapons_level_1_terran": {
           "name": "Infantry Weapons Level 1",
@@ -2612,7 +2750,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "E",
           "key": "infantry_weapons_level_1_terran",
-          "icon_url": "https://liquipedia.net/commons/images/e/ec/Infantry_weapons_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/e/ec/Infantry_weapons_1.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_1.jpg"
         },
         "infantry_weapons_level_2_terran": {
           "name": "Infantry Weapons Level 2",
@@ -2629,7 +2768,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "E",
           "key": "infantry_weapons_level_2_terran",
-          "icon_url": "https://liquipedia.net/commons/images/0/06/Infantry_weapons_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/0/06/Infantry_weapons_2.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_2.jpg"
         },
         "infantry_weapons_level_3_terran": {
           "name": "Infantry Weapons Level 3",
@@ -2646,7 +2786,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "E",
           "key": "infantry_weapons_level_3_terran",
-          "icon_url": "https://liquipedia.net/commons/images/c/ce/Infantry_weapons_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/ce/Infantry_weapons_3.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_weapons_level_3.jpg"
         },
         "infantry__armor_level_1_terran": {
           "name": "Infantry  Armor Level 1",
@@ -2663,7 +2804,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "A",
           "key": "infantry__armor_level_1_terran",
-          "icon_url": "https://liquipedia.net/commons/images/1/1a/Infantry_armor_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/1/1a/Infantry_armor_1.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level_1.jpg"
         },
         "infantry__armor_level_2_terran": {
           "name": "Infantry  Armor Level 2",
@@ -2680,7 +2822,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "A",
           "key": "infantry__armor_level_2_terran",
-          "icon_url": "https://liquipedia.net/commons/images/c/c9/Infantry_armor_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/c9/Infantry_armor_2.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level_2.jpg"
         },
         "infantry__armor_level_3_terran": {
           "name": "Infantry  Armor Level 3",
@@ -2697,7 +2840,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "A",
           "key": "infantry__armor_level_3_terran",
-          "icon_url": "https://liquipedia.net/commons/images/5/5e/Infantry_armor_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/5/5e/Infantry_armor_3.gif",
+          "href": "/assets/icons/terran/upgrades/infantry_armor_level_3.jpg"
         },
         "structure_armor_terran": {
           "name": "Structure Armor",
@@ -2713,7 +2857,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "B",
           "key": "structure_armor_terran",
-          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3a/Building_armor.gif",
+          "href": "/assets/icons/terran/upgrades/structure_armor.jpg"
         },
         "neosteel_frame_terran": {
           "name": "Neosteel Frame",
@@ -2728,7 +2873,8 @@
           "research_building": "Engineering Bay",
           "hotkey": "N",
           "key": "neosteel_frame_terran",
-          "icon_url": "https://liquipedia.net/commons/images/9/92/Neosteel_frames.gif"
+          "icon_url": "https://liquipedia.net/commons/images/9/92/Neosteel_frames.gif",
+          "href": "/assets/icons/terran/upgrades/neosteel_frame.jpg"
         }
       }
     },
@@ -3041,7 +3187,8 @@
           "build_time": 25,
           "requirements": [
             "Baneling Nest"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/baneling.jpg"
         },
         "corruptor": {
           "name": "Corruptor",
@@ -3054,7 +3201,8 @@
           "build_time": 29,
           "requirements": [
             "Spire"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/corruptor.jpg"
         },
         "broodling": {
           "name": "Broodling",
@@ -3063,7 +3211,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Broodling_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/0/0f/Broodling_sc2.png",
           "minerals": 0,
-          "gas": 0
+          "gas": 0,
+          "href": "/assets/icons/zerg/units/broodling.jpg"
         },
         "changeling": {
           "name": "Changeling",
@@ -3072,7 +3221,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Changeling_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/thumb/8/8e/SC2Changeling.jpg/600px-SC2Changeling.jpg",
           "minerals": 0,
-          "gas": 0
+          "gas": 0,
+          "href": "/assets/icons/zerg/units/changeling.jpg"
         },
         "brood_lord": {
           "name": "Brood Lord",
@@ -3085,7 +3235,8 @@
           "build_time": 150,
           "requirements": [
             "Greater Spire"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/brood_lord.jpg"
         },
         "drone": {
           "name": "Drone",
@@ -3095,7 +3246,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/cf/SC2Drone.jpg/600px-SC2Drone.jpg",
           "minerals": 50,
           "gas": 0,
-          "build_time": 12
+          "build_time": 12,
+          "href": "/assets/icons/zerg/units/drone.jpg"
         },
         "flying_locust": {
           "name": "Flying Locust",
@@ -3105,7 +3257,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2LocustLanded.jpg/600px-SC2LocustLanded.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 3
+          "build_time": 3,
+          "href": "/assets/icons/zerg/units/flying_locust.jpg"
         },
         "landed_locust": {
           "name": "Landed Locust",
@@ -3115,7 +3268,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/68/SC2LocustLanded.jpg/600px-SC2LocustLanded.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 3
+          "build_time": 3,
+          "href": "/assets/icons/zerg/units/landed_locust.jpg"
         },
         "hydralisk": {
           "name": "Hydralisk",
@@ -3128,7 +3282,8 @@
           "build_time": 24,
           "requirements": [
             "Hydralisk Den"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/hydralisk.jpg"
         },
         "infestor": {
           "name": "Infestor",
@@ -3141,7 +3296,8 @@
           "build_time": 36,
           "requirements": [
             "Infestation Pit"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/infestor.jpg"
         },
         "larva": {
           "name": "Larva",
@@ -3150,7 +3306,8 @@
           "page_url": "https://liquipedia.net/starcraft2/Larva_(Legacy_of_the_Void)",
           "icon_url": "https://liquipedia.net/commons/images/a/ab/Larva_sc2.png",
           "minerals": 0,
-          "gas": 0
+          "gas": 0,
+          "href": "/assets/icons/zerg/units/larva.jpg"
         },
         "lurker": {
           "name": "Lurker",
@@ -3163,7 +3320,8 @@
           "build_time": 100,
           "requirements": [
             "Lurker Den"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/lurker.jpg"
         },
         "mutalisk": {
           "name": "Mutalisk",
@@ -3176,7 +3334,8 @@
           "build_time": 24,
           "requirements": [
             "Spire"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/mutalisk.jpg"
         },
         "nydus_worm": {
           "name": "Nydus Worm",
@@ -3186,7 +3345,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/1/1f/SC2NydusWorm.jpg/600px-SC2NydusWorm.jpg",
           "minerals": 75,
           "gas": 75,
-          "build_time": 14
+          "build_time": 14,
+          "href": "/assets/icons/zerg/units/nydus_worm.jpg"
         },
         "overlord": {
           "name": "Overlord",
@@ -3196,7 +3356,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5a/SC2Overlord.jpg/600px-SC2Overlord.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18
+          "build_time": 18,
+          "href": "/assets/icons/zerg/units/overlord.jpg"
         },
         "overseer": {
           "name": "Overseer",
@@ -3209,7 +3370,8 @@
           "build_time": 50,
           "requirements": [
             "Lair"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/overseer.jpg"
         },
         "queen": {
           "name": "Queen",
@@ -3222,7 +3384,8 @@
           "build_time": 36,
           "requirements": [
             "Spawning Pool"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/queen.jpg"
         },
         "ravager": {
           "name": "Ravager",
@@ -3235,7 +3398,8 @@
           "build_time": 75,
           "requirements": [
             "Roach Warren"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/ravager.jpg"
         },
         "roach": {
           "name": "Roach",
@@ -3248,7 +3412,8 @@
           "build_time": 19,
           "requirements": [
             "Roach Warren"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/roach.jpg"
         },
         "ultralisk": {
           "name": "Ultralisk",
@@ -3261,7 +3426,8 @@
           "build_time": 39,
           "requirements": [
             "Ultralisk Cavern"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/ultralisk.jpg"
         },
         "swarm_host": {
           "name": "Swarm Host",
@@ -3274,7 +3440,8 @@
           "build_time": 29,
           "requirements": [
             "Infestation Pit"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/swarm_host.jpg"
         },
         "viper": {
           "name": "Viper",
@@ -3287,7 +3454,8 @@
           "build_time": 29,
           "requirements": [
             "Hive"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/viper.jpg"
         },
         "ventral_sacs_overlord": {
           "name": "Ventral Sacs Overlord",
@@ -3297,7 +3465,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/5/5a/SC2Overlord.jpg/600px-SC2Overlord.jpg",
           "minerals": 100,
           "gas": 0,
-          "build_time": 18
+          "build_time": 18,
+          "href": "/assets/icons/zerg/units/ventral_sacs_overlord.jpg"
         },
         "baneling_nest": {
           "name": "Baneling Nest",
@@ -3313,7 +3482,8 @@
           ],
           "unlocks": [
             "Baneling"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/baneling_nest.jpg"
         },
         "zergling": {
           "name": "Zergling",
@@ -3326,7 +3496,8 @@
           "build_time": 17,
           "requirements": [
             "Spawning Pool"
-          ]
+          ],
+          "href": "/assets/icons/zerg/units/zergling.jpg"
         },
         "evolution_chamber": {
           "name": "Evolution Chamber",
@@ -3339,7 +3510,8 @@
           "build_time": 25,
           "requirements": [
             "Hatchery"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/evolution_chamber.jpg"
         },
         "extractor": {
           "name": "Extractor",
@@ -3349,7 +3521,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/6/69/SC2Extractor.jpg/600px-SC2Extractor.jpg",
           "minerals": 25,
           "gas": 0,
-          "build_time": 21
+          "build_time": 21,
+          "href": "/assets/icons/zerg/buildings/extractor.jpg"
         },
         "greater_spire": {
           "name": "Greater Spire",
@@ -3366,7 +3539,8 @@
           ],
           "unlocks": [
             "Brood Lord"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/greater_spire.jpg"
         },
         "hatchery": {
           "name": "Hatchery",
@@ -3385,7 +3559,8 @@
             "Spawning Pool",
             "Evolution Chamber",
             "+ 6"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/hatchery.jpg"
         },
         "hive": {
           "name": "Hive",
@@ -3408,7 +3583,8 @@
             "Ultralisk Cavern",
             "Greater Spire",
             "Viper"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/hive.jpg"
         },
         "hydralisk_den": {
           "name": "Hydralisk Den",
@@ -3425,7 +3601,8 @@
           "unlocks": [
             "Hydralisk",
             "Lurker Den"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/hydralisk_den.jpg"
         },
         "infestation_pit": {
           "name": "Infestation Pit",
@@ -3443,7 +3620,8 @@
             "Hive",
             "Infestor",
             "Swarm Host"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/infestation_pit.jpg"
         },
         "lair": {
           "name": "Lair",
@@ -3469,7 +3647,8 @@
             "Nydus Network",
             "Generate Creep",
             "Ventral Sacs"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/lair.jpg"
         },
         "lurker_den": {
           "name": "Lurker Den",
@@ -3485,7 +3664,8 @@
           ],
           "unlocks": [
             "Lurker"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/lurker_den.jpg"
         },
         "nydus_network": {
           "name": "Nydus Network",
@@ -3504,7 +3684,8 @@
           ],
           "unlocks": [
             "Nydus Worm"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/nydus_network.jpg"
         },
         "creep_tumor": {
           "name": "Creep Tumor",
@@ -3514,7 +3695,8 @@
           "icon_url": "https://liquipedia.net/commons/images/thumb/c/c7/SC2CreepTumour.jpg/600px-SC2CreepTumour.jpg",
           "minerals": 0,
           "gas": 0,
-          "build_time": 11
+          "build_time": 11,
+          "href": "/assets/icons/zerg/buildings/creep_tumor.jpg"
         },
         "spawning_pool": {
           "name": "Spawning Pool",
@@ -3536,7 +3718,8 @@
             "Spore Crawler",
             "Zergling",
             "Queen"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/spawning_pool.jpg"
         },
         "roach_warren": {
           "name": "Roach Warren",
@@ -3553,7 +3736,8 @@
           "unlocks": [
             "Roach",
             "Ravager"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/roach_warren.jpg"
         },
         "spire": {
           "name": "Spire",
@@ -3570,7 +3754,8 @@
           "unlocks": [
             "Mutalisk",
             "Corruptor"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/spire.jpg"
         },
         "spore_crawler": {
           "name": "Spore Crawler",
@@ -3583,7 +3768,8 @@
           "build_time": 21,
           "requirements": [
             "Spawning Pool"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/spore_crawler.jpg"
         },
         "spine_crawler": {
           "name": "Spine Crawler",
@@ -3596,7 +3782,8 @@
           "build_time": 36,
           "requirements": [
             "Spawning Pool"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/spine_crawler.jpg"
         },
         "ultralisk_cavern": {
           "name": "Ultralisk Cavern",
@@ -3612,7 +3799,8 @@
           ],
           "unlocks": [
             "Ultralisk"
-          ]
+          ],
+          "href": "/assets/icons/zerg/buildings/ultralisk_cavern.jpg"
         }
       },
       "upgrades": {
@@ -3630,7 +3818,8 @@
           "research_building": "Baneling",
           "hotkey": "C",
           "key": "centrifugal_hooks_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/4/47/Centrifugal_hooks.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/47/Centrifugal_hooks.gif",
+          "href": "/assets/icons/zerg/upgrades/centrifugal_hooks.jpg"
         },
         "muscular_augments_zerg": {
           "name": "Muscular Augments",
@@ -3647,7 +3836,8 @@
           "research_building": "Hydralisk",
           "hotkey": "A",
           "key": "muscular_augments_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/8/89/Muscular_Augments.png"
+          "icon_url": "https://liquipedia.net/commons/images/8/89/Muscular_Augments.png",
+          "href": "/assets/icons/zerg/upgrades/muscular_augments.jpg"
         },
         "grooved_spines_zerg": {
           "name": "Grooved Spines",
@@ -3664,7 +3854,8 @@
           "research_building": "Hydralisk",
           "hotkey": "G",
           "key": "grooved_spines_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/4/4d/Grooved_Spines_LotV.png"
+          "icon_url": "https://liquipedia.net/commons/images/4/4d/Grooved_Spines_LotV.png",
+          "href": "/assets/icons/zerg/upgrades/grooved_spines.jpg"
         },
         "nanomuscular_swell_zerg": {
           "name": "Nanomuscular Swell",
@@ -3680,7 +3871,8 @@
           "research_building": "Hydralisk",
           "hotkey": "F",
           "key": "nanomuscular_swell_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f1/Frenzy.png/62px-Frenzy.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/f/f1/Frenzy.png/62px-Frenzy.png",
+          "href": "/assets/icons/zerg/upgrades/nanomuscular_swell.jpg"
         },
         "neural_parasite_zerg": {
           "name": "Neural Parasite",
@@ -3696,7 +3888,8 @@
           "research_building": "Infestor",
           "hotkey": "E",
           "key": "neural_parasite_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/c/c7/Neural_parasite.png"
+          "icon_url": "https://liquipedia.net/commons/images/c/c7/Neural_parasite.png",
+          "href": "/assets/icons/zerg/upgrades/neural_parasite.jpg"
         },
         "pathogen_glands_zerg": {
           "name": "Pathogen Glands",
@@ -3712,7 +3905,8 @@
           "research_building": "Infestor",
           "hotkey": "G",
           "key": "pathogen_glands_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/4/49/Pathogen_glands.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/49/Pathogen_glands.gif",
+          "href": "/assets/icons/zerg/upgrades/pathogen_glands.jpg"
         },
         "evolve_microbial_shroud_zerg": {
           "name": "Evolve Microbial Shroud",
@@ -3728,7 +3922,8 @@
           "research_building": "Infestor",
           "hotkey": null,
           "key": "evolve_microbial_shroud_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/2/26/Microbial_Shroud.png/62px-Microbial_Shroud.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/2/26/Microbial_Shroud.png/62px-Microbial_Shroud.png",
+          "href": "/assets/icons/zerg/upgrades/evolve_microbial_shroud.jpg"
         },
         "adaptive_talons_zerg": {
           "name": "Adaptive Talons",
@@ -3744,7 +3939,8 @@
           "research_building": "Lurker",
           "hotkey": "D",
           "key": "adaptive_talons_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/6/62/Adaptive_Talons.png/62px-Adaptive_Talons.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/6/62/Adaptive_Talons.png/62px-Adaptive_Talons.png",
+          "href": "/assets/icons/zerg/upgrades/adaptive_talons.jpg"
         },
         "seismic_spines_zerg": {
           "name": "Seismic Spines",
@@ -3760,7 +3956,8 @@
           "research_building": "Lurker",
           "hotkey": "S",
           "key": "seismic_spines_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/thumb/0/0f/Seismic_Spines_%28Kerrigan_coop%29.png/62px-Seismic_Spines_%28Kerrigan_coop%29.png"
+          "icon_url": "https://liquipedia.net/commons/images/thumb/0/0f/Seismic_Spines_%28Kerrigan_coop%29.png/62px-Seismic_Spines_%28Kerrigan_coop%29.png",
+          "href": "/assets/icons/zerg/upgrades/seismic_spines.jpg"
         },
         "pneumatized_carapace_zerg": {
           "name": "Pneumatized Carapace",
@@ -3780,7 +3977,8 @@
           "research_building": "Overlord",
           "hotkey": "P",
           "key": "pneumatized_carapace_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/2/2a/Pneumatized_carapace.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/2a/Pneumatized_carapace.gif",
+          "href": "/assets/icons/zerg/upgrades/pneumatized_carapace.jpg"
         },
         "glial_reconstitution_zerg": {
           "name": "Glial Reconstitution",
@@ -3796,7 +3994,8 @@
           "research_building": "Roach",
           "hotkey": "G",
           "key": "glial_reconstitution_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/f/f4/Tunneling_claws.gif"
+          "icon_url": "https://liquipedia.net/commons/images/f/f4/Tunneling_claws.gif",
+          "href": "/assets/icons/zerg/upgrades/glial_reconstitution.jpg"
         },
         "tunneling_claws_zerg": {
           "name": "Tunneling Claws",
@@ -3812,7 +4011,8 @@
           "research_building": "Roach",
           "hotkey": "T",
           "key": "tunneling_claws_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/2/20/Glial_reconstitution.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/20/Glial_reconstitution.gif",
+          "href": "/assets/icons/zerg/upgrades/tunneling_claws.jpg"
         },
         "chitinous_plating_zerg": {
           "name": "Chitinous Plating",
@@ -3828,7 +4028,8 @@
           "research_building": "Ultralisk",
           "hotkey": "C",
           "key": "chitinous_plating_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/0/07/Chitinous_Plating.gif"
+          "icon_url": "https://liquipedia.net/commons/images/0/07/Chitinous_Plating.gif",
+          "href": "/assets/icons/zerg/upgrades/chitinous_plating.jpg"
         },
         "anabolic_synthesis_zerg": {
           "name": "Anabolic Synthesis",
@@ -3844,7 +4045,8 @@
           "research_building": "Ultralisk",
           "hotkey": null,
           "key": "anabolic_synthesis_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/3/3e/Anabolic_Synthesis.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3e/Anabolic_Synthesis.gif",
+          "href": "/assets/icons/zerg/upgrades/anabolic_synthesis.jpg"
         },
         "adrenal_glands_zerg": {
           "name": "Adrenal Glands",
@@ -3860,7 +4062,8 @@
           "research_building": "Zergling",
           "hotkey": "A",
           "key": "adrenal_glands_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/0/02/Adrenal_glands.gif"
+          "icon_url": "https://liquipedia.net/commons/images/0/02/Adrenal_glands.gif",
+          "href": "/assets/icons/zerg/upgrades/adrenal_glands.jpg"
         },
         "metabolic_boost_zerg": {
           "name": "Metabolic Boost",
@@ -3876,7 +4079,8 @@
           "research_building": "Zergling",
           "hotkey": "M",
           "key": "metabolic_boost_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/a/a8/Metabolic_boost.gif"
+          "icon_url": "https://liquipedia.net/commons/images/a/a8/Metabolic_boost.gif",
+          "href": "/assets/icons/zerg/upgrades/metabolic_boost.jpg"
         },
         "melee_attacks_level_1_zerg": {
           "name": "Melee Attacks Level 1",
@@ -3893,7 +4097,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "M",
           "key": "melee_attacks_level_1_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/c/ca/Melee_attacks_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/c/ca/Melee_attacks_1.gif",
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_1.jpg"
         },
         "melee_attacks_level_2_zerg": {
           "name": "Melee Attacks Level 2",
@@ -3910,7 +4115,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "M",
           "key": "melee_attacks_level_2_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/4/42/Melee_attacks_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/42/Melee_attacks_2.gif",
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_2.jpg"
         },
         "melee_attacks_level_3_zerg": {
           "name": "Melee Attacks Level 3",
@@ -3927,7 +4133,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "M",
           "key": "melee_attacks_level_3_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/4/4a/Melee_attacks_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/4/4a/Melee_attacks_3.gif",
+          "href": "/assets/icons/zerg/upgrades/melee_attacks_level_3.jpg"
         },
         "missile_attacks_level_1_zerg": {
           "name": "Missile Attacks Level 1",
@@ -3944,7 +4151,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "A",
           "key": "missile_attacks_level_1_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/7/70/Missile_attacks_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/7/70/Missile_attacks_1.gif",
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_1.jpg"
         },
         "missile_attacks_level_2_zerg": {
           "name": "Missile Attacks Level 2",
@@ -3961,7 +4169,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "A",
           "key": "missile_attacks_level_2_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/d/dc/Missile_attacks_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/d/dc/Missile_attacks_2.gif",
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_2.jpg"
         },
         "missile_attacks_level_3_zerg": {
           "name": "Missile Attacks Level 3",
@@ -3978,7 +4187,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "A",
           "key": "missile_attacks_level_3_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/3/3b/Missile_attacks_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/3b/Missile_attacks_3.gif",
+          "href": "/assets/icons/zerg/upgrades/missile_attacks_level_3.jpg"
         },
         "ground_carapace_level_1_zerg": {
           "name": "Ground Carapace Level 1",
@@ -3995,7 +4205,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "C",
           "key": "ground_carapace_level_1_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/e/ee/Ground_carapace_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/e/ee/Ground_carapace_1.gif",
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_1.jpg"
         },
         "ground_carapace_level_2_zerg": {
           "name": "Ground Carapace Level 2",
@@ -4012,7 +4223,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "C",
           "key": "ground_carapace_level_2_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/6/6d/Ground_carapace_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/6d/Ground_carapace_2.gif",
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_2.jpg"
         },
         "ground_carapace_level_3_zerg": {
           "name": "Ground Carapace Level 3",
@@ -4029,7 +4241,8 @@
           "research_building": "Evolution Chamber",
           "hotkey": "C",
           "key": "ground_carapace_level_3_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/3/30/Ground_carapace_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/3/30/Ground_carapace_3.gif",
+          "href": "/assets/icons/zerg/upgrades/ground_carapace_level_3.jpg"
         },
         "flyer_attacks_level_1_zerg": {
           "name": "Flyer Attacks Level 1",
@@ -4047,7 +4260,8 @@
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_1_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/6/6f/Flyer_attack_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/6/6f/Flyer_attack_1.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_1.jpg"
         },
         "flyer_attacks_level_2_zerg": {
           "name": "Flyer Attacks Level 2",
@@ -4065,7 +4279,8 @@
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_2_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/5/5b/Flyer_attack_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/5/5b/Flyer_attack_2.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_2.jpg"
         },
         "flyer_attacks_level_3_zerg": {
           "name": "Flyer Attacks Level 3",
@@ -4083,7 +4298,8 @@
           "research_building": "Greater Spire",
           "hotkey": "A",
           "key": "flyer_attacks_level_3_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/2/28/Flyer_attack_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/2/28/Flyer_attack_3.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_attacks_level_3.jpg"
         },
         "flyer_carapace_level_1_zerg": {
           "name": "Flyer Carapace Level 1",
@@ -4101,7 +4317,8 @@
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_1_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/7/78/Flyer_carapace_1.gif"
+          "icon_url": "https://liquipedia.net/commons/images/7/78/Flyer_carapace_1.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_1.jpg"
         },
         "flyer_carapace_level_2_zerg": {
           "name": "Flyer Carapace Level 2",
@@ -4119,7 +4336,8 @@
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_2_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/f/f7/Flyer_carapace_2.gif"
+          "icon_url": "https://liquipedia.net/commons/images/f/f7/Flyer_carapace_2.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_2.jpg"
         },
         "flyer_carapace_level_3_zerg": {
           "name": "Flyer Carapace Level 3",
@@ -4137,7 +4355,8 @@
           "research_building": "Greater Spire",
           "hotkey": "C",
           "key": "flyer_carapace_level_3_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/9/98/Flyer_carapace_3.gif"
+          "icon_url": "https://liquipedia.net/commons/images/9/98/Flyer_carapace_3.gif",
+          "href": "/assets/icons/zerg/upgrades/flyer_carapace_level_3.jpg"
         },
         "burrow_zerg": {
           "name": "Burrow",
@@ -4154,7 +4373,8 @@
           "research_building": "Hatchery",
           "hotkey": "B",
           "key": "burrow_zerg",
-          "icon_url": "https://liquipedia.net/commons/images/d/d2/Burrow.gif"
+          "icon_url": "https://liquipedia.net/commons/images/d/d2/Burrow.gif",
+          "href": "/assets/icons/zerg/upgrades/burrow.jpg"
         }
       }
     }

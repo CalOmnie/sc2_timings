@@ -179,6 +179,9 @@ class SC2ComprehensiveScraper:
                     
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
+                        # Add local file path for frontend use
+                        local_name = re.sub(r'\s+', '_', full_upgrade_name.lower())
+                        upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                     
                     upgrades.append(upgrade_data)
             else:
@@ -217,6 +220,9 @@ class SC2ComprehensiveScraper:
                     
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
+                        # Add local file path for frontend use
+                        local_name = re.sub(r'\s+', '_', upgrade_name.lower())
+                        upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                     
                     upgrades.append(upgrade_data)
         
@@ -317,6 +323,9 @@ class SC2ComprehensiveScraper:
                 
                 if upgrade_icon_url:
                     upgrade_data['icon_url'] = upgrade_icon_url
+                    # Add local file path for frontend use
+                    local_name = re.sub(r'\s+', '_', upgrade_name.lower())
+                    upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
                 
                 upgrades.append(upgrade_data)
         
@@ -410,6 +419,9 @@ class SC2ComprehensiveScraper:
             # Add icon URL if found
             if upgrade_icon_url:
                 upgrade_data['icon_url'] = upgrade_icon_url
+                # Add local file path for frontend use
+                local_name = upgrade_name.lower().replace(' ', '_')
+                upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
             
             upgrades.append(upgrade_data)
         
@@ -487,6 +499,8 @@ class SC2ComprehensiveScraper:
         icon_url = self._extract_icon_url(infobox)
         if icon_url:
             entity_data['icon_url'] = icon_url
+            # Add local file path for frontend use
+            entity_data['href'] = f"/assets/icons/{entity['race']}/{entity['type']}s/{entity['name'].lower().replace(' ', '_')}.jpg"
             
         # Extract cost data
         cost_data = self._extract_cost_data(infobox)
