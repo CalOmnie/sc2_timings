@@ -6,7 +6,7 @@ import json
 import pytest
 from pathlib import Path
 
-from sc2_gantt.web_app import create_app
+from sc2_gantt.backend.web_app import create_app
 
 
 @pytest.fixture

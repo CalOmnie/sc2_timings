@@ -102,11 +102,11 @@ class GanttChart {
             const img = document.createElement('img');
             let imagePath;
             if (this.selectedType === 'units') {
-                imagePath = `/static/icons/${this.selectedRace}/units/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                imagePath = `/assets/icons/${this.selectedRace}/units/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
             } else if (this.selectedType === 'buildings') {
-                imagePath = `/static/icons/${this.selectedRace}/buildings/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                imagePath = `/assets/icons/${this.selectedRace}/buildings/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
             } else if (this.selectedType === 'upgrades') {
-                imagePath = `/static/icons/${this.selectedRace}/upgrades/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+                imagePath = `/assets/icons/${this.selectedRace}/upgrades/${entity.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
             }
             
             img.src = imagePath;
@@ -159,11 +159,11 @@ class GanttChart {
         // Determine image path based on entity type
         let imagePath;
         if (entityType === 'units') {
-            imagePath = `/static/icons/${entityData.race}/units/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            imagePath = `/assets/icons/${entityData.race}/units/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
         } else if (entityType === 'buildings') {
-            imagePath = `/static/icons/${entityData.race}/buildings/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            imagePath = `/assets/icons/${entityData.race}/buildings/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
         } else if (entityType === 'upgrades') {
-            imagePath = `/static/icons/${entityData.race}/upgrades/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+            imagePath = `/assets/icons/${entityData.race}/upgrades/${entityData.name.toLowerCase().replace(/\s+/g, '_')}.jpg`;
         }
         
         entityImage.src = imagePath;

@@ -7,7 +7,7 @@ from unittest.mock import Mock, patch, mock_open
 import json
 from pathlib import Path
 
-from sc2_gantt.sc2_data.comprehensive_scraper import SC2ComprehensiveScraper
+from sc2_gantt.backend.sc2_data.comprehensive_scraper import SC2ComprehensiveScraper
 
 
 @pytest.fixture

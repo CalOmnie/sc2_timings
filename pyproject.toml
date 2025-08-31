@@ -48,7 +48,7 @@ package-dir = {"" = "src"}
 [project.scripts]
 sc2_gantt = "sc2_gantt.__main__:main"
 sc2_gantt_web = "sc2_gantt.web_app:run_app"
-sc2_data = "sc2_gantt.sc2_data.__main__:main"
+sc2_data = "sc2_gantt.backend.sc2_data.__main__:main"
 
 
 

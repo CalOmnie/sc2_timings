@@ -1,0 +1,1 @@
+"""SC2 Gantt frontend resources."""
