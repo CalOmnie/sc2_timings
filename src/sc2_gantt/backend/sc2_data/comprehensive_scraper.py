@@ -160,9 +160,9 @@ class SC2ComprehensiveScraper:
                     full_upgrade_name = f"{normalized_base_name} Level {level}"
                     
                     # Find level-specific icon
-                    upgrade_icon_url = self._extract_tiered_upgrade_icon(element, upgrade_base_name, level)
+                    upgrade_icon_url = self._extract_upgrade_icon_from_element(element)
                     
-                    name = re.sub(r'\s+', '_', normalized_base_name.lower())
+                    name = self._normalize_filename(normalized_base_name)
                     upgrade_data = {
                         'name': full_upgrade_name,
                         'base_name': normalized_base_name,  # For grouping related upgrades
@@ -181,8 +181,7 @@ class SC2ComprehensiveScraper:
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
                         # Add local file path for frontend use - match asset filename format
-                        local_name = re.sub(r'\s+', '_', full_upgrade_name.lower()).replace('level_', 'level')
-                        upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
+                        upgrade_data['href'] = self._generate_local_href_path(entity['race'], 'upgrade', full_upgrade_name)
                     
                     upgrades.append(upgrade_data)
             else:
@@ -206,7 +205,7 @@ class SC2ComprehensiveScraper:
                     
                     upgrade_icon_url = self._extract_upgrade_icon_from_element(element)
                     
-                    name = re.sub(r'\s+', '_', upgrade_name.lower())
+                    name = self._normalize_filename(upgrade_name)
                     upgrade_data = {
                         'name': upgrade_name,
                         'type': 'upgrade',
@@ -223,52 +222,17 @@ class SC2ComprehensiveScraper:
                     if upgrade_icon_url:
                         upgrade_data['icon_url'] = upgrade_icon_url
                         # Add local file path for frontend use - match asset filename format
-                        local_name = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
-                        upgrade_data['href'] = f"/assets/icons/{entity['race']}/upgrades/{local_name}.jpg"
+                        upgrade_data['href'] = self._generate_local_href_path(entity['race'], 'upgrade', upgrade_name)
                     
                     upgrades.append(upgrade_data)
         
         return upgrades
     
-    def _extract_tiered_upgrade_icon(self, element, base_name: str, level: str) -> Optional[str]:
-        """Extract level-specific upgrade icon from an HTML element."""
-        if not element:
-            return None
-            
-        # Find all images in this element
-        images = element.find_all("img") if hasattr(element, 'find_all') else []
-        
-        for img in images:
-            src = img.get('src', '')
-            
-            # Skip common non-upgrade images
-            skip_patterns = [
-                'minerals.gif', 'vespene', 'buildtime', 'hotkey',
-                'edit', 'information', 'commons/thumb/a/a4'
-            ]
-            
-            if any(skip in src.lower() for skip in skip_patterns):
-                continue
-            
-            # Look for level-specific upgrade icons
-            if (src and 
-                ('/commons/images/thumb/' in src or '/commons/images/' in src) and
-                src.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))):
-                
-                # Check if the filename contains the level number
-                filename = os.path.basename(src).lower()
-                base_keywords = base_name.lower().replace(' ', '_').split('_')
-                
-                # Look for level indicator in filename
-                if level in filename and any(keyword in filename for keyword in base_keywords if len(keyword) > 2):
-                    return urljoin(self.BASE_IMAGE_URL, src)
-        
-        return None
     
     
     def _find_matching_icon(self, upgrade_name: str, all_icons: List[Tuple[str, str]]) -> Optional[str]:
         """Find the best matching icon for an upgrade name by filename similarity."""
-        upgrade_words = re.sub(r'\s+', '_', upgrade_name.lower()).split('_')
+        upgrade_words = self._normalize_filename(upgrade_name).split('_')
         best_match = None
         best_score = 0
         
@@ -313,6 +277,15 @@ class SC2ComprehensiveScraper:
         return best_match
     
     
+    def _normalize_filename(self, text: str) -> str:
+        """Normalize text for use as filename."""
+        return re.sub(r'\s+', '_', text.lower())
+    
+    def _generate_local_href_path(self, race: str, entity_type: str, name: str) -> str:
+        """Generate local href path for assets."""
+        clean_name = self._normalize_filename(name).replace('level_', 'level')
+        return f"/assets/icons/{race}/{entity_type}s/{clean_name}.jpg"
+
     def _extract_upgrade_icon_from_element(self, element) -> Optional[str]:
         """Extract upgrade icon URL from an HTML element."""
         if not element:
@@ -386,7 +359,7 @@ class SC2ComprehensiveScraper:
         if icon_url:
             entity_data['icon_url'] = icon_url
             # Add local file path for frontend use
-            entity_data['href'] = f"/assets/icons/{entity['race']}/{entity['type']}s/{entity['name'].lower().replace(' ', '_')}.jpg"
+            entity_data['href'] = self._generate_local_href_path(entity['race'], entity['type'], entity['name'])
             
         # Extract cost data
         cost_data = self._extract_cost_data(infobox)
@@ -628,7 +601,7 @@ class SC2ComprehensiveScraper:
             upgrades_dir.mkdir(parents=True, exist_ok=True)
             
             # Create filename - handle level-specific names properly and normalize whitespace
-            filename = re.sub(r'\s+', '_', upgrade_name.lower()).replace('level_', 'level')
+            filename = self._normalize_filename(upgrade_name).replace('level_', 'level')
             save_path = upgrades_dir / f"{filename}.jpg"
             
             # Save as JPG with high quality

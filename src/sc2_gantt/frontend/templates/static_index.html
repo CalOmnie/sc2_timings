@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarCraft II Build Order Gantt Chart</title>
+    <link rel="stylesheet" href="./css/gantt.css">
+    <meta name="description" content="Interactive Gantt chart tool for planning StarCraft II build orders with drag-and-drop timeline interface.">
+    <meta name="keywords" content="StarCraft 2, SC2, build order, Gantt chart, timeline, strategy, gaming">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <div class="tab-container">
+                <div class="tab-group race-tabs">
+                    <div class="tab-header">Race</div>
+                    <div class="tabs">
+                        <div class="tab race-tab" data-race="protoss">
+                            <span class="tab-icon">⚡</span>
+                            <span class="tab-label">Protoss</span>
+                        </div>
+                        <div class="tab race-tab" data-race="terran">
+                            <span class="tab-icon">🔧</span>
+                            <span class="tab-label">Terran</span>
+                        </div>
+                        <div class="tab race-tab" data-race="zerg">
+                            <span class="tab-icon">🦠</span>
+                            <span class="tab-label">Zerg</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-group type-tabs">
+                    <div class="tab-header">Type</div>
+                    <div class="tabs">
+                        <div class="tab type-tab" data-type="units">
+                            <span class="tab-icon">👥</span>
+                            <span class="tab-label">Units</span>
+                        </div>
+                        <div class="tab type-tab" data-type="buildings">
+                            <span class="tab-icon">🏗️</span>
+                            <span class="tab-label">Buildings</span>
+                        </div>
+                        <div class="tab type-tab" data-type="upgrades">
+                            <span class="tab-icon">⬆️</span>
+                            <span class="tab-label">Upgrades</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-container">
+                    <div class="search-header">Search</div>
+                    <input type="text" id="entitySearch" placeholder="Search entities..." class="search-input">
+                    <div class="entity-count">
+                        Found: <span id="entityCount">0</span>
+                    </div>
+                </div>
+                
+                <div class="toolbar-actions">
+                    <button id="addRow" class="toolbar-btn">Add Row</button>
+                    <button id="downloadData" class="toolbar-btn">Download Data</button>
+                    <button id="exportBuildOrder" class="toolbar-btn">Export Build Order</button>
+                    <div id="timeScaleDisplay" class="time-scale-display">Scale: 3.0x</div>
+                </div>
+            </div>
+            
+            <div class="entity-palette" id="entityPalette">
+                <div class="palette-header">
+                    <h3>Entities</h3>
+                </div>
+                <div class="palette-content" id="paletteContent">
+                    <!-- Entity icons will be populated here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chart-container">
+                <div class="time-index" id="timeIndex"></div>
+                <div class="chart" id="chart">
+                    <div class="grid-lines" id="gridLines"></div>
+                    <!-- Rows will be added dynamically -->
+                    <div class="row" data-row="0">
+                        <div class="row-label">Row 1</div>
+                        <div class="row-stats">
+                            <div class="row-end-time">End: 0:00</div>
+                            <div class="row-total-cost">Cost: 0/0</div>
+                        </div>
+                        <div class="row-controls">
+                            <button class="row-control-btn delete-row" title="Delete Row">❌</button>
+                            <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
+                            <button class="row-control-btn align-left" title="Align Left">⇤</button>
+                            <button class="row-control-btn align-right" title="Align with Row Above End">⇥</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-panel" id="infoPanel">
+                <div class="info-header">
+                    <h3 id="infoTitle">Entity Information</h3>
+                    <button id="closeInfoPanel" class="close-btn">×</button>
+                </div>
+                <div class="info-content" id="infoContent">
+                    <!-- Entity information will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/gantt.js"></script>
+</body>
+</html>

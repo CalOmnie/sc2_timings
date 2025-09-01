@@ -5,7 +5,6 @@ class GanttChart {
         this.rows = 1;
         this.selectedRectangle = null;
         this.dragData = null;
-        this.resizeData = null;
         this.gridSize = 20;
         this.sc2Data = null;
         this.timeScale = 3; // pixels per second
@@ -45,9 +44,42 @@ class GanttChart {
         };
     }
     
-    init() {
-        document.getElementById('addRow').addEventListener('click', () => this.addRow());
-        
+    createElement(tag, className, innerHTML = '') {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (innerHTML) element.innerHTML = innerHTML;
+        return element;
+    }
+
+    addClickListener(selector, callback) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.addEventListener('click', callback);
+        }
+        return element;
+    }
+    
+    createRowStatsHTML(endTime = 0, minerals = 0, gas = 0) {
+        return `
+            <div class="row-end-time">End: ${this.formatTime(endTime)}</div>
+            <div class="row-total-cost">Cost: ${minerals}/${gas}</div>
+        `;
+    }
+    
+    createRowControlsHTML() {
+        return `
+            <button class="row-control-btn delete-row" title="Delete Row">❌</button>
+            <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
+            <button class="row-control-btn align-left" title="Align Left">⇤</button>
+            <button class="row-control-btn align-right" title="Align with Row Above End">⇥</button>
+        `;
+    }
+    
+    getRowElement(rowIndex) {
+        return this.chart.querySelector(`.row[data-row="${rowIndex}"]`);
+    }
+    
+    initTabHandlers() {
         // Race tab handlers
         document.querySelectorAll('.race-tab').forEach(tab => {
             tab.addEventListener('click', (e) => {
@@ -63,6 +95,13 @@ class GanttChart {
                 this.onTypeSelect(type);
             });
         });
+    }
+    
+    init() {
+        document.getElementById('addRow').addEventListener('click', () => this.addRow());
+        
+        // Tab handlers
+        this.initTabHandlers();
         
         this.chart.addEventListener('mousedown', (e) => this.handleMouseDown(e));
         this.chart.addEventListener('wheel', (e) => this.handleWheel(e));
@@ -84,6 +123,10 @@ class GanttChart {
                 const row = e.target.closest('.row');
                 const rowIndex = parseInt(row.dataset.row);
                 this.alignRowRight(rowIndex);
+            } else if (e.target.classList.contains('delete-row')) {
+                const row = e.target.closest('.row');
+                const rowIndex = parseInt(row.dataset.row);
+                this.deleteRow(rowIndex);
             }
         });
         
@@ -99,22 +142,10 @@ class GanttChart {
             searchInput.addEventListener('input', (e) => this.onSearchInput(e.target.value));
         }
         
-        // Info panel functionality
-        const closeInfoPanel = document.getElementById('closeInfoPanel');
-        if (closeInfoPanel) {
-            closeInfoPanel.addEventListener('click', () => this.hideInfoPanel());
-        }
-        
-        // Download functionality
-        const downloadDataBtn = document.getElementById('downloadData');
-        if (downloadDataBtn) {
-            downloadDataBtn.addEventListener('click', () => this.showDownloadMenu());
-        }
-        
-        const exportBuildOrderBtn = document.getElementById('exportBuildOrder');
-        if (exportBuildOrderBtn) {
-            exportBuildOrderBtn.addEventListener('click', () => this.exportBuildOrder());
-        }
+        // Setup click handlers
+        this.addClickListener('#closeInfoPanel', () => this.hideInfoPanel());
+        this.addClickListener('#downloadData', () => this.showDownloadMenu());
+        this.addClickListener('#exportBuildOrder', () => this.exportBuildOrder());
     }
     
     async loadSC2Data() {
@@ -193,8 +224,7 @@ class GanttChart {
         content.innerHTML = '';
         
         entities.forEach(entity => {
-            const iconButton = document.createElement('div');
-            iconButton.className = 'entity-icon-button';
+            const iconButton = this.createElement('div', 'entity-icon-button');
             iconButton.dataset.entityData = JSON.stringify(entity);
             iconButton.dataset.entityType = this.selectedType;
             
@@ -235,8 +265,7 @@ class GanttChart {
         const buildTime = this.getBuildTime(entityData);
         const width = buildTime * this.timeScale;
         
-        const rectangle = document.createElement('div');
-        rectangle.className = `rectangle entity-rectangle ${entityData.race} ${entityType.slice(0, -1)}`;
+        const rectangle = this.createElement('div', `rectangle entity-rectangle ${entityData.race} ${entityType.slice(0, -1)}`);
         rectangle.style.width = width + 'px';
         rectangle.style.left = '0px';
         rectangle.dataset.entityName = entityData.name;
@@ -260,9 +289,6 @@ class GanttChart {
         timeDisplay.textContent = `${buildTime}s`;
         rectangle.appendChild(timeDisplay);
         
-        const resizeHandle = document.createElement('div');
-        resizeHandle.className = 'resize-handle';
-        rectangle.appendChild(resizeHandle);
         
         // Calculate position to place at end of existing entities in last row BEFORE adding to DOM
         const lastRowIndex = this.rows - 1;
@@ -280,7 +306,7 @@ class GanttChart {
         rectangle.style.top = '5px';
         
         // Now add to the last row
-        const lastRow = this.chart.querySelector(`.row[data-row="${lastRowIndex}"]`);
+        const lastRow = this.getRowElement(lastRowIndex);
         lastRow.appendChild(rectangle);
         
         const rectData = {
@@ -469,7 +495,7 @@ class GanttChart {
             });
         }
         
-        const rowElement = this.chart.querySelector(`.row[data-row="${rowIndex}"]`);
+        const rowElement = this.getRowElement(rowIndex);
         if (rowElement) {
             const endTimeElement = rowElement.querySelector('.row-end-time');
             const costElement = rowElement.querySelector('.row-total-cost');
@@ -657,20 +683,13 @@ class GanttChart {
     addChronoboostHandlers(entityData, rectangleData) {
         if (!rectangleData || entityData.race !== 'protoss') return;
         
-        const increaseButton = document.querySelector('.chronoboost-increase');
-        const decreaseButton = document.querySelector('.chronoboost-decrease');
+        this.addClickListener('.chronoboost-increase', () => {
+            this.applyChronoboost(rectangleData, 1);
+        });
         
-        if (increaseButton) {
-            increaseButton.addEventListener('click', () => {
-                this.applyChronoboost(rectangleData, 1);
-            });
-        }
-        
-        if (decreaseButton) {
-            decreaseButton.addEventListener('click', () => {
-                this.applyChronoboost(rectangleData, -1);
-            });
-        }
+        this.addClickListener('.chronoboost-decrease', () => {
+            this.applyChronoboost(rectangleData, -1);
+        });
     }
     
     applyChronoboost(rectangleData, change = 1) {
@@ -750,20 +769,13 @@ class GanttChart {
         
         const stats = document.createElement('div');
         stats.className = 'row-stats';
-        stats.innerHTML = `
-            <div class="row-end-time">End: 0:00</div>
-            <div class="row-total-cost">Cost: 0/0</div>
-        `;
+        stats.innerHTML = this.createRowStatsHTML();
         row.appendChild(stats);
         
         // Add row controls
         const controls = document.createElement('div');
         controls.className = 'row-controls';
-        controls.innerHTML = `
-            <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
-            <button class="row-control-btn align-left" title="Align Left">⇤</button>
-            <button class="row-control-btn align-right" title="Align with Row Above End">⇥</button>
-        `;
+        controls.innerHTML = this.createRowControlsHTML();
         row.appendChild(controls);
         
         this.chart.appendChild(row);
@@ -911,40 +923,35 @@ class GanttChart {
         this.selectedRectangle = rectData;
         rectangle.classList.add('selected');
         
-        if (e.target.classList.contains('resize-handle')) {
-            this.resizeData = {
-                rectangle: rectData,
-                startX: e.clientX,
-                startWidth: rectData.width
-            };
-        } else {
-            const rect = rectangle.getBoundingClientRect();
+        {
             const chartRect = this.chart.getBoundingClientRect();
+            
+            // Find all rectangles to the right that should move with this one
+            // Only include rectangles that are strictly to the right (not at the same position)
+            const rightwardRects = this.rectangles.filter(rect => 
+                rect.row === rectData.row && 
+                rect.id !== rectData.id && 
+                rect.x > rectData.x
+            );
             
             this.dragData = {
                 rectangle: rectData,
-                offsetX: e.clientX - rect.left,
-                offsetY: e.clientY - rect.top,
+                offsetX: e.clientX - chartRect.left - rectData.x,
+                offsetY: e.clientY - chartRect.top - (rectData.row * 105 + 47),
                 startX: rectData.x,
-                startY: rect.top - chartRect.top,
-                originalRow: rectData.row
+                startY: rectData.row * 105 + 47,
+                originalRow: rectData.row,
+                rightwardRects: rightwardRects // Store the boxes to move with this one
             };
             
-                this.showDropZones();
+                this.showDropZones(rectData.x, rectData.row);
         }
         
         e.preventDefault();
     }
     
     handleMouseMove(e) {
-        if (this.resizeData) {
-            const deltaX = e.clientX - this.resizeData.startX;
-            const newWidth = Math.max(60, this.resizeData.startWidth + deltaX);
-            
-            this.resizeData.rectangle.width = newWidth;
-            this.resizeData.rectangle.element.style.width = newWidth + 'px';
-            
-        } else if (this.dragData) {
+        if (this.dragData) {
             const chartRect = this.chart.getBoundingClientRect();
             const x = e.clientX - chartRect.left - this.dragData.offsetX;
             const y = e.clientY - chartRect.top - this.dragData.offsetY;
@@ -957,21 +964,47 @@ class GanttChart {
                 
                 if (newRowElement && oldRow) {
                     try {
+                        // Move the main rectangle
                         oldRow.removeChild(this.dragData.rectangle.element);
                         newRowElement.appendChild(this.dragData.rectangle.element);
                         this.dragData.rectangle.row = newRow;
+                        
+                        // Move all rightward rectangles to the new row
+                        this.dragData.rightwardRects.forEach(rect => {
+                            if (rect.element && rect.element.parentNode) {
+                                oldRow.removeChild(rect.element);
+                                newRowElement.appendChild(rect.element);
+                                rect.row = newRow;
+                            }
+                        });
                     } catch (error) {
                         console.error('Error moving between rows:', error);
                     }
                 }
             }
             
-            // Simple positioning logic for dragging
-            this.dragData.rectangle.x = Math.max(0, x);
+            // Group dragging logic - move selected box and all boxes to the right
+            const oldX = this.dragData.rectangle.x;
+            const newX = Math.max(0, x);
+            const deltaX = newX - oldX;
+            
+            this.dragData.rectangle.x = newX;
+            
+            // Move the selected rectangle
             this.dragData.rectangle.element.style.left = this.dragData.rectangle.x + 'px';
             this.dragData.rectangle.element.style.top = '5px';
             
-            this.updateDropZones(x, newRow);
+            // Move all pre-calculated rightward rectangles by the same delta
+            // But ensure they don't move to the left of the main rectangle
+            let currentX = this.dragData.rectangle.x + this.dragData.rectangle.width;
+            this.dragData.rightwardRects.forEach(rect => {
+                rect.x = Math.max(currentX, rect.x + deltaX);
+                rect.element.style.left = rect.x + 'px';
+                rect.element.style.top = '5px';
+                currentX = rect.x + rect.width;
+            });
+            
+            this.showDropZones(this.dragData.rectangle.x, newRow);
         }
     }
     
@@ -982,10 +1015,8 @@ class GanttChart {
             const originalRow = this.dragData.originalRow;
             const originalX = this.dragData.startX;
             
-            // Always collapse gaps to maintain sequential placement
-            this.collapseGap(originalRow, originalX, this.dragData.rectangle.width, this.dragData.rectangle.id);
-            
-            this.positionRectangle(this.dragData.rectangle);
+            // After dropping, position the element at the nearest valid insertion point
+            this.positionAtInsertionPoint(this.dragData.rectangle);
             
             // Update stats for both old and new rows
             this.updateRowStats(originalRow);
@@ -996,11 +1027,6 @@ class GanttChart {
             this.dragData = null;
         }
         
-        if (this.resizeData) {
-            this.positionRectangle(this.resizeData.rectangle);
-            this.updateRowStats(this.resizeData.rectangle.row);
-            this.resizeData = null;
-        }
         
         if (this.selectedRectangle) {
             this.selectedRectangle.element.classList.remove('selected');
@@ -1008,17 +1034,26 @@ class GanttChart {
         }
     }
     
-    showDropZones() {
+    showDropZones(dragX = null, dragRow = null) {
         this.hideDropZones();
-        this.showAlignmentGuides();
+        
+        const proximityThreshold = 30; // pixels
         
         for (let rowIndex = 0; rowIndex < this.rows; rowIndex++) {
-            const rowElement = this.chart.querySelector(`.row[data-row="${rowIndex}"]`);
+            const rowElement = this.getRowElement(rowIndex);
             
             // Use the standard insertion logic for sequential placement
             const insertionPoints = this.getInsertionPoints(rowIndex, this.dragData.rectangle.id);
             
             insertionPoints.forEach((point, index) => {
+                // Only show drop zone if no drag position is provided (initial call) 
+                // or if the drag position is close to this drop zone
+                if (dragX !== null && dragRow !== null) {
+                    if (dragRow !== rowIndex || Math.abs(dragX - point) > proximityThreshold) {
+                        return; // Skip this drop zone
+                    }
+                }
+                
                 const dropZone = document.createElement('div');
                 dropZone.className = 'drop-zone';
                 dropZone.style.left = point + 'px';
@@ -1029,50 +1064,11 @@ class GanttChart {
         }
     }
     
-    updateDropZones(dragX, dragRow) {
-        const dropZones = this.chart.querySelectorAll('.drop-zone');
-        
-        dropZones.forEach(zone => {
-            zone.classList.remove('active');
-            const zoneX = parseInt(zone.dataset.position);
-            const zoneRow = parseInt(zone.dataset.row);
-            
-            if (zoneRow === dragRow && Math.abs(dragX - zoneX) < 30) {
-                zone.classList.add('active');
-            }
-        });
-    }
     
-    showAlignmentGuides() {
-        this.hideAlignmentGuides();
-        
-        // Get all unique X positions from all entities
-        const allPositions = [];
-        this.rectangles.forEach(rect => {
-            allPositions.push(rect.x);
-            allPositions.push(rect.x + rect.width);
-        });
-        
-        const uniquePositions = [...new Set(allPositions)].sort((a, b) => a - b);
-        
-        uniquePositions.forEach(x => {
-            const guide = document.createElement('div');
-            guide.className = 'alignment-guide';
-            guide.style.left = x + 'px';
-            guide.dataset.position = x;
-            this.chart.appendChild(guide);
-        });
-    }
-    
-    hideAlignmentGuides() {
-        const guides = this.chart.querySelectorAll('.alignment-guide');
-        guides.forEach(guide => guide.remove());
-    }
     
     hideDropZones() {
         const dropZones = this.chart.querySelectorAll('.drop-zone');
         dropZones.forEach(zone => zone.remove());
-        this.hideAlignmentGuides();
     }
     
     getInsertionPoints(row, excludeId = -1) {
@@ -1081,15 +1077,14 @@ class GanttChart {
         
         const points = [0];
         
-        // Add end positions of entities in current row
-        for (let i = 0; i < rowRects.length - 1; i++) {
-            const currentRect = rowRects[i];
-            points.push(currentRect.x + currentRect.width);
+        // Add start positions of entities in current row (for insertion before them)
+        for (const rect of rowRects) {
+            points.push(rect.x);
         }
         
-        if (rowRects.length > 0) {
-            const lastRect = rowRects[rowRects.length - 1];
-            points.push(lastRect.x + lastRect.width);
+        // Add end positions of entities in current row (for insertion after them)
+        for (const rect of rowRects) {
+            points.push(rect.x + rect.width);
         }
         
         // Add alignment points from all other rows
@@ -1104,6 +1099,43 @@ class GanttChart {
         }
         
         return [...new Set(points)].sort((a, b) => a - b);
+    }
+    
+    positionAtInsertionPoint(draggedRect) {
+        const targetRow = draggedRect.row;
+        
+        // Get all rectangles in this row (excluding the dragged group)
+        const otherRects = this.rectangles.filter(r => 
+            r.row === targetRow && 
+            r.id !== draggedRect.id && 
+            !this.dragData.rightwardRects.includes(r)
+        );
+        
+        // Create the new order: determine where the dragged group should be inserted
+        const allRects = [...otherRects];
+        const draggedGroup = [draggedRect, ...this.dragData.rightwardRects];
+        
+        // Find insertion index based on dragged rectangle's current X position
+        let insertIndex = 0;
+        for (let i = 0; i < otherRects.length; i++) {
+            if (draggedRect.x <= otherRects[i].x) {
+                insertIndex = i;
+                break;
+            }
+            insertIndex = i + 1;
+        }
+        
+        // Insert the dragged group at the determined position
+        allRects.splice(insertIndex, 0, ...draggedGroup);
+        
+        // Position all rectangles sequentially
+        let currentPosition = 0;
+        allRects.forEach(rect => {
+            rect.x = currentPosition;
+            rect.element.style.left = currentPosition + 'px';
+            rect.element.style.top = '5px';
+            currentPosition += rect.width;
+        });
     }
     
     collapseGap(row, gapStartX, gapWidth, excludeId) {
@@ -1197,6 +1229,47 @@ class GanttChart {
         
         this.updateRowStats(rowIndex);
         console.log(`Aligned row ${rowIndex + 1} to align with end of row above`);
+    }
+    
+    deleteRow(rowIndex) {
+        // Don't allow deleting if it's the only row
+        if (this.rows <= 1) {
+            alert('Cannot delete the last remaining row.');
+            return;
+        }
+        
+        // Clear all rectangles from this row first
+        this.clearRow(rowIndex);
+        
+        // Remove the row element from DOM
+        const rowElement = this.getRowElement(rowIndex);
+        if (rowElement && rowElement.parentNode) {
+            rowElement.parentNode.removeChild(rowElement);
+        }
+        
+        // Update row indices for all rows after the deleted one
+        for (let i = rowIndex + 1; i < this.rows; i++) {
+            const row = this.getRowElement(i);
+            if (row) {
+                row.dataset.row = i - 1;
+                const label = row.querySelector('.row-label');
+                if (label) {
+                    label.textContent = `Row ${i}`;
+                }
+            }
+        }
+        
+        // Update rectangles that were in rows after the deleted one
+        this.rectangles.forEach(rect => {
+            if (rect.row > rowIndex) {
+                rect.row -= 1;
+            }
+        });
+        
+        // Decrease total row count
+        this.rows--;
+        
+        console.log(`Deleted row ${rowIndex + 1}`);
     }
     
     showDownloadMenu() {

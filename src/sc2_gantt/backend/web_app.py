@@ -3,6 +3,10 @@ import os
 import json
 from pathlib import Path
 
+def error_response(message, status_code=500):
+    """Helper to create consistent error responses."""
+    return jsonify({'error': message}), status_code
+
 def create_app():
     # Calculate paths relative to new directory structure
     backend_dir = Path(__file__).parent
@@ -27,7 +31,7 @@ def create_app():
                 data = json.load(f)
             return jsonify(data)
         except Exception as e:
-            return jsonify({'error': str(e)}), 500
+            return error_response(str(e))
     
     @app.route('/static/<path:filename>')
     def serve_static(filename):
@@ -51,7 +55,7 @@ def create_app():
                 mimetype='application/json'
             )
         except Exception as e:
-            return jsonify({'error': str(e)}), 500
+            return error_response(str(e))
     
     @app.route('/download/sc2-data/<race>')
     def download_race_data(race):
@@ -62,7 +66,7 @@ def create_app():
                 data = json.load(f)
             
             if race not in data.get('races', {}):
-                return jsonify({'error': f'Race "{race}" not found'}), 404
+                return error_response(f'Race "{race}" not found', 404)
             
             race_data = {
                 'race': race,
@@ -77,7 +81,7 @@ def create_app():
             return response
             
         except Exception as e:
-            return jsonify({'error': str(e)}), 500
+            return error_response(str(e))
     
     @app.route('/export/build-order', methods=['POST'])
     def export_build_order():
@@ -86,7 +90,7 @@ def create_app():
         try:
             build_order = request.get_json()
             if not build_order:
-                return jsonify({'error': 'No build order data provided'}), 400
+                return error_response('No build order data provided', 400)
             
             response = Response(
                 json.dumps(build_order, indent=2),
@@ -96,7 +100,7 @@ def create_app():
             return response
             
         except Exception as e:
-            return jsonify({'error': str(e)}), 500
+            return error_response(str(e))
     
     return app
 
