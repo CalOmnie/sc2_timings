@@ -139,14 +139,19 @@ window.addEventListener('load', () => {
     else:
         print(f"✗ Warning: Could not find data file at {data_file}")
     
-    # Create simplified HTML
-    html_content = f'''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarCraft II Build Order Gantt Chart</title>
-    <link rel="stylesheet" href="{base_path}/css/gantt.css">
+    # Use existing HTML template and modify paths
+    static_template_path = Path('src/sc2_gantt/frontend/templates/static_index.html')
+    if static_template_path.exists():
+        # Read the existing static template
+        with open(static_template_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        
+        # Update paths in the template
+        html_content = html_content.replace('href="css/gantt.css"', f'href="{base_path}/css/gantt.css"')
+        html_content = html_content.replace('src="js/gantt.js"', f'src="{base_path}/js/gantt.js"')
+        
+        # Add debugging script
+        debug_script = f'''
     <script>
         // GitHub Pages debugging
         console.log('HTML loaded, base path: {base_path}');
@@ -169,114 +174,18 @@ window.addEventListener('load', () => {
             // Test API endpoint
             console.log('API endpoint will be:', '{base_path}/api/sc2-data.json');
         }});
-    </script>
-</head>
-<body>
-    <div class="container">
-        <div class="toolbar">
-            <div class="tab-container">
-                <div class="tab-group race-tabs">
-                    <div class="tab-header">Race</div>
-                    <div class="tabs">
-                        <div class="tab race-tab" data-race="protoss">
-                            <span class="tab-icon">⚡</span>
-                            <span class="tab-label">Protoss</span>
-                        </div>
-                        <div class="tab race-tab" data-race="terran">
-                            <span class="tab-icon">🔧</span>
-                            <span class="tab-label">Terran</span>
-                        </div>
-                        <div class="tab race-tab" data-race="zerg">
-                            <span class="tab-icon">🦠</span>
-                            <span class="tab-label">Zerg</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-group type-tabs">
-                    <div class="tab-header">Type</div>
-                    <div class="tabs">
-                        <div class="tab type-tab" data-type="units">
-                            <span class="tab-icon">👥</span>
-                            <span class="tab-label">Units</span>
-                        </div>
-                        <div class="tab type-tab" data-type="buildings">
-                            <span class="tab-icon">🏗️</span>
-                            <span class="tab-label">Buildings</span>
-                        </div>
-                        <div class="tab type-tab" data-type="upgrades">
-                            <span class="tab-icon">⬆️</span>
-                            <span class="tab-label">Upgrades</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="search-container">
-                    <div class="search-header">Search</div>
-                    <input type="text" id="entitySearch" placeholder="Search entities..." class="search-input">
-                    <div class="entity-count">
-                        Found: <span id="entityCount">0</span>
-                    </div>
-                </div>
-                
-                <div class="toolbar-actions">
-                    <button id="addRow" class="toolbar-btn">Add Row</button>
-                    <button id="downloadData" class="toolbar-btn">Download Data</button>
-                    <button id="exportBuildOrder" class="toolbar-btn">Export Build Order</button>
-                    <div id="timeScaleDisplay" class="time-scale-display">Scale: 3.0x</div>
-                </div>
-            </div>
-            
-            <div class="entity-palette" id="entityPalette">
-                <div class="palette-header">
-                    <h3>Entities</h3>
-                </div>
-                <div class="palette-content" id="paletteContent">
-                    <!-- Entity icons will be populated here -->
-                </div>
-            </div>
-        </div>
+    </script>'''
         
-        <div class="main-content">
-            <div class="chart-container">
-                <div class="time-index" id="timeIndex"></div>
-                <div class="chart" id="chart">
-                    <div class="grid-lines" id="gridLines"></div>
-                    <!-- Rows will be added dynamically -->
-                    <div class="row" data-row="0">
-                        <div class="row-label">Row 1</div>
-                        <div class="row-stats">
-                            <div class="row-end-time">End: 0:00</div>
-                            <div class="row-total-cost">Cost: 0/0</div>
-                        </div>
-                        <div class="row-controls">
-                            <button class="row-control-btn delete-row" title="Delete Row">❌</button>
-                            <button class="row-control-btn clear-row" title="Clear Row">🗑️</button>
-                            <button class="row-control-btn align-left" title="Align Left">⇤</button>
-                            <button class="row-control-btn align-right" title="Align with Row Above End">⇥</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="info-panel" id="infoPanel">
-                <div class="info-header">
-                    <h3 id="infoTitle">Entity Information</h3>
-                    <button id="closeInfoPanel" class="close-btn">×</button>
-                </div>
-                <div class="info-content" id="infoContent">
-                    <!-- Entity information will be populated here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="{base_path}/js/gantt.js"></script>
-</body>
-</html>'''
-    
-    with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
-        f.write(html_content)
+        # Insert debug script before closing </head>
+        html_content = html_content.replace('</head>', debug_script + '\n</head>')
+        
+        with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
+            f.write(html_content)
+    else:
+        print(f"Warning: Static template not found at {static_template_path}")
+        # Fallback - could use Flask to render the template
+        with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
+            f.write(f'<html><body><h1>Template not found</h1><p>Could not find {static_template_path}</p></body></html>')
     
     # Create 404.html
     with open(dist_dir / '404.html', 'w', encoding='utf-8') as f:
