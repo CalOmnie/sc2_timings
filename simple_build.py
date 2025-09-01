@@ -62,15 +62,24 @@ def build_simple_static():
             f'return `{base_path}/assets/icons/${{race}}/${{entityType}}s/${{name}}.jpg`;'
         )
         
-        # Fix export functionality for static hosting - replace server endpoint
-        js_content = js_content.replace(
-            "await fetch('/export/build-order',", 
-            "// Static export - direct download\n            false && await fetch('/export/build-order',"
-        )
-        js_content = js_content.replace(
-            "if (response.ok) {",
-            "if (false) { // Static hosting - skip server response\n            } else {"
-        )
+        # Fix export functionality for static hosting - replace entire export section
+        export_old = '''// Send to export endpoint
+            const response = await fetch('/export/build-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(buildOrder)
+            });
+            
+            if (response.ok) {
+                // Trigger download
+                const blob = await response.blob();'''
+        
+        export_new = '''// Static hosting - direct client-side download
+            const blob = new Blob([JSON.stringify(buildOrder, null, 2)], { type: 'application/json' });'''
+        
+        js_content = js_content.replace(export_old, export_new)
         
         # Ensure proper module loading by wrapping in DOMContentLoaded if needed
         if 'DOMContentLoaded' not in js_content and 'window.addEventListener(\'load\'' in js_content:
