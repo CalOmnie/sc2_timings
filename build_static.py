@@ -5,11 +5,25 @@ This converts the Flask app into a static site that can be hosted on GitHub Page
 """
 
 import os
+import sys
 import json
 import shutil
 from pathlib import Path
-from flask import Flask
-from src.sc2_gantt.backend.web_app import create_app
+
+# Add the src directory to Python path for imports
+current_dir = Path(__file__).parent
+src_dir = current_dir / 'src'
+sys.path.insert(0, str(src_dir))
+
+try:
+    from flask import Flask
+    from sc2_gantt.backend.web_app import create_app
+except ImportError as e:
+    print(f"Import error: {e}")
+    print(f"Current directory: {current_dir}")
+    print(f"Src directory: {src_dir}")
+    print(f"Python path: {sys.path}")
+    raise
 
 def build_static_site():
     """Build the static site for GitHub Pages deployment."""
