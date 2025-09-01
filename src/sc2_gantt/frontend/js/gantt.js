@@ -152,7 +152,7 @@ class GanttChart {
     async loadSC2Data() {
         try {
             const basePath = window.APP_BASE_PATH || '';
-            const apiUrl = window.APP_API_URL || `${basePath}/api/sc2-data`;
+            const apiUrl = window.APP_API_URL || `${basePath}/api/sc2-data.json`;
             const response = await fetch(apiUrl);
             this.sc2Data = await response.json();
             console.log('SC2 data loaded:', this.sc2Data);
