@@ -24,7 +24,8 @@ class GanttChart {
         // Fallback to constructed path for backwards compatibility
         const race = entityData.race || this.selectedRace || 'unknown';
         const name = entityData.name.toLowerCase().replace(/\s+/g, '_');
-        return `/assets/icons/${race}/${entityType}s/${name}.jpg`;
+        const basePath = window.APP_BASE_PATH || '';
+        return `${basePath}/assets/icons/${race}/${entityType}s/${name}.jpg`;
     }
     
     formatTime(seconds) {
@@ -150,7 +151,9 @@ class GanttChart {
     
     async loadSC2Data() {
         try {
-            const response = await fetch('/api/sc2-data');
+            const basePath = window.APP_BASE_PATH || '';
+            const apiUrl = window.APP_API_URL || `${basePath}/api/sc2-data`;
+            const response = await fetch(apiUrl);
             this.sc2Data = await response.json();
             console.log('SC2 data loaded:', this.sc2Data);
         } catch (error) {
@@ -1363,18 +1366,10 @@ class GanttChart {
                 buildOrder.rows.push(rowData);
             }
             
-            // Send to export endpoint
-            const response = await fetch('/export/build-order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(buildOrder)
-            });
-            
-            if (response.ok) {
-                // Trigger download
-                const blob = await response.blob();
+            // Check if we're in static hosting mode
+            if (window.APP_STATIC_MODE) {
+                // Static hosting - direct client-side download
+                const blob = new Blob([JSON.stringify(buildOrder, null, 2)], { type: 'application/json' });
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
@@ -1387,7 +1382,32 @@ class GanttChart {
                 
                 console.log('Build order exported successfully');
             } else {
-                throw new Error(`Export failed: ${response.statusText}`);
+                // Server-side export
+                const response = await fetch('/export/build-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(buildOrder)
+                });
+                
+                if (response.ok) {
+                    // Trigger download
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'build_order.json';
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                    
+                    console.log('Build order exported successfully');
+                } else {
+                    throw new Error(`Export failed: ${response.statusText}`);
+                }
             }
             
         } catch (error) {
