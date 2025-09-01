@@ -60,10 +60,22 @@ def build_static_site():
     print("Generating sc2-data.json...")
     with app.test_client() as client:
         response = client.get('/api/sc2-data')
-        api_dir = dist_dir / 'api'
-        api_dir.mkdir()
-        with open(api_dir / 'sc2-data.json', 'w', encoding='utf-8') as f:
-            f.write(response.get_data(as_text=True))
+        if response.status_code == 200:
+            api_dir = dist_dir / 'api'
+            api_dir.mkdir()
+            data = response.get_data(as_text=True)
+            with open(api_dir / 'sc2-data.json', 'w', encoding='utf-8') as f:
+                f.write(data)
+            print(f"Generated API data: {len(data)} characters")
+            # Verify it's valid JSON
+            try:
+                json.loads(data)
+                print("API data is valid JSON")
+            except json.JSONDecodeError as e:
+                print(f"Warning: Generated API data is not valid JSON: {e}")
+        else:
+            print(f"Error: Failed to get API data. Status code: {response.status_code}")
+            print(f"Response: {response.get_data(as_text=True)}")
     
     # Copy static files
     print("Copying static files...")
@@ -88,6 +100,9 @@ def build_static_site():
     assets_dst = dist_dir / 'assets'
     if assets_src.exists():
         shutil.copytree(assets_src, assets_dst)
+        print(f"Copied assets from {assets_src} to {assets_dst}")
+    else:
+        print(f"Warning: Assets directory not found at {assets_src}")
     
     # Update API endpoints in JavaScript for static hosting
     print("Updating API endpoints for static hosting...")
@@ -97,11 +112,73 @@ def build_static_site():
             content = f.read()
         
         # Replace API endpoints with static file paths
-        content = content.replace("'/api/sc2-data'", "'./api/sc2-data.json'")
-        content = content.replace('"/api/sc2-data"', '"./api/sc2-data.json"')
+        # Use relative paths that work both locally and on GitHub Pages
+        content = content.replace("'/api/sc2-data'", "'api/sc2-data.json'")
+        content = content.replace('"/api/sc2-data"', '"api/sc2-data.json"')
+        content = content.replace("fetch('/api/sc2-data')", "fetch('api/sc2-data.json')")
+        content = content.replace('fetch("/api/sc2-data")', 'fetch("api/sc2-data.json")')
         
         # Update asset paths to be relative
-        content = content.replace('/assets/', './assets/')
+        content = content.replace('/assets/', 'assets/')
+        
+        # Add better error handling for debugging
+        old_load_function = '''async loadSC2Data() {
+        try {
+            const response = await fetch('api/sc2-data.json');
+            this.sc2Data = await response.json();
+            console.log('SC2 data loaded:', this.sc2Data);
+        } catch (error) {
+            console.error('Failed to load SC2 data:', error);
+        }
+    }'''
+        
+        new_load_function = '''async loadSC2Data() {
+        try {
+            console.log('Attempting to load SC2 data from api/sc2-data.json');
+            console.log('Current location:', window.location.href);
+            console.log('Base URL would be:', new URL('api/sc2-data.json', window.location.href).href);
+            
+            const response = await fetch('api/sc2-data.json');
+            console.log('Fetch response status:', response.status);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            this.sc2Data = data;
+            console.log('SC2 data loaded successfully:', Object.keys(data));
+            
+            if (data.races) {
+                console.log('Available races:', Object.keys(data.races));
+            }
+        } catch (error) {
+            console.error('Failed to load SC2 data:', error);
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack,
+                currentURL: window.location.href
+            });
+            
+            // Try alternative paths
+            console.log('Trying alternative paths...');
+            try {
+                const altResponse = await fetch('./api/sc2-data.json');
+                if (altResponse.ok) {
+                    this.sc2Data = await altResponse.json();
+                    console.log('SC2 data loaded from alternative path');
+                    return;
+                }
+            } catch (altError) {
+                console.error('Alternative path also failed:', altError);
+            }
+            
+            // Show user-friendly error
+            alert('Failed to load game data. Please check the browser console for details.');
+        }
+    }'''
+        
+        content = content.replace(old_load_function, new_load_function)
         
         # Update export functionality for static hosting
         export_replacement = '''
