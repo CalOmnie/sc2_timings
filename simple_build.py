@@ -94,21 +94,28 @@ def build_simple_static():
     else:
         print(f"✗ Warning: Could not find data file at {data_file}")
     
-    # Use existing HTML template and modify paths
-    static_template_path = Path('src/sc2_gantt/frontend/templates/static_index.html')
-    if static_template_path.exists():
-        # Read the existing static template
-        with open(static_template_path, 'r', encoding='utf-8') as f:
+    # Use original Flask template and convert Flask syntax
+    flask_template_path = Path('src/sc2_gantt/frontend/templates/index.html')
+    if flask_template_path.exists():
+        # Read the original Flask template
+        with open(flask_template_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
         
-        # Update paths in the template
-        html_content = html_content.replace('href="css/gantt.css"', f'href="{base_path}/css/gantt.css"')
-        html_content = html_content.replace('src="js/gantt.js"', f'src="{base_path}/js/gantt.js"')
+        # Convert Flask url_for calls to static paths
+        html_content = html_content.replace(
+            "{{ url_for('static', filename='css/gantt.css') }}", 
+            f"{base_path}/css/gantt.css"
+        )
+        html_content = html_content.replace(
+            "{{ url_for('static', filename='js/gantt.js') }}", 
+            f"{base_path}/js/gantt.js"
+        )
         
         with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
+        print(f"✓ Converted Flask template to static HTML")
     else:
-        print(f"Warning: Static template not found at {static_template_path}")
+        print(f"Warning: Flask template not found at {flask_template_path}")
     
     # Create simple 404 redirect
     with open(dist_dir / '404.html', 'w', encoding='utf-8') as f:
