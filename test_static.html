@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Static Build</title>
+    <script>
+        async function testBuild() {
+            console.log('Testing static build...');
+            
+            // Test API endpoint
+            try {
+                const response = await fetch('./dist/api/sc2-data.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('✓ API data loads successfully:', Object.keys(data));
+                } else {
+                    console.error('✗ API endpoint failed:', response.status);
+                }
+            } catch (error) {
+                console.error('✗ API fetch error:', error);
+            }
+            
+            // Test CSS
+            const cssExists = document.createElement('link');
+            cssExists.rel = 'stylesheet';
+            cssExists.href = './dist/css/gantt.css';
+            cssExists.onload = () => console.log('✓ CSS loads successfully');
+            cssExists.onerror = () => console.error('✗ CSS failed to load');
+            document.head.appendChild(cssExists);
+            
+            // Test JS
+            const jsExists = document.createElement('script');
+            jsExists.src = './dist/js/gantt.js';
+            jsExists.onload = () => console.log('✓ JavaScript loads successfully');
+            jsExists.onerror = () => console.error('✗ JavaScript failed to load');
+            document.head.appendChild(jsExists);
+        }
+        
+        window.addEventListener('load', testBuild);
+    </script>
+</head>
+<body>
+    <h1>Static Build Test</h1>
+    <p>Check the console for test results.</p>
+    <p><a href="./dist/index.html">Open the built app</a></p>
+</body>
+</html>

@@ -35,7 +35,9 @@ jobs:
         
     - name: Build static site
       run: |
-        python build_static.py
+        python simple_build.py
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
