@@ -8,6 +8,7 @@ class GanttChart {
         this.gridSize = 20;
         this.sc2Data = null;
         this.timeScale = 3; // pixels per second
+        this.rightAlignedRows = new Set(); // Track which rows are right-aligned
         
         this.init();
         this.createGridLines();
@@ -153,7 +154,7 @@ class GanttChart {
     async loadSC2Data() {
         try {
             const basePath = window.APP_BASE_PATH || '';
-            const apiUrl = window.APP_API_URL || `${basePath}/api/sc2-data.json`;
+            const apiUrl = window.APP_API_URL || `${basePath}/api/sc2-data`;
             const response = await fetch(apiUrl);
             this.sc2Data = await response.json();
             console.log('SC2 data loaded:', this.sc2Data);
@@ -483,12 +484,15 @@ class GanttChart {
         const rowRects = this.rectangles.filter(r => r.row === rowIndex);
         
         let endTime = 0;
+        let startTime = 0;
         let totalMinerals = 0;
         let totalGas = 0;
         
         if (rowRects.length > 0) {
             // Calculate end time (furthest right edge of any entity)
             endTime = Math.max(...rowRects.map(r => (r.x + r.width) / this.timeScale));
+            // Calculate start time (leftmost position of any entity)
+            startTime = Math.min(...rowRects.map(r => r.x / this.timeScale));
             
             // Calculate total costs
             rowRects.forEach(rect => {
@@ -501,11 +505,15 @@ class GanttChart {
         
         const rowElement = this.getRowElement(rowIndex);
         if (rowElement) {
-            const endTimeElement = rowElement.querySelector('.row-end-time');
+            const timeElement = rowElement.querySelector('.row-end-time');
             const costElement = rowElement.querySelector('.row-total-cost');
             
-            if (endTimeElement) {
-                endTimeElement.textContent = `End: ${this.formatTime(Math.round(endTime))}`;
+            if (timeElement) {
+                // Show start time if row is right-aligned, otherwise show end time
+                const isRightAligned = this.rightAlignedRows.has(rowIndex);
+                const displayTime = isRightAligned ? startTime : endTime;
+                const timeLabel = isRightAligned ? 'Start' : 'End';
+                timeElement.textContent = `${timeLabel}: ${this.formatTime(Math.round(displayTime))}`;
             }
             if (costElement) {
                 costElement.textContent = `Cost: ${totalMinerals}/${totalGas}`;
@@ -1196,6 +1204,7 @@ class GanttChart {
             currentX += rect.width;
         });
         
+        this.rightAlignedRows.delete(rowIndex);
         this.updateRowStats(rowIndex);
         console.log(`Aligned row ${rowIndex + 1} to left`);
     }
@@ -1231,6 +1240,7 @@ class GanttChart {
             currentX += rect.width;
         });
         
+        this.rightAlignedRows.add(rowIndex);
         this.updateRowStats(rowIndex);
         console.log(`Aligned row ${rowIndex + 1} to align with end of row above`);
     }
