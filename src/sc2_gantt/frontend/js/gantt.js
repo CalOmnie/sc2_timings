@@ -16,15 +16,16 @@ class GanttChart {
     }
     
     getIconPath(entityData, entityType) {
+        const basePath = window.APP_BASE_PATH || '';
+        
         // Use href field from JSON data if available, fallback to constructed path
         if (entityData.href) {
-            return entityData.href;
+            return `${basePath}${entityData.href}`;
         }
         
         // Fallback to constructed path for backwards compatibility
         const race = entityData.race || this.selectedRace || 'unknown';
         const name = entityData.name.toLowerCase().replace(/\s+/g, '_');
-        const basePath = window.APP_BASE_PATH || '';
         return `${basePath}/assets/icons/${race}/${entityType}s/${name}.jpg`;
     }
     
