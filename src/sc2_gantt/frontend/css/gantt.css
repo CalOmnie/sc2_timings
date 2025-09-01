@@ -434,7 +434,8 @@ body {
     position: relative;
     min-height: 400px;
     padding: 20px;
-    padding-left: 100px;
+    padding-left: 120px; /* Increased to give more space for row labels */
+    padding-right: 20px;
     padding-bottom: 50px; /* Make room for time index */
 }
 

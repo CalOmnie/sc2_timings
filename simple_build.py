@@ -55,9 +55,12 @@ def build_simple_static():
             f"fetch('{base_path}/api/sc2-data.json')"
         )
         
-        # Fix asset paths - be more specific to avoid double replacement
-        js_content = js_content.replace('return `/assets/icons/', f'return `{base_path}/assets/icons/')
-        js_content = js_content.replace('return `assets/icons/', f'return `{base_path}/assets/icons/')
+        # Fix asset paths - use more specific patterns to avoid double replacement
+        # Only replace the path in the getIconPath function return statement
+        js_content = js_content.replace(
+            'return `/assets/icons/${race}/${entityType}s/${name}.jpg`;',
+            f'return `{base_path}/assets/icons/${{race}}/${{entityType}}s/${{name}}.jpg`;'
+        )
         
         # Fix export functionality for static hosting
         export_old = '''// Send to export endpoint

@@ -423,8 +423,8 @@ class GanttChart {
         
         // Calculate the maximum time span needed
         const maxTime = this.getMaxTimeSpan();
-        const chartWidth = this.chart.clientWidth - 120; // Account for padding
-        const entityStartOffset = 100; // Same offset as chart padding-left where entities start
+        const chartWidth = this.chart.clientWidth - 140; // Account for padding (120 + 20)
+        const entityStartOffset = 120; // Same offset as chart padding-left where entities start
         
         // Create vertical lines every 10 seconds starting at 0:00
         const interval = 10; // 10 second intervals
@@ -448,7 +448,7 @@ class GanttChart {
         
         // Calculate the maximum time span needed
         const maxTime = this.getMaxTimeSpan();
-        const chartWidth = this.chart.clientWidth - 120; // Account for padding
+        const chartWidth = this.chart.clientWidth - 140; // Account for padding (120 + 20)
         
         // Create time markers every 30 seconds (or every minute for very long spans)
         const interval = maxTime > 600 ? 60 : 30; // 60s intervals for >10min, 30s otherwise
