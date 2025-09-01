@@ -62,59 +62,14 @@ def build_simple_static():
             f'return `{base_path}/assets/icons/${{race}}/${{entityType}}s/${{name}}.jpg`;'
         )
         
-        # Fix export functionality for static hosting
-        export_old = '''// Send to export endpoint
-            const response = await fetch('/export/build-order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(buildOrder)
-            });
-            
-            if (response.ok) {
-                // Trigger download
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'build_order.json';
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
-                
-                console.log('Build order exported successfully');
-            } else {
-                throw new Error(`Export failed: ${response.statusText}`);
-            }'''
-        
-        export_new = '''// Static hosting - export as client-side download
-            const blob = new Blob([JSON.stringify(buildOrder, null, 2)], { type: 'application/json' });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'build_order.json';
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-            
-            console.log('Build order exported successfully');'''
-        
-        js_content = js_content.replace(export_old, export_new)
-        
-        # Add initialization debugging
+        # Fix export functionality for static hosting - replace server endpoint
         js_content = js_content.replace(
-            "window.addEventListener('load', () => {",
-            """console.log('GitHub Pages SC2 Gantt Chart starting...');
-console.log('Base path:', window.location.pathname);
-console.log('Repository detected:', '""" + repo_name + """');
-
-window.addEventListener('load', () => {
-    console.log('Window loaded, initializing Gantt Chart...');"""
+            "await fetch('/export/build-order',", 
+            "// Static export - direct download\n            false && await fetch('/export/build-order',"
+        )
+        js_content = js_content.replace(
+            "if (response.ok) {",
+            "if (false) { // Static hosting - skip server response\n            } else {"
         )
         
         with open(js_dst / 'gantt.js', 'w', encoding='utf-8') as f:
@@ -150,55 +105,14 @@ window.addEventListener('load', () => {
         html_content = html_content.replace('href="css/gantt.css"', f'href="{base_path}/css/gantt.css"')
         html_content = html_content.replace('src="js/gantt.js"', f'src="{base_path}/js/gantt.js"')
         
-        # Add debugging script
-        debug_script = f'''
-    <script>
-        // GitHub Pages debugging
-        console.log('HTML loaded, base path: {base_path}');
-        console.log('Current URL:', window.location.href);
-        console.log('Repository: {repo_name}');
-        
-        // Test if files are accessible
-        window.addEventListener('DOMContentLoaded', () => {{
-            console.log('DOM loaded, testing file access...');
-            
-            // Test CSS
-            const cssLink = document.querySelector('link[rel="stylesheet"]');
-            if (cssLink) {{
-                console.log('CSS link found:', cssLink.href);
-            }}
-            
-            // Test JS will be loaded
-            console.log('JavaScript will load from:', '{base_path}/js/gantt.js');
-            
-            // Test API endpoint
-            console.log('API endpoint will be:', '{base_path}/api/sc2-data.json');
-        }});
-    </script>'''
-        
-        # Insert debug script before closing </head>
-        html_content = html_content.replace('</head>', debug_script + '\n</head>')
-        
         with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
     else:
         print(f"Warning: Static template not found at {static_template_path}")
-        # Fallback - could use Flask to render the template
-        with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
-            f.write(f'<html><body><h1>Template not found</h1><p>Could not find {static_template_path}</p></body></html>')
     
-    # Create 404.html
+    # Create simple 404 redirect
     with open(dist_dir / '404.html', 'w', encoding='utf-8') as f:
-        f.write(f'''<!DOCTYPE html>
-<html>
-<head>
-    <title>404 - Page Not Found</title>
-    <meta http-equiv="refresh" content="0; url={base_path}/">
-</head>
-<body>
-    <p>Redirecting to <a href="{base_path}/">SC2 Gantt Chart</a>...</p>
-</body>
-</html>''')
+        f.write(f'<meta http-equiv="refresh" content="0; url={base_path}/">')
     
     print(f"\n✓ Static site built successfully in {dist_dir.absolute()}")
     print(f"✓ Base path configured as: '{base_path}'")
