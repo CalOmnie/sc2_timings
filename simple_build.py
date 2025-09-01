@@ -62,7 +62,7 @@ def build_simple_static():
             f'return `{base_path}/assets/icons/${{race}}/${{entityType}}s/${{name}}.jpg`;'
         )
         
-        # Fix export functionality for static hosting - replace entire export section
+        # Fix export functionality for static hosting - replace entire server section
         export_old = '''// Send to export endpoint
             const response = await fetch('/export/build-order', {
                 method: 'POST',
@@ -74,10 +74,35 @@ def build_simple_static():
             
             if (response.ok) {
                 // Trigger download
-                const blob = await response.blob();'''
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'build_order.json';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+                
+                console.log('Build order exported successfully');
+            } else {
+                throw new Error(`Export failed: ${response.statusText}`);
+            }'''
         
         export_new = '''// Static hosting - direct client-side download
-            const blob = new Blob([JSON.stringify(buildOrder, null, 2)], { type: 'application/json' });'''
+            const blob = new Blob([JSON.stringify(buildOrder, null, 2)], { type: 'application/json' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'build_order.json';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            
+            console.log('Build order exported successfully');'''
         
         js_content = js_content.replace(export_old, export_new)
         
