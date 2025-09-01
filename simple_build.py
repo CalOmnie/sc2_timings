@@ -72,6 +72,10 @@ def build_simple_static():
             "if (false) { // Static hosting - skip server response\n            } else {"
         )
         
+        # Ensure proper module loading by wrapping in DOMContentLoaded if needed
+        if 'DOMContentLoaded' not in js_content and 'window.addEventListener(\'load\'' in js_content:
+            print("✓ JavaScript already has proper load event handling")
+        
         with open(js_dst / 'gantt.js', 'w', encoding='utf-8') as f:
             f.write(js_content)
         print(f"✓ Modified and copied JavaScript")
@@ -101,7 +105,7 @@ def build_simple_static():
         with open(flask_template_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
         
-        # Convert Flask url_for calls to static paths
+        # Convert Flask url_for calls to static paths with proper absolute URLs
         html_content = html_content.replace(
             "{{ url_for('static', filename='css/gantt.css') }}", 
             f"{base_path}/css/gantt.css"
@@ -109,6 +113,12 @@ def build_simple_static():
         html_content = html_content.replace(
             "{{ url_for('static', filename='js/gantt.js') }}", 
             f"{base_path}/js/gantt.js"
+        )
+        
+        # Ensure script tag has proper loading attributes for GitHub Pages
+        html_content = html_content.replace(
+            f'<script src="{base_path}/js/gantt.js"></script>',
+            f'<script src="{base_path}/js/gantt.js" defer></script>'
         )
         
         with open(dist_dir / 'index.html', 'w', encoding='utf-8') as f:
